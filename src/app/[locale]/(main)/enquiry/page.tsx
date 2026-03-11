@@ -271,6 +271,8 @@ export default function EnquiryPage() {
 
       if (!res.ok) throw new Error("Failed to submit");
 
+      // Clear cart cookie after successful submission
+      document.cookie = "selectedPlaces=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT";
       setSubmitted(true);
     } catch {
       setSubmitError("Something went wrong. Please try again or contact us directly.");
