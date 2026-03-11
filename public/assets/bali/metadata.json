@@ -1,0 +1,47 @@
+{
+  "name": "bali",
+  "originalWidth": 2992,
+  "originalHeight": 3992,
+  "aspectRatio": 0.7495,
+  "dominantColor": "#182818",
+  "variants": [
+    {
+      "name": "placeholder",
+      "width": 20,
+      "height": 27,
+      "file": "placeholder.webp"
+    },
+    {
+      "name": "sm",
+      "width": 640,
+      "height": 854,
+      "file": "sm.webp"
+    },
+    {
+      "name": "md",
+      "width": 1024,
+      "height": 1366,
+      "file": "md.webp"
+    },
+    {
+      "name": "lg",
+      "width": 1536,
+      "height": 2049,
+      "file": "lg.webp"
+    },
+    {
+      "name": "xl",
+      "width": 1920,
+      "height": 2562,
+      "file": "xl.webp"
+    },
+    {
+      "name": "original",
+      "width": 2992,
+      "height": 3992,
+      "file": "original.webp"
+    }
+  ],
+  "basePath": "/assets/bali",
+  "generatedAt": "2026-03-11T14:19:46.368Z"
+}

@@ -1,0 +1,47 @@
+{
+  "name": "komodo",
+  "originalWidth": 3264,
+  "originalHeight": 4450,
+  "aspectRatio": 0.7335,
+  "dominantColor": "#382828",
+  "variants": [
+    {
+      "name": "placeholder",
+      "width": 20,
+      "height": 27,
+      "file": "placeholder.webp"
+    },
+    {
+      "name": "sm",
+      "width": 640,
+      "height": 872,
+      "file": "sm.webp"
+    },
+    {
+      "name": "md",
+      "width": 1024,
+      "height": 1396,
+      "file": "md.webp"
+    },
+    {
+      "name": "lg",
+      "width": 1536,
+      "height": 2094,
+      "file": "lg.webp"
+    },
+    {
+      "name": "xl",
+      "width": 1920,
+      "height": 2618,
+      "file": "xl.webp"
+    },
+    {
+      "name": "original",
+      "width": 3264,
+      "height": 4450,
+      "file": "original.webp"
+    }
+  ],
+  "basePath": "/assets/komodo",
+  "generatedAt": "2026-03-11T14:20:14.032Z"
+}

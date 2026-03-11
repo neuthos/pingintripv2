@@ -1,0 +1,47 @@
+{
+  "name": "east-java",
+  "originalWidth": 4689,
+  "originalHeight": 5861,
+  "aspectRatio": 0.8,
+  "dominantColor": "#182828",
+  "variants": [
+    {
+      "name": "placeholder",
+      "width": 20,
+      "height": 25,
+      "file": "placeholder.webp"
+    },
+    {
+      "name": "sm",
+      "width": 640,
+      "height": 800,
+      "file": "sm.webp"
+    },
+    {
+      "name": "md",
+      "width": 1024,
+      "height": 1280,
+      "file": "md.webp"
+    },
+    {
+      "name": "lg",
+      "width": 1536,
+      "height": 1920,
+      "file": "lg.webp"
+    },
+    {
+      "name": "xl",
+      "width": 1920,
+      "height": 2400,
+      "file": "xl.webp"
+    },
+    {
+      "name": "original",
+      "width": 4689,
+      "height": 5861,
+      "file": "original.webp"
+    }
+  ],
+  "basePath": "/assets/east-java",
+  "generatedAt": "2026-03-11T14:20:29.854Z"
+}

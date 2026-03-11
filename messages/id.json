@@ -1,0 +1,155 @@
+{
+  "Navbar": {
+    "destinations": "Destinasi",
+    "packages": "Paket Wisata",
+    "customTour": "Tur Kustom",
+    "about": "Tentang",
+    "cta": "Pesan Sekarang",
+    "login": "Masuk",
+    "signup": "Daftar",
+    "logout": "Keluar"
+  },
+  "LanguageSwitcher": {
+    "en": "English",
+    "id": "Indonesia",
+    "cn": "中文"
+  },
+  "Hero": {
+    "title": "Jelajahi Lombok & Bali",
+    "subtitle": "Rancang liburan pulau impian Anda — pilih destinasi dan kami akan membuatkan itinerary personal khusus untuk Anda.",
+    "cta": "Buat Tur Kustom Anda",
+    "secondaryCta": "Lihat Paket"
+  },
+  "Mission": {
+    "heading": "Perjalanan Anda, Cara Anda",
+    "paragraphs": [
+      "Lombok dan Bali lebih dari sekadar destinasi — mereka adalah perasaan. Kehangatan matahari terbit di Gunung Rinjani, ketenangan pantai tersembunyi, sensasi menyelam di perairan jernih.",
+      "Kami tidak membuat tur biasa. Setiap itinerary yang kami buat sepenuhnya personal — dirancang sesuai tempat yang ingin Anda kunjungi, pengalaman yang ingin Anda rasakan, dan siapa teman perjalanan Anda.",
+      "Apakah Anda pasangan yang mencari liburan romantis, keluarga yang mencari petualangan, atau traveler solo yang menjelajahi hal baru — kami merancang setiap detail untuk Anda.",
+      "Mari ciptakan sesuatu yang luar biasa bersama."
+    ],
+    "cta": "Hubungi Kami"
+  },
+  "Testimonials": {
+    "heading": "Kata Para Traveler",
+    "items": [
+      {
+        "quote": "Itinerary kustom yang benar-benar sempurna. Setiap detail diurus, dari air terjun tersembunyi hingga makan malam di pantai saat sunset.",
+        "name": "Sarah",
+        "location": "Australia"
+      },
+      {
+        "quote": "Liburan keluarga terbaik yang pernah kami alami. Anak-anak suka snorkeling dan pengalaman budayanya tak terlupakan.",
+        "name": "David",
+        "location": "Singapura"
+      },
+      {
+        "quote": "Dari kuil tersembunyi hingga piknik di pantai pribadi — perjalanan ini melebihi semua ekspektasi. Benar-benar mimpi jadi kenyataan.",
+        "name": "Yuki",
+        "location": "Jepang"
+      },
+      {
+        "quote": "Kami menginginkan sesuatu yang unik untuk bulan madu kami dan mereka memberikan lebih dari imajinasi. Setiap momen terasa ajaib.",
+        "name": "Emma & James",
+        "location": "Inggris"
+      }
+    ]
+  },
+  "Destinations": {
+    "heading": "Jelajahi Destinasi",
+    "subtitle": "Dari puncak gunung berapi hingga pantai perawan — temukan wilayah paling menakjubkan di Indonesia.",
+    "cta": "Buat Tur Kustom Anda",
+    "ctaHint": "Pilih destinasi Anda dan kami akan merancang itinerary personal untuk Anda."
+  },
+  "Trips": {
+    "heading": "Jelajahi Perjalanan Kami",
+    "subtitle": "Pengalaman luar biasa untuk menginspirasi pikiran",
+    "viewAll": "Lihat Semua Paket",
+    "days": "Hari",
+    "from": "Mulai",
+    "exploreTrip": "Jelajahi"
+  },
+  "Awards": {
+    "heading": "Dipercaya Traveler di Seluruh Dunia",
+    "items": [
+      {
+        "text": "Operator Tur Terbaik di Asia Tenggara 2025",
+        "logo": "tripadvisor"
+      },
+      {
+        "text": "Pengalaman Wisata Kustom Terbaik di Indonesia",
+        "logo": "travel-leisure"
+      },
+      {
+        "text": "Pemenang Travelers' Choice Award 2025",
+        "logo": "google-reviews"
+      },
+      {
+        "text": "Operator Wisata Berkelanjutan Bersertifikat",
+        "logo": "green-tourism"
+      }
+    ]
+  },
+  "BrandStory": {
+    "block1": {
+      "heading": "Apa yang Kami Lakukan\nDan Mengapa",
+      "body1": "Bali dan Lombok lebih dari sekadar pemandangan indah — mereka adalah cerita hidup yang menunggu untuk diceritakan. Di Pingintrip, kami tidak hanya menunjukkan keindahan alam. Kami merancang perjalanan mewah yang memadukan budaya, sejarah, dan narasi tersembunyi di balik setiap destinasi.",
+      "body2": "Dari upacara pura pribadi hingga makan malam saat sunset di teras tebing, setiap momen dikurasi agar kaya makna sekaligus keindahan. Ini bukan sekadar wisata — ini bercerita melalui perjalanan.",
+      "cta": "Tonton Cerita Kami",
+      "ctaHref": "/about"
+    },
+    "block2": {
+      "heading": "Dipercaya\nSejak 2013",
+      "body1": "Selama lebih dari satu dekade, Pingintrip telah menjadi salah satu operator tur terbesar dan paling dipercaya di Bali dan Lombok. Bermula dari tim kecil pemandu lokal yang penuh semangat, kini berkembang menjadi perusahaan travel lengkap — namun hati kami tetap sama.",
+      "body2": "Lebih dari 10.000 traveler dari 40+ negara telah menjelajahi Indonesia bersama kami. Reputasi kami dibangun di atas keandalan, perhatian personal, dan komitmen tak tergoyahkan untuk menciptakan pengalaman luar biasa.",
+      "cta": "Perjalanan Kami",
+      "ctaHref": "/about"
+    },
+    "block3": {
+      "heading": "Lebih dari\nSekadar Pemandangan",
+      "body1": "Pemandangan indah hanyalah permulaan. Kami percaya momen perjalanan paling tak terlupakan datang dari apa yang kamu lakukan, bukan hanya apa yang kamu lihat. Itulah mengapa setiap itinerary Pingintrip menyertakan pengalaman imersif — dari kelas memasak tradisional hingga treasure hunt di pulau dan tantangan tim.",
+      "body2": "Baik itu kompetisi seru di air terjun tersembunyi, permainan budaya bersama komunitas lokal, atau petualangan kejutan yang dirancang khusus untuk kelompokmu — kami pastikan kamu pulang membawa lebih dari foto. Kamu pulang membawa cerita.",
+      "cta": "Jelajahi Pengalaman",
+      "ctaHref": "/custom-tour"
+    }
+  },
+  "USP": {
+    "heading": "Kenapa Pingintrip",
+    "items": [
+      {
+        "title": "Dipercaya Sejak 2013",
+        "description": "Lebih dari satu dekade sebagai operator tur terbesar di Lombok — 10.000+ traveler, 40+ negara, satu standar keunggulan yang tak tergoyahkan."
+      },
+      {
+        "title": "Pemandu CEO Lokal",
+        "description": "Setiap perjalanan dipimpin oleh Chief Experience Officer — ahli lokal asli yang berbagi jiwa pulau-pulau, bukan sekadar pemandangan."
+      },
+      {
+        "title": "Komunitas Utama",
+        "description": "Kami menjalankan wisata yang memberi dampak. Setiap perjalanan langsung mendukung keluarga lokal, melestarikan tradisi, dan menjaga lingkungan yang kami cintai."
+      },
+      {
+        "title": "Melampaui Jalur Turis",
+        "description": "Kami membawa Anda ke tempat yang tak dijangkau buku panduan — air terjun tersembunyi, upacara sakral, pantai rahasia. Indonesia yang sesungguhnya."
+      }
+    ]
+  },
+  "FinalCTA": {
+    "heading": "Jadi, Siap Memulai?",
+    "cta": "Hubungi Kami"
+  },
+  "Footer": {
+    "tagline": "Pengalaman pulau mewah, berakar pada jiwa lokal. Sejak 2013.",
+    "companyTitle": "Pingintrip",
+    "infoTitle": "Informasi",
+    "destinationsTitle": "Destinasi Populer",
+    "newsletter": "Berlangganan Newsletter",
+    "newsletterPlaceholder": "emailanda@contoh.com"
+  },
+  "Newsletter": {
+    "heading": "Dapatkan Inspirasi Perjalanan",
+    "placeholder": "Masukkan email Anda",
+    "cta": "Berlangganan",
+    "success": "Terima kasih sudah berlangganan!"
+  }
+}

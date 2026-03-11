@@ -1,0 +1,47 @@
+{
+  "name": "hero2",
+  "originalWidth": 4771,
+  "originalHeight": 3181,
+  "aspectRatio": 1.4998,
+  "dominantColor": "#181818",
+  "variants": [
+    {
+      "name": "placeholder",
+      "width": 20,
+      "height": 13,
+      "file": "placeholder.webp"
+    },
+    {
+      "name": "sm",
+      "width": 640,
+      "height": 427,
+      "file": "sm.webp"
+    },
+    {
+      "name": "md",
+      "width": 1024,
+      "height": 683,
+      "file": "md.webp"
+    },
+    {
+      "name": "lg",
+      "width": 1536,
+      "height": 1024,
+      "file": "lg.webp"
+    },
+    {
+      "name": "xl",
+      "width": 1920,
+      "height": 1280,
+      "file": "xl.webp"
+    },
+    {
+      "name": "original",
+      "width": 4771,
+      "height": 3181,
+      "file": "original.webp"
+    }
+  ],
+  "basePath": "/assets/hero2",
+  "generatedAt": "2026-03-11T13:37:46.125Z"
+}

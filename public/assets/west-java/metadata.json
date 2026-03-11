@@ -1,0 +1,41 @@
+{
+  "name": "west-java",
+  "originalWidth": 1688,
+  "originalHeight": 3000,
+  "aspectRatio": 0.5627,
+  "dominantColor": "#98a8a8",
+  "variants": [
+    {
+      "name": "placeholder",
+      "width": 20,
+      "height": 36,
+      "file": "placeholder.webp"
+    },
+    {
+      "name": "sm",
+      "width": 640,
+      "height": 1137,
+      "file": "sm.webp"
+    },
+    {
+      "name": "md",
+      "width": 1024,
+      "height": 1820,
+      "file": "md.webp"
+    },
+    {
+      "name": "lg",
+      "width": 1536,
+      "height": 2730,
+      "file": "lg.webp"
+    },
+    {
+      "name": "original",
+      "width": 1688,
+      "height": 3000,
+      "file": "original.webp"
+    }
+  ],
+  "basePath": "/assets/west-java",
+  "generatedAt": "2026-03-11T14:20:31.498Z"
+}

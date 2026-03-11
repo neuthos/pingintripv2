@@ -1,0 +1,47 @@
+{
+  "name": "sumbawa",
+  "originalWidth": 2256,
+  "originalHeight": 3384,
+  "aspectRatio": 0.6667,
+  "dominantColor": "#182828",
+  "variants": [
+    {
+      "name": "placeholder",
+      "width": 20,
+      "height": 30,
+      "file": "placeholder.webp"
+    },
+    {
+      "name": "sm",
+      "width": 640,
+      "height": 960,
+      "file": "sm.webp"
+    },
+    {
+      "name": "md",
+      "width": 1024,
+      "height": 1536,
+      "file": "md.webp"
+    },
+    {
+      "name": "lg",
+      "width": 1536,
+      "height": 2304,
+      "file": "lg.webp"
+    },
+    {
+      "name": "xl",
+      "width": 1920,
+      "height": 2880,
+      "file": "xl.webp"
+    },
+    {
+      "name": "original",
+      "width": 2256,
+      "height": 3384,
+      "file": "original.webp"
+    }
+  ],
+  "basePath": "/assets/sumbawa",
+  "generatedAt": "2026-03-11T14:20:38.878Z"
+}

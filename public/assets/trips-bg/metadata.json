@@ -1,0 +1,35 @@
+{
+  "name": "trips-bg",
+  "originalWidth": 1024,
+  "originalHeight": 558,
+  "aspectRatio": 1.8351,
+  "dominantColor": "#282828",
+  "variants": [
+    {
+      "name": "placeholder",
+      "width": 20,
+      "height": 11,
+      "file": "placeholder.webp"
+    },
+    {
+      "name": "sm",
+      "width": 640,
+      "height": 349,
+      "file": "sm.webp"
+    },
+    {
+      "name": "md",
+      "width": 1024,
+      "height": 558,
+      "file": "md.webp"
+    },
+    {
+      "name": "original",
+      "width": 1024,
+      "height": 558,
+      "file": "original.webp"
+    }
+  ],
+  "basePath": "/assets/trips-bg",
+  "generatedAt": "2026-03-11T15:09:08.860Z"
+}
