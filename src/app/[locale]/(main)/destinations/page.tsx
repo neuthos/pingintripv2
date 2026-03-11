@@ -3,6 +3,7 @@
 import {useState, useMemo, useCallback, useEffect} from "react";
 import {useTranslations} from "next-intl";
 import {useLocale} from "next-intl";
+import {Link} from "@/i18n/navigation";
 import {
   regions,
   places,
@@ -19,9 +20,6 @@ import {
   MapPin,
   Clock,
   Tag,
-  ShoppingBag,
-  Trash2,
-  MessageCircle,
   ChevronDown,
   ChevronUp,
   ChevronLeft,
@@ -67,7 +65,6 @@ export default function DestinationsPage() {
   );
   const [selectedPlaces, setSelectedPlaces] = useState<Place[]>([]);
   const [detailPlace, setDetailPlace] = useState<Place | null>(null);
-  const [cartOpen, setCartOpen] = useState(false);
   const [hydrated, setHydrated] = useState(false);
 
   const isSearching = searchQuery.trim().length > 0;
@@ -477,88 +474,6 @@ export default function DestinationsPage() {
         </div>
       </section>
 
-      {/* Floating Cart */}
-      <div
-        className={`fixed bottom-0 left-0 right-0 z-50 transition-transform duration-300 ${
-          selectedPlaces.length > 0 ? "translate-y-0" : "translate-y-full"
-        }`}
-        aria-hidden={selectedPlaces.length === 0}
-      >
-        <div
-          className={`bg-white border-t border-gray-200 shadow-2xl overflow-hidden transition-all duration-300 ${
-            cartOpen ? "max-h-[50vh] opacity-100" : "max-h-0 opacity-0"
-          }`}
-        >
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 overflow-y-auto max-h-[45vh]">
-            <div className="flex items-center justify-between mb-3">
-              <h4 className="text-sm font-bold text-neutral">
-                {t("selectedPlaces")} ({selectedPlaces.length})
-              </h4>
-              <button
-                onClick={() => setSelectedPlaces([])}
-                className="text-xs text-red-400 hover:text-red-600 transition-colors"
-              >
-                {t("clearAll")}
-              </button>
-            </div>
-            <div className="space-y-2">
-              {selectedPlaces.map((place) => {
-                const region = regions.find((r) => r.id === place.regionId);
-                return (
-                  <div
-                    key={place.id}
-                    className="flex items-center justify-between bg-gray-50 rounded-lg px-3 py-2"
-                  >
-                    <div>
-                      <p className="text-sm font-semibold text-neutral">
-                        {getName(place.name)}
-                      </p>
-                      {region && (
-                        <p className="text-[11px] text-gray-400">
-                          {getName(region.name)}
-                        </p>
-                      )}
-                    </div>
-                    <button
-                      onClick={() => togglePlace(place)}
-                      className="text-gray-400 hover:text-red-500 transition-colors"
-                    >
-                      <Trash2 className="w-3.5 h-3.5" />
-                    </button>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-
-        <div className="bg-[#1a1a1a] text-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
-            <button
-              onClick={() => setCartOpen(!cartOpen)}
-              className="flex items-center gap-3"
-            >
-              <div className="relative">
-                <ShoppingBag className="w-5 h-5" />
-                <span className="absolute -top-1.5 -right-1.5 bg-white text-black text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
-                  {selectedPlaces.length}
-                </span>
-              </div>
-              <span className="text-sm font-medium">{t("yourTrip")}</span>
-              {cartOpen ? (
-                <ChevronDown className="w-4 h-4 text-white/50" />
-              ) : (
-                <ChevronUp className="w-4 h-4 text-white/50" />
-              )}
-            </button>
-            <button className="bg-white text-black text-sm font-bold px-6 py-2 rounded-full hover:bg-white/90 transition-colors flex items-center gap-2">
-              <MessageCircle className="w-4 h-4" />
-              {t("makeEnquiry")}
-            </button>
-          </div>
-        </div>
-      </div>
-
       {/* Place Detail Modal */}
       <div
         className={`fixed inset-0 z-[60] flex items-end md:items-center justify-center transition-opacity duration-300 ${
@@ -701,7 +616,7 @@ function PlaceCardComponent({
 }: PlaceCardProps) {
   return (
     <div className="bg-white border border-gray-100 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow h-full flex flex-col">
-      <div className="relative aspect-3/2 cursor-pointer" onClick={onDetail}>
+      <Link href={`/destinations/${place.slug}`} className="relative aspect-3/2 block cursor-pointer">
         <OptimizedImage
           src={place.image}
           alt={getName(place.name)}
@@ -711,11 +626,16 @@ function PlaceCardComponent({
         <span className="absolute top-2.5 left-2.5 bg-black/70 text-white text-[9px] uppercase tracking-wider px-2 py-0.5 rounded-full backdrop-blur-sm">
           {place.category}
         </span>
-      </div>
+      </Link>
 
       <div className="p-3.5 flex flex-col flex-1">
         <h4 className="font-bold text-neutral text-sm mb-1 leading-tight">
-          {getName(place.name)}
+          <Link
+            href={`/destinations/${place.slug}`}
+            className="hover:text-gray-700 transition-colors"
+          >
+            {getName(place.name)}
+          </Link>
         </h4>
         <p className="text-[11px] text-gray-400 mb-2.5 line-clamp-2 flex-1">
           {getName(place.description)}
@@ -745,12 +665,12 @@ function PlaceCardComponent({
               </>
             )}
           </button>
-          <button
-            onClick={onDetail}
-            className="text-[11px] font-bold py-1.5 px-3 rounded-lg border border-gray-200 text-gray-500 hover:border-gray-400 hover:text-neutral transition-colors"
+          <Link
+            href={`/destinations/${place.slug}`}
+            className="text-[11px] font-bold py-1.5 px-3 rounded-lg border border-gray-200 text-gray-500 hover:border-gray-400 hover:text-neutral transition-colors text-center"
           >
             {t("viewDetails")}
-          </button>
+          </Link>
         </div>
       </div>
     </div>

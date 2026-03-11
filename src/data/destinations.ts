@@ -317,6 +317,13 @@ export function getPlaceBySlug(slug: string): Place | undefined {
 }
 
 /**
+ * Get all place slugs (used for generateStaticParams)
+ */
+export function getAllPlaceSlugs(): string[] {
+  return places.map((p) => p.slug);
+}
+
+/**
  * Smart search across regions and places — matches name in all locales,
  * tagline, description, and category. Case-insensitive.
  */

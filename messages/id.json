@@ -180,5 +180,20 @@
     "emptyCart": "Pilih tempat untuk menyusun perjalanan Anda",
     "needHelpTitle": "Tidak tahu mau ke mana?",
     "needHelpDesc": "Tenang! Hubungi kami atau kirim pesan WhatsApp, kami akan bantu menemukan destinasi yang cocok untukmu."
+  },
+  "PlaceDetailPage": {
+    "backToDestinations": "Kembali ke Destinasi",
+    "breadcrumbDestinations": "Destinasi",
+    "aboutPlace": "Tentang {place}",
+    "duration": "Durasi",
+    "category": "Kategori",
+    "gallery": "Galeri",
+    "addToTrip": "Tambahkan ke Perjalanan Anda",
+    "addToTripDesc": "Suka tempat ini? Tambahkan ke tur kustom Anda dan kami akan bantu merencanakan itinerary yang sempurna.",
+    "addToTripCta": "Jelajahi Semua Destinasi",
+    "addToTripBtn": "Tambahkan ke Itinerary",
+    "addedToTrip": "Sudah Ditambahkan ✓",
+    "relatedPlaces": "Jelajahi Lainnya di {region}",
+    "viewDetails": "Lihat Detail"
   }
 }

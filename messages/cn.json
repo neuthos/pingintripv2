@@ -180,5 +180,20 @@
     "emptyCart": "选择景点来规划您的行程",
     "needHelpTitle": "不知道去哪里？",
     "needHelpDesc": "别担心！打电话给我们或发WhatsApp消息，我们会帮您找到完美的目的地。"
+  },
+  "PlaceDetailPage": {
+    "backToDestinations": "返回目的地",
+    "breadcrumbDestinations": "目的地",
+    "aboutPlace": "关于{place}",
+    "duration": "时长",
+    "category": "类别",
+    "gallery": "图集",
+    "addToTrip": "添加到您的行程",
+    "addToTripDesc": "喜欢这个地方吗？将它添加到您的定制旅行中，我们将帮您规划完美的行程。",
+    "addToTripCta": "浏览所有目的地",
+    "addToTripBtn": "添加到我的行程",
+    "addedToTrip": "已添加到行程 ✓",
+    "relatedPlaces": "探索{region}的更多景点",
+    "viewDetails": "查看详情"
   }
 }

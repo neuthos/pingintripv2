@@ -180,5 +180,20 @@
     "emptyCart": "Select places to build your trip",
     "needHelpTitle": "Not sure where to go?",
     "needHelpDesc": "No worries! Call us or send a WhatsApp message and we'll help you find the perfect destinations."
+  },
+  "PlaceDetailPage": {
+    "backToDestinations": "Back to Destinations",
+    "breadcrumbDestinations": "Destinations",
+    "aboutPlace": "About {place}",
+    "duration": "Duration",
+    "category": "Category",
+    "gallery": "Gallery",
+    "addToTrip": "Add to Your Trip",
+    "addToTripDesc": "Like this place? Add it to your custom tour and we'll help you plan the perfect itinerary.",
+    "addToTripCta": "Browse All Destinations",
+    "addToTripBtn": "Add to My Itinerary",
+    "addedToTrip": "Added to Itinerary ✓",
+    "relatedPlaces": "Explore More in {region}",
+    "viewDetails": "View Details"
   }
 }
