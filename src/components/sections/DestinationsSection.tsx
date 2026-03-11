@@ -2,7 +2,7 @@
 
 import {useTranslations} from "next-intl";
 import {useLocale} from "next-intl";
-import {destinations} from "@/data/destinations";
+import {regions} from "@/data/destinations";
 import {Link} from "@/i18n/navigation";
 import OptimizedImage from "@/components/ui/optimized-image";
 import {ArrowRight} from "lucide-react";
@@ -26,7 +26,7 @@ export default function DestinationsSection() {
 
         {/* Preview Grid — show first 4 on mobile, all 8 on desktop */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
-          {destinations.map((dest, index) => {
+          {regions.map((dest, index) => {
             const name =
               dest.name[locale as keyof typeof dest.name] || dest.name.en;
             const tagline =
@@ -68,15 +68,13 @@ export default function DestinationsSection() {
         {/* CTA */}
         <div className="text-center mt-10">
           <Link
-            href="/custom-tour"
+            href="/destinations"
             className="btn btn-primary btn-md rounded-lg text-sm font-semibold gap-2 px-8"
           >
             {t("cta")}
             <ArrowRight className="w-4 h-4" />
           </Link>
-          <p className="text-xs text-gray-400 mt-3">
-            {t("ctaHint")}
-          </p>
+          <p className="text-xs text-gray-400 mt-3">{t("ctaHint")}</p>
         </div>
       </div>
     </section>

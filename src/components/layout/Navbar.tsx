@@ -1,18 +1,17 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { useTranslations } from "next-intl";
-import { Link, usePathname, useRouter } from "@/i18n/navigation";
-import { useLocale } from "next-intl";
-import { useSession, signIn, signOut } from "next-auth/react";
-import { Menu, X, Globe, ChevronDown, User, LogOut } from "lucide-react";
+import {useState, useEffect} from "react";
+import {useTranslations} from "next-intl";
+import {Link, usePathname, useRouter} from "@/i18n/navigation";
+import {useLocale} from "next-intl";
+import {useSession, signIn, signOut} from "next-auth/react";
+import {Menu, X, Globe, ChevronDown, User, LogOut} from "lucide-react";
 import Image from "next/image";
 
 const navLinks = [
-  { key: "destinations", href: "/destinations" },
-  { key: "packages", href: "/packages" },
-  { key: "customTour", href: "/custom-tour" },
-  { key: "about", href: "/about" },
+  {key: "destinations", href: "/destinations"},
+  {key: "packages", href: "/packages"},
+  {key: "about", href: "/about"},
 ] as const;
 
 const localeLabels: Record<string, string> = {
@@ -26,7 +25,7 @@ export default function Navbar() {
   const locale = useLocale();
   const pathname = usePathname();
   const router = useRouter();
-  const { data: session, status } = useSession();
+  const {data: session, status} = useSession();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -34,12 +33,12 @@ export default function Navbar() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
-    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("scroll", handleScroll, {passive: true});
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const handleLocaleChange = (newLocale: string) => {
-    router.replace(pathname, { locale: newLocale as "en" | "id" | "cn" });
+    router.replace(pathname, {locale: newLocale as "en" | "id" | "cn"});
   };
 
   const handleSignIn = () => {

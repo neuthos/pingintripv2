@@ -39,7 +39,7 @@ export default function FinalCTASection() {
           {t("heading")}
         </h2>
         <Link
-          href="/custom-tour"
+          href="/destinations"
           className="inline-block bg-neutral text-white text-xs uppercase tracking-[0.2em] font-bold px-8 py-3.5 hover:bg-gray-800 transition-colors"
         >
           {t("cta")}

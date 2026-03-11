@@ -1,4 +1,8 @@
-export interface Destination {
+// ============================
+// REGION (formerly "Destination")
+// ============================
+
+export interface Region {
   id: string;
   slug: string;
   name: {
@@ -17,15 +21,54 @@ export interface Destination {
     cn: string;
   };
   image: string; // path to /assets/<name> folder for OptimizedImage
-  highlights: string[]; // IDs of highlight spots (for future relations)
-  region: "nusa-tenggara" | "java";
   province: string;
   popularFor: string[];
 }
 
-export const destinations: Destination[] = [
+// ============================
+// PLACE (specific spots within a region)
+// ============================
+
+export interface Place {
+  id: string;
+  slug: string;
+  regionId: string; // FK → region.id
+  name: {
+    en: string;
+    id: string;
+    cn: string;
+  };
+  description: {
+    en: string;
+    id: string;
+    cn: string;
+  };
+  longDescription: {
+    en: string;
+    id: string;
+    cn: string;
+  };
+  image: string; // "/assets/<name>" for OptimizedImage
+  gallery: string[]; // additional image paths
+  category:
+    | "beach"
+    | "mountain"
+    | "waterfall"
+    | "temple"
+    | "culture"
+    | "nature"
+    | "adventure"
+    | "village";
+  estimatedDuration: string; // "Half day" | "Full day" | "2 days" etc.
+}
+
+// ============================
+// REGIONS DATA
+// ============================
+
+export const regions: Region[] = [
   {
-    id: "dest-bali",
+    id: "region-bali",
     slug: "bali",
     name: {
       en: "Bali",
@@ -43,13 +86,11 @@ export const destinations: Destination[] = [
       cn: "探索古老的寺庙、翠绿的梯田、世界级的冲浪胜地和充满活力的夜生活。巴厘岛完美融合了文化、冒险和休闲。",
     },
     image: "/assets/bali",
-    highlights: ["ubud", "uluwatu", "seminyak", "nusa-penida", "kuta"],
-    region: "nusa-tenggara",
     province: "Bali",
     popularFor: ["temples", "surfing", "rice-terraces", "nightlife", "yoga"],
   },
   {
-    id: "dest-lombok",
+    id: "region-lombok",
     slug: "lombok",
     name: {
       en: "Lombok",
@@ -67,13 +108,11 @@ export const destinations: Destination[] = [
       cn: "发现原始海滩、雄伟的林贾尼火山和吉利群岛的清澈海水。龙目岛是巴厘岛更安静、更原始的邻居。",
     },
     image: "/assets/lombok",
-    highlights: ["rinjani", "gili-trawangan", "gili-air", "kuta-lombok", "senggigi"],
-    region: "nusa-tenggara",
     province: "Nusa Tenggara Barat",
     popularFor: ["trekking", "diving", "beaches", "snorkeling", "culture"],
   },
   {
-    id: "dest-komodo",
+    id: "region-komodo",
     slug: "komodo",
     name: {
       en: "Komodo Island",
@@ -91,13 +130,11 @@ export const destinations: Destination[] = [
       cn: "与传说中的科莫多巨蜥同行，潜入世界上生物多样性最丰富的水域，航行穿越令人叹为观止的岛屿景观。",
     },
     image: "/assets/komodo",
-    highlights: ["komodo-np", "padar-island", "pink-beach", "manta-point"],
-    region: "nusa-tenggara",
     province: "Nusa Tenggara Timur",
     popularFor: ["wildlife", "diving", "sailing", "photography", "adventure"],
   },
   {
-    id: "dest-sumba",
+    id: "region-sumba",
     slug: "sumba",
     name: {
       en: "Sumba",
@@ -115,13 +152,17 @@ export const destinations: Destination[] = [
       cn: "体验原始未开发的美景——壮观的悬崖、碧绿的泻湖、古老的巨石村庄和标志性的尼希瓦图海滩。",
     },
     image: "/assets/sumba",
-    highlights: ["nihiwatu", "weekuri-lagoon", "tarimbang", "ratenggaro"],
-    region: "nusa-tenggara",
     province: "Nusa Tenggara Timur",
-    popularFor: ["beaches", "culture", "surfing", "photography", "off-the-beaten-path"],
+    popularFor: [
+      "beaches",
+      "culture",
+      "surfing",
+      "photography",
+      "off-the-beaten-path",
+    ],
   },
   {
-    id: "dest-east-java",
+    id: "region-east-java",
     slug: "east-java",
     name: {
       en: "East Java",
@@ -139,13 +180,17 @@ export const destinations: Destination[] = [
       cn: "伊真火山的空灵蓝色火焰、布罗莫火山广阔的沙海和壮丽的通帕瑟武瀑布的家园。东爪哇是冒险家的梦想。",
     },
     image: "/assets/east-java",
-    highlights: ["bromo", "ijen", "tumpak-sewu", "malang"],
-    region: "java",
     province: "Jawa Timur",
-    popularFor: ["volcanoes", "trekking", "waterfalls", "photography", "nature"],
+    popularFor: [
+      "volcanoes",
+      "trekking",
+      "waterfalls",
+      "photography",
+      "nature",
+    ],
   },
   {
-    id: "dest-west-java",
+    id: "region-west-java",
     slug: "west-java",
     name: {
       en: "West Java",
@@ -163,13 +208,17 @@ export const destinations: Destination[] = [
       cn: "漫步万隆的起伏茶园，惊叹于白火山口的超凡景象，探索巽他文化的心脏地带。",
     },
     image: "/assets/west-java",
-    highlights: ["bandung", "kawah-putih", "tangkuban-perahu", "pangandaran"],
-    region: "java",
     province: "Jawa Barat",
-    popularFor: ["tea-plantations", "culture", "nature", "culinary", "hot-springs"],
+    popularFor: [
+      "tea-plantations",
+      "culture",
+      "nature",
+      "culinary",
+      "hot-springs",
+    ],
   },
   {
-    id: "dest-central-java",
+    id: "region-central-java",
     slug: "central-java",
     name: {
       en: "Central Java",
@@ -187,13 +236,11 @@ export const destinations: Destination[] = [
       cn: "在古老的婆罗浮屠和普兰巴南寺庙前驻足感叹，探索文化之都日惹，见证数百年的爪哇传统。",
     },
     image: "/assets/central-java",
-    highlights: ["borobudur", "prambanan", "yogyakarta", "dieng", "karimunjawa"],
-    region: "java",
     province: "Jawa Tengah",
     popularFor: ["temples", "history", "culture", "batik", "culinary"],
   },
   {
-    id: "dest-sumbawa",
+    id: "region-sumbawa",
     slug: "sumbawa",
     name: {
       en: "Sumbawa",
@@ -211,33 +258,129 @@ export const destinations: Destination[] = [
       cn: "在拉基峰冲击世界级浪潮，探索莫约岛的偏远之美，徒步穿越茂密森林到达隐藏的瀑布。松巴哇是原始的冒险。",
     },
     image: "/assets/sumbawa",
-    highlights: ["lakey-peak", "moyo-island", "tambora", "hu-u"],
-    region: "nusa-tenggara",
     province: "Nusa Tenggara Barat",
-    popularFor: ["surfing", "diving", "trekking", "off-the-beaten-path", "nature"],
+    popularFor: [
+      "surfing",
+      "diving",
+      "trekking",
+      "off-the-beaten-path",
+      "nature",
+    ],
   },
 ];
 
+// ============================
+// PLACES DATA — imported from places.ts
+// ============================
+
+import {allPlaces} from "./places";
+
+export const places: Place[] = allPlaces;
+
+// ============================
+// HELPER FUNCTIONS
+// ============================
+
 /**
- * Helper to get destination name by locale
+ * Get region name by locale
  */
-export function getDestinationName(
-  dest: Destination,
-  locale: string
-): string {
-  return dest.name[locale as keyof typeof dest.name] || dest.name.en;
+export function getRegionName(region: Region, locale: string): string {
+  return region.name[locale as keyof typeof region.name] || region.name.en;
 }
 
 /**
- * Helper to get destination by slug
+ * Get region by slug
  */
-export function getDestinationBySlug(slug: string): Destination | undefined {
-  return destinations.find((d) => d.slug === slug);
+export function getRegionBySlug(slug: string): Region | undefined {
+  return regions.find((r) => r.slug === slug);
 }
 
 /**
- * Helper to get destination by ID
+ * Get region by ID
  */
-export function getDestinationById(id: string): Destination | undefined {
-  return destinations.find((d) => d.id === id);
+export function getRegionById(id: string): Region | undefined {
+  return regions.find((r) => r.id === id);
+}
+
+/**
+ * Get all places for a given region ID
+ */
+export function getPlacesByRegion(regionId: string): Place[] {
+  return places.filter((p) => p.regionId === regionId);
+}
+
+/**
+ * Get place by slug
+ */
+export function getPlaceBySlug(slug: string): Place | undefined {
+  return places.find((p) => p.slug === slug);
+}
+
+/**
+ * Smart search across regions and places — matches name in all locales,
+ * tagline, description, and category. Case-insensitive.
+ */
+export function searchRegionsAndPlaces(
+  query: string,
+  locale: string = "en"
+): { regions: Region[]; places: Place[] } {
+  const q = query.toLowerCase().trim();
+  if (!q) return {regions: [...regions], places: [...places]};
+
+  const matchedRegions = regions.filter((r) => {
+    const searchable = [
+      r.name.en,
+      r.name.id,
+      r.name.cn,
+      r.tagline.en,
+      r.tagline.id,
+      r.tagline.cn,
+      r.description[locale as keyof typeof r.description] || r.description.en,
+      r.province,
+      ...r.popularFor,
+    ]
+      .join(" ")
+      .toLowerCase();
+    return searchable.includes(q);
+  });
+
+  const matchedPlaces = places.filter((p) => {
+    const searchable = [
+      p.name.en,
+      p.name.id,
+      p.name.cn,
+      p.description[locale as keyof typeof p.description] || p.description.en,
+      p.category,
+    ]
+      .join(" ")
+      .toLowerCase();
+    return searchable.includes(q);
+  });
+
+  return {regions: matchedRegions, places: matchedPlaces};
+}
+
+// ============================
+// BACKWARD COMPATIBILITY
+// ============================
+// These aliases ensure existing code using the old names still works
+// TODO: Remove after all references are updated
+
+/** @deprecated Use Region instead */
+export type Destination = Region;
+
+/** @deprecated Use regions instead */
+export const destinations = regions;
+
+/** @deprecated Use getRegionName instead */
+export const getDestinationName = getRegionName;
+
+/** @deprecated Use getRegionBySlug instead */
+export function getDestinationBySlug(slug: string): Region | undefined {
+  return getRegionBySlug(slug);
+}
+
+/** @deprecated Use getRegionById instead */
+export function getDestinationById(id: string): Region | undefined {
+  return getRegionById(id);
 }
