@@ -1,7 +1,7 @@
 {
   "Navbar": {
-    "destinations": "Destinasi",
-    "packages": "Paket Wisata",
+    "destinations": "Jelajahi & Rencanakan",
+    "packages": "Open Trip",
     "customTour": "Tur Kustom",
     "about": "Tentang",
     "cta": "Pesan Sekarang",
@@ -16,9 +16,9 @@
   },
   "Hero": {
     "title": "Jelajahi Lombok & Bali",
-    "subtitle": "Rancang liburan pulau impian Anda — pilih destinasi dan kami akan membuatkan itinerary personal khusus untuk Anda.",
+    "subtitle": "Jelajahi Indonesia bersama teman lokal — pilih destinasimu dan kami akan merancang perjalanan autentik yang personal untukmu.",
     "cta": "Buat Tur Kustom Anda",
-    "secondaryCta": "Lihat Paket"
+    "secondaryCta": "Lihat Open Trip"
   },
   "Mission": {
     "heading": "Perjalanan Anda, Cara Anda",
@@ -139,7 +139,7 @@
     "cta": "Hubungi Kami"
   },
   "Footer": {
-    "tagline": "Pengalaman pulau mewah, berakar pada jiwa lokal. Sejak 2013.",
+    "tagline": "Perjalanan autentik, persahabatan nyata, jiwa lokal. Sejak 2013.",
     "companyTitle": "Pingintrip",
     "infoTitle": "Informasi",
     "destinationsTitle": "Destinasi Populer",
@@ -270,6 +270,8 @@
     "teamRezaBio": "Guide lokal yang telah menjelajahi setiap destinasi yang ditawarkan Pingintrip. Pengetahuan mendalam Reza tentang budaya Indonesia dan kehangatannya dengan para traveler membuat setiap trip terasa seperti petualangan bersama teman.",
     "teamGalangRole": "Co-Founder & Operasional",
     "teamGalangBio": "Mesin di balik layar. Galang memastikan setiap itinerary berjalan mulus — dari logistik dan kemitraan hingga memastikan kamu mendapat pengalaman lokal terbaik.",
+    "galleryTag": "Momen Berharga",
+    "galleryTitle": "Petualangan bersama traveler kami",
     "trustTag": "Partner Terpercaya",
     "trustTitle": "Dipercaya oleh bisnis di seluruh Indonesia",
     "trustDesc": "Selama bertahun-tahun, beberapa perusahaan terkemuka Indonesia telah memilih Pingintrip untuk mengorganisir retreat perusahaan, outing tim, dan pengalaman VIP — bukti dari keandalan dan kualitas layanan kami.",

@@ -232,6 +232,73 @@ export default function AboutPage() {
       </section>
 
       {/* ============================
+          GALLERY
+          ============================ */}
+      <section className="py-16 md:py-24 bg-gray-50">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <span className="inline-block text-xs uppercase tracking-[0.25em] font-bold text-primary mb-4">
+              {t("galleryTag")}
+            </span>
+            <h2 className="text-2xl md:text-3xl font-bold text-neutral">
+              {t("galleryTitle")}
+            </h2>
+          </div>
+
+          {/* Masonry-style grid */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+            {/* Row 1 — large + 2 small */}
+            <div className="col-span-2 row-span-2 aspect-square bg-gray-200 rounded-2xl overflow-hidden relative group">
+              {/* Replace with: <OptimizedImage src="/assets/gallery-1" alt="..." fill objectFit="cover" /> */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <p className="text-xs text-gray-400 italic text-center px-4">Group photo with travelers</p>
+              </div>
+            </div>
+            <div className="aspect-square bg-gray-200 rounded-2xl overflow-hidden relative">
+              <div className="absolute inset-0 flex items-center justify-center">
+                <p className="text-xs text-gray-400 italic text-center px-2">Hiking adventure</p>
+              </div>
+            </div>
+            <div className="aspect-square bg-gray-200 rounded-2xl overflow-hidden relative">
+              <div className="absolute inset-0 flex items-center justify-center">
+                <p className="text-xs text-gray-400 italic text-center px-2">Beach moment</p>
+              </div>
+            </div>
+
+            {/* Row 2 */}
+            <div className="aspect-square bg-gray-200 rounded-2xl overflow-hidden relative">
+              <div className="absolute inset-0 flex items-center justify-center">
+                <p className="text-xs text-gray-400 italic text-center px-2">Temple visit</p>
+              </div>
+            </div>
+            <div className="aspect-square bg-gray-200 rounded-2xl overflow-hidden relative">
+              <div className="absolute inset-0 flex items-center justify-center">
+                <p className="text-xs text-gray-400 italic text-center px-2">Local food experience</p>
+              </div>
+            </div>
+
+            {/* Row 3 — 2 small + large */}
+            <div className="aspect-square bg-gray-200 rounded-2xl overflow-hidden relative">
+              <div className="absolute inset-0 flex items-center justify-center">
+                <p className="text-xs text-gray-400 italic text-center px-2">Sunset view</p>
+              </div>
+            </div>
+            <div className="aspect-square bg-gray-200 rounded-2xl overflow-hidden relative">
+              <div className="absolute inset-0 flex items-center justify-center">
+                <p className="text-xs text-gray-400 italic text-center px-2">Snorkeling spot</p>
+              </div>
+            </div>
+            <div className="col-span-2 aspect-video bg-gray-200 rounded-2xl overflow-hidden relative">
+              {/* Replace with: <OptimizedImage src="/assets/gallery-8" alt="..." fill objectFit="cover" /> */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <p className="text-xs text-gray-400 italic text-center px-4">Team with travelers panorama</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ============================
           TRUST
           ============================ */}
       <section className="py-16 md:py-20 bg-gray-50">

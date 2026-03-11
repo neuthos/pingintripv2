@@ -1,7 +1,7 @@
 {
   "Navbar": {
-    "destinations": "Destinations",
-    "packages": "Tour Packages",
+    "destinations": "Explore & Plan",
+    "packages": "Open Trips",
     "customTour": "Custom Tour",
     "about": "About",
     "cta": "Book Now",
@@ -16,9 +16,9 @@
   },
   "Hero": {
     "title": "Discover Lombok & Bali",
-    "subtitle": "Craft your perfect island getaway — choose your destinations and we'll build a personalized itinerary just for you.",
+    "subtitle": "Explore Indonesia with a local friend — pick your destinations and we'll craft an authentic, personalized journey just for you.",
     "cta": "Build Your Custom Tour",
-    "secondaryCta": "Explore Packages"
+    "secondaryCta": "Browse Open Trips"
   },
   "Mission": {
     "heading": "Your Journey, Your Way",
@@ -139,7 +139,7 @@
     "cta": "Get in Touch"
   },
   "Footer": {
-    "tagline": "Luxury island experiences, rooted in local soul. Since 2013.",
+    "tagline": "Authentic journeys, real friendships, local soul. Since 2013.",
     "companyTitle": "Pingintrip",
     "infoTitle": "Useful Information",
     "destinationsTitle": "Popular Destinations",
@@ -270,6 +270,8 @@
     "teamRezaBio": "A local guide who has explored every destination Pingintrip offers. Reza's deep knowledge of Indonesian culture and his natural warmth with travelers are what make every trip feel like an adventure with a friend.",
     "teamGalangRole": "Co-Founder & Operations",
     "teamGalangBio": "The engine behind the scenes. Galang ensures every itinerary runs smoothly — from logistics and partnerships to making sure you have the best local experience possible.",
+    "galleryTag": "Moments That Matter",
+    "galleryTitle": "Adventures with our travelers",
     "trustTag": "Trusted Partner",
     "trustTitle": "Trusted by businesses across Indonesia",
     "trustDesc": "Over the years, some of Indonesia's leading companies have chosen Pingintrip to organize corporate retreats, team outings, and VIP experiences — a testament to our reliability and quality of service.",

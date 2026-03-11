@@ -74,8 +74,6 @@ export default function Footer() {
               </a>
             </div>
 
-
-
             {/* Social */}
             <div className="flex gap-3">
               {socialLinks.map((social) => {
@@ -94,25 +92,6 @@ export default function Footer() {
                 );
               })}
             </div>
-          </div>
-
-          {/* Nav column: Company */}
-          <div>
-            <h4 className="text-xs uppercase tracking-wider font-bold text-white/40 mb-4">
-              {t("companyTitle")}
-            </h4>
-            <ul className="space-y-2.5">
-              {footerNavColumns.company.links.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-white/60 hover:text-white transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
           </div>
 
           {/* Nav column: Information */}
@@ -162,10 +141,16 @@ export default function Footer() {
             © {currentYear} {companyInfo.legalName}. All rights reserved.
           </p>
           <div className="flex gap-5 text-[11px] text-white/30">
-            <Link href="/privacy" className="hover:text-white/60 transition-colors">
+            <Link
+              href="/privacy"
+              className="hover:text-white/60 transition-colors"
+            >
               Privacy Policy
             </Link>
-            <Link href="/terms" className="hover:text-white/60 transition-colors">
+            <Link
+              href="/terms"
+              className="hover:text-white/60 transition-colors"
+            >
               Terms & Conditions
             </Link>
           </div>

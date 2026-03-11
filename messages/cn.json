@@ -1,7 +1,7 @@
 {
   "Navbar": {
-    "destinations": "目的地",
-    "packages": "旅游套餐",
+    "destinations": "探索与计划",
+    "packages": "拼团旅行",
     "customTour": "定制旅游",
     "about": "关于我们",
     "cta": "立即预订",
@@ -16,9 +16,9 @@
   },
   "Hero": {
     "title": "探索龙目岛与巴厘岛",
-    "subtitle": "打造您完美的海岛之旅 — 选择目的地，我们将为您量身定制专属行程。",
+    "subtitle": "与当地朋友一起探索印度尼西亚——选择您的目的地，我们将为您打造真实、个性化的旅程。",
     "cta": "定制您的旅程",
-    "secondaryCta": "浏览套餐"
+    "secondaryCta": "浏览拼团旅行"
   },
   "Mission": {
     "heading": "您的旅程，您做主",
@@ -139,7 +139,7 @@
     "cta": "联系我们"
   },
   "Footer": {
-    "tagline": "奢华海岛体验，根植于本地灵魂。始于2013年。",
+    "tagline": "真实旅程，真挚友谊，本地灵魂。始于2013年。",
     "companyTitle": "Pingintrip",
     "infoTitle": "实用信息",
     "destinationsTitle": "热门目的地",
@@ -270,6 +270,8 @@
     "teamRezaBio": "一位探索过Pingintrip提供的每个目的地的当地导游。Reza对印度尼西亚文化的深入了解和他对旅行者的天然热情，让每次旅行都像是和朋友一起冒险。",
     "teamGalangRole": "联合创始人兼运营",
     "teamGalangBio": "幕后的引擎。Galang确保每个行程顺利运行——从物流和合作到确保您获得最佳的本地体验。",
+    "galleryTag": "珍贵时刻",
+    "galleryTitle": "与旅行者们的冒险",
     "trustTag": "值得信赖的合作伙伴",
     "trustTitle": "受到印度尼西亚各地企业的信赖",
     "trustDesc": "多年来，印度尼西亚一些领先企业选择Pingintrip组织企业静修、团队出游和VIP体验——这证明了我们的可靠性和服务质量。",
