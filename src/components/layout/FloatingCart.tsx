@@ -2,6 +2,7 @@
 
 import {useState, useEffect, useCallback} from "react";
 import {useTranslations, useLocale} from "next-intl";
+import {Link, usePathname} from "@/i18n/navigation";
 import {
   regions,
   places,
@@ -44,6 +45,7 @@ function saveSelectedPlacesToCookies(placeIds: string[]) {
 export default function FloatingCart() {
   const t = useTranslations("DestinationsPage");
   const locale = useLocale();
+  const pathname = usePathname();
   const [selectedPlaces, setSelectedPlaces] = useState<Place[]>([]);
   const [cartOpen, setCartOpen] = useState(false);
   const [hydrated, setHydrated] = useState(false);
@@ -85,7 +87,7 @@ export default function FloatingCart() {
     saveSelectedPlacesToCookies([]);
   }, []);
 
-  if (!hydrated || selectedPlaces.length === 0) return null;
+  if (!hydrated || selectedPlaces.length === 0 || pathname === "/enquiry") return null;
 
   return (
     <div
@@ -163,10 +165,10 @@ export default function FloatingCart() {
               <ChevronUp className="w-4 h-4 text-white/50" />
             )}
           </button>
-          <button className="bg-white text-black text-sm font-bold px-6 py-2 rounded-full hover:bg-white/90 transition-colors flex items-center gap-2 cursor-pointer">
+          <Link href="/enquiry" className="bg-white text-black text-sm font-bold px-6 py-2 rounded-full hover:bg-white/90 transition-colors flex items-center gap-2 cursor-pointer">
             <MessageCircle className="w-4 h-4" />
             {t("makeEnquiry")}
-          </button>
+          </Link>
         </div>
       </div>
     </div>
