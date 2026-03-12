@@ -5,7 +5,7 @@ import {useTranslations} from "next-intl";
 import {Link, usePathname, useRouter} from "@/i18n/navigation";
 import {useLocale} from "next-intl";
 import {useSession, signIn, signOut} from "next-auth/react";
-import {Menu, X, Globe, ChevronDown, User, LogOut, Send} from "lucide-react";
+import {Menu, X, Globe, ChevronDown, User, LogOut, Send, Shield, ShoppingBag} from "lucide-react";
 import Image from "next/image";
 
 const navLinks = [
@@ -28,6 +28,10 @@ export default function Navbar() {
   const {data: session, status} = useSession();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const isAdmin = session?.user?.email
+    ? (process.env.NEXT_PUBLIC_ADMIN_EMAILS || "").split(",").map(e => e.trim().toLowerCase()).includes(session.user.email.toLowerCase())
+    : false;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -170,6 +174,26 @@ export default function Navbar() {
                       </span>
                     </li>
                     <li>
+                      <Link
+                        href="/orders"
+                        className="text-xs text-gray-600 hover:bg-gray-50 rounded-md gap-2"
+                      >
+                        <ShoppingBag className="w-3.5 h-3.5" />
+                        My Orders
+                      </Link>
+                    </li>
+                    {isAdmin && (
+                      <li>
+                        <Link
+                          href="/admin/orders"
+                          className="text-xs text-gray-600 hover:bg-gray-50 rounded-md gap-2"
+                        >
+                          <Shield className="w-3.5 h-3.5" />
+                          Admin Orders
+                        </Link>
+                      </li>
+                    )}
+                    <li>
                       <button
                         onClick={handleSignOut}
                         className="text-xs text-red-500 hover:bg-red-50 rounded-md gap-2"
@@ -299,6 +323,24 @@ export default function Navbar() {
             >
               {t("enquiry")}
             </Link>
+            {session?.user && (
+              <Link
+                href="/orders"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block py-2.5 px-3 rounded-lg text-[13px] font-medium text-gray-600 hover:bg-gray-50 hover:text-primary transition-colors"
+              >
+                📦 My Orders
+              </Link>
+            )}
+            {isAdmin && (
+              <Link
+                href="/admin/orders"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block py-2.5 px-3 rounded-lg text-[13px] font-semibold text-amber-600 hover:bg-amber-50 transition-colors"
+              >
+                🔐 Admin Orders
+              </Link>
+            )}
             <div className="pt-2">
               {session?.user ? (
                 <button

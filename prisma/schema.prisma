@@ -1,0 +1,66 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum OrderStatus {
+  pending_payment
+  paid
+  confirmed
+  in_progress
+  completed
+  cancelled
+  refunded
+}
+
+model Order {
+  id              String      @id @default(uuid())
+  orderNumber     String      @unique // PT-ORD-XXXXXX
+
+  // Tour info
+  tripCode        String      // PT-BALI-01
+  tripSlug        String
+  tripTitle       String
+  durationDays    Int
+
+  // Dates
+  startDate       DateTime
+  endDate         DateTime
+
+  // Traveler info
+  userName        String
+  userEmail       String
+  userPhone       String?
+  googleId        String?
+  travelerCount   Int         @default(1)
+  specialRequests String?
+
+  // Pricing
+  currency        String      // USD, IDR, CNY
+  unitPrice       Float
+  totalPrice      Float
+  discountPercent Float       @default(0)
+
+  // Xendit payment
+  xenditInvoiceId  String?
+  xenditInvoiceUrl String?
+  paymentMethod    String?
+  paidAt           DateTime?
+
+  // Status
+  status          OrderStatus @default(pending_payment)
+  adminNotes      String?
+  cancelledAt     DateTime?
+  cancelledBy     String?     // "user" or "admin"
+
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+
+  @@index([userEmail])
+  @@index([status])
+  @@index([orderNumber])
+}

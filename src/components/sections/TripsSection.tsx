@@ -113,7 +113,7 @@ export default function TripsSection() {
               .filter((pkg) => pkg.featured)
               .map((pkg) => {
                 const name =
-                  pkg.name[locale as keyof typeof pkg.name] || pkg.name.en;
+                  pkg.title[locale as keyof typeof pkg.title] || pkg.title.en;
                 const route =
                   pkg.route[locale as keyof typeof pkg.route] || pkg.route.en;
                 const price = pkg.price[currency];
@@ -136,7 +136,7 @@ export default function TripsSection() {
 
                       {/* Duration badge */}
                       <div className="absolute top-3 right-3 z-3 bg-primary/90 backdrop-blur-sm text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">
-                        {pkg.duration} {t("days")}
+                        {pkg.durationDays} {t("days")}
                       </div>
 
                       {/* Gradient */}

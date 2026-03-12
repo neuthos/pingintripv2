@@ -69,3 +69,69 @@ ${data.comments ? `💬 _"${escapeMarkdown(data.comments)}"_` : ""}
 
   return {success: true};
 }
+
+// ============================
+// Order Telegram Notifications
+// ============================
+
+export interface OrderTelegramData {
+  type: "new_booking" | "payment_received" | "cancelled" | "confirmed";
+  orderNumber: string;
+  userName: string;
+  userEmail: string;
+  tripTitle: string;
+  tripCode: string;
+  startDate: string;
+  endDate: string;
+  totalPrice: string;
+  travelerCount: number;
+}
+
+export async function sendOrderTelegramNotification(data: OrderTelegramData) {
+  const icons: Record<string, string> = {
+    new_booking: "🆕",
+    payment_received: "💰",
+    cancelled: "❌",
+    confirmed: "✅",
+  };
+
+  const titles: Record<string, string> = {
+    new_booking: "New Booking Created\\!",
+    payment_received: "Payment Received\\!",
+    cancelled: "Booking Cancelled",
+    confirmed: "Booking Confirmed",
+  };
+
+  const message = `
+${icons[data.type]} *${titles[data.type]}*
+
+📋 *Order:* ${escapeMarkdown(data.orderNumber)}
+👤 *${escapeMarkdown(data.userName)}* \\(${escapeMarkdown(data.userEmail)}\\)
+
+🗺 *Trip:* ${escapeMarkdown(data.tripTitle)}
+🏷 Code: ${escapeMarkdown(data.tripCode)}
+📅 ${escapeMarkdown(data.startDate)} — ${escapeMarkdown(data.endDate)}
+👥 ${data.travelerCount} traveller\\(s\\)
+💰 Total: ${escapeMarkdown(data.totalPrice)}
+  `.trim();
+
+  const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
+
+  const res = await fetch(url, {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({
+      chat_id: CHAT_ID,
+      text: message,
+      parse_mode: "MarkdownV2",
+    }),
+  });
+
+  if (!res.ok) {
+    const errBody = await res.text();
+    console.error("Telegram API error:", res.status, errBody);
+    throw new Error(`Telegram API error ${res.status}: ${errBody}`);
+  }
+
+  return {success: true};
+}

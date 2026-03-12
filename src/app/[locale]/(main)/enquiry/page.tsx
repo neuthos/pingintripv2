@@ -4,12 +4,14 @@ import {useState, useEffect, useMemo, useRef} from "react";
 import {useTranslations, useLocale} from "next-intl";
 import {useSession, signIn} from "next-auth/react";
 import {Link} from "@/i18n/navigation";
+import {useSearchParams} from "next/navigation";
 import {
   places,
   regions,
   type Place,
 } from "@/data/destinations";
 import {companyInfo} from "@/data/company";
+import {openTrips, getOpenTripTitle, getOpenTripRoute} from "@/data/packages";
 import {PhoneInput} from "react-international-phone";
 import "react-international-phone/style.css";
 import {
@@ -109,6 +111,13 @@ export default function EnquiryPage() {
   const t = useTranslations("EnquiryPage");
   const locale = useLocale();
   const {data: session} = useSession();
+  const searchParams = useSearchParams();
+  const refCode = searchParams.get("ref");
+
+  // Look up reference tour if coming from "Make it Private"
+  const referenceTour = refCode
+    ? openTrips.find((t) => t.code === refCode)
+    : null;
 
   // --- Trip State ---
   const [selectedPlaceIds, setSelectedPlaceIds] = useState<string[]>([]);
@@ -252,7 +261,9 @@ export default function EnquiryPage() {
           lastName,
           email,
           phone,
-          destinations: destinationNames,
+          destinations: referenceTour
+            ? `[REF: ${referenceTour.code}] ${getOpenTripTitle(referenceTour, locale)}`
+            : destinationNames,
           month: month !== "" ? monthNames[Number(month)] : "",
           year,
           duration,
@@ -321,11 +332,30 @@ export default function EnquiryPage() {
                   {t("yourTrip")}
                 </h2>
 
-                {/* Where to go — Multi select */}
+                {/* Where to go — Multi select (hidden if reference tour) */}
                 <div className="mb-6">
-                  <label className="text-sm font-semibold text-neutral mb-2 block">
-                    {t("whereToGo")} <span className="text-red-400">*</span>
-                  </label>
+                  {referenceTour ? (
+                    <>
+                      <label className="text-sm font-semibold text-neutral mb-2 block">
+                        Reference Tour
+                      </label>
+                      <div className="bg-primary/5 border border-primary/20 rounded-xl px-4 py-3 flex items-start gap-3">
+                        <MapPin className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                        <div>
+                          <p className="text-sm font-bold text-neutral">
+                            {getOpenTripTitle(referenceTour, locale)}
+                          </p>
+                          <p className="text-xs text-gray-500 mt-0.5">
+                            {referenceTour.code} · {referenceTour.durationDays} days · {getOpenTripRoute(referenceTour, locale)}
+                          </p>
+                        </div>
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      <label className="text-sm font-semibold text-neutral mb-2 block">
+                        {t("whereToGo")} <span className="text-red-400">*</span>
+                      </label>
 
                   <div className="relative" ref={dropdownRef}>
                     <div
@@ -398,6 +428,8 @@ export default function EnquiryPage() {
                       </div>
                     )}
                   </div>
+                    </>
+                  )}
                 </div>
 
                 {/* When to go + Duration */}
