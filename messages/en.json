@@ -280,5 +280,56 @@
     "ctaDesc": "Tell us where you want to go and we'll craft a journey that's uniquely yours — complete with local insights, hidden gems, and a friend to guide the way.",
     "ctaButton": "Start Planning Your Trip",
     "ctaSecondary": "Browse Destinations"
+  },
+  "PrivacyPage": {
+    "heroTitle": "Privacy Policy",
+    "heroDesc": "Your privacy matters to us. This policy explains how we collect, use, and protect your personal information when you use our services.",
+    "lastUpdated": "Last Updated",
+    "tableOfContents": "Table of Contents",
+    "ctaTitle": "Have questions about your data?",
+    "ctaDesc": "If you have any questions about how we handle your personal information, we're happy to help.",
+    "ctaCta": "Contact Us"
+  },
+  "FaqPage": {
+    "heroTitle": "Frequently Asked Questions",
+    "heroDesc": "Find answers to the most common questions about traveling with Pingintrip.",
+    "ctaTitle": "Still have questions?",
+    "ctaDesc": "Can't find what you're looking for? Our team is happy to help with any questions about your trip.",
+    "ctaCta": "Get in Touch"
+  },
+  "BookingConditionsPage": {
+    "heroTitle": "Booking Conditions",
+    "heroDesc": "Please review our booking terms before confirming your reservation. These conditions protect both you and us.",
+    "lastUpdated": "Last Updated",
+    "tableOfContents": "Table of Contents",
+    "ctaTitle": "Ready to book your trip?",
+    "ctaDesc": "Now that you know our booking terms, let's start planning your perfect Indonesian adventure.",
+    "ctaCta": "Start Planning"
+  },
+  "TermsPage": {
+    "heroTitle": "Terms & Conditions",
+    "heroDesc": "These terms govern your use of our website and services. Please read them carefully.",
+    "lastUpdated": "Last Updated",
+    "tableOfContents": "Table of Contents",
+    "ctaTitle": "Questions about our terms?",
+    "ctaDesc": "If anything is unclear, we're happy to explain. Don't hesitate to reach out.",
+    "ctaCta": "Contact Us"
+  },
+  "InsurancePage": {
+    "heroTitle": "Travel Insurance",
+    "heroDesc": "Protect your trip with comprehensive travel insurance. Travel with peace of mind knowing you're covered.",
+    "lastUpdated": "Last Updated",
+    "recommendation": "We strongly recommend all travelers purchase comprehensive travel insurance before departure. It is required for adventure activities such as Mount Rinjani trekking and scuba diving.",
+    "coverageTag": "What to Look For",
+    "coverageTitle": "Essential Coverage",
+    "providersTag": "Our Recommendations",
+    "providersTitle": "Recommended Providers",
+    "providersDesc": "These are providers we trust based on our travelers' experiences. We are not affiliated with any of them.",
+    "visitWebsite": "Visit Website",
+    "tipsTag": "Pro Tips",
+    "tipsTitle": "Insurance Tips for Indonesia",
+    "ctaTitle": "Ready to plan your adventure?",
+    "ctaDesc": "Once you're covered, let's start building your dream trip to Indonesia.",
+    "ctaCta": "Start Planning"
   }
 }

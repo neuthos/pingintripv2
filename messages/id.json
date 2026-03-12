@@ -280,5 +280,56 @@
     "ctaDesc": "Ceritakan ke mana tujuanmu dan kami akan merancang perjalanan yang unik untukmu — lengkap dengan insight lokal, hidden gems, dan teman yang akan memandumu.",
     "ctaButton": "Mulai Rencanakan Tripmu",
     "ctaSecondary": "Lihat Destinasi"
+  },
+  "PrivacyPage": {
+    "heroTitle": "Kebijakan Privasi",
+    "heroDesc": "Privasi Anda penting bagi kami. Kebijakan ini menjelaskan bagaimana kami mengumpulkan, menggunakan, dan melindungi informasi pribadi Anda saat menggunakan layanan kami.",
+    "lastUpdated": "Terakhir Diperbarui",
+    "tableOfContents": "Daftar Isi",
+    "ctaTitle": "Punya pertanyaan tentang data Anda?",
+    "ctaDesc": "Jika Anda memiliki pertanyaan tentang bagaimana kami menangani informasi pribadi Anda, kami siap membantu.",
+    "ctaCta": "Hubungi Kami"
+  },
+  "FaqPage": {
+    "heroTitle": "Pertanyaan yang Sering Diajukan",
+    "heroDesc": "Temukan jawaban atas pertanyaan umum tentang perjalanan bersama Pingintrip.",
+    "ctaTitle": "Masih punya pertanyaan?",
+    "ctaDesc": "Tidak menemukan yang Anda cari? Tim kami siap membantu menjawab pertanyaan tentang perjalanan Anda.",
+    "ctaCta": "Hubungi Kami"
+  },
+  "BookingConditionsPage": {
+    "heroTitle": "Ketentuan Pemesanan",
+    "heroDesc": "Harap tinjau ketentuan pemesanan kami sebelum mengonfirmasi reservasi. Ketentuan ini melindungi Anda dan kami.",
+    "lastUpdated": "Terakhir Diperbarui",
+    "tableOfContents": "Daftar Isi",
+    "ctaTitle": "Siap memesan perjalanan Anda?",
+    "ctaDesc": "Sekarang Anda sudah mengetahui ketentuan pemesanan kami, mari mulai merencanakan petualangan Indonesia Anda.",
+    "ctaCta": "Mulai Merencanakan"
+  },
+  "TermsPage": {
+    "heroTitle": "Syarat & Ketentuan",
+    "heroDesc": "Syarat-syarat ini mengatur penggunaan Anda atas website dan layanan kami. Harap baca dengan saksama.",
+    "lastUpdated": "Terakhir Diperbarui",
+    "tableOfContents": "Daftar Isi",
+    "ctaTitle": "Pertanyaan tentang syarat kami?",
+    "ctaDesc": "Jika ada yang kurang jelas, kami dengan senang hati menjelaskan. Jangan ragu untuk menghubungi kami.",
+    "ctaCta": "Hubungi Kami"
+  },
+  "InsurancePage": {
+    "heroTitle": "Asuransi Perjalanan",
+    "heroDesc": "Lindungi perjalanan Anda dengan asuransi perjalanan yang komprehensif. Bepergian dengan tenang karena Anda terlindungi.",
+    "lastUpdated": "Terakhir Diperbarui",
+    "recommendation": "Kami sangat menyarankan semua traveler untuk membeli asuransi perjalanan komprehensif sebelum keberangkatan. Ini wajib untuk aktivitas petualangan seperti trekking Gunung Rinjani dan scuba diving.",
+    "coverageTag": "Yang Perlu Dicari",
+    "coverageTitle": "Perlindungan Penting",
+    "providersTag": "Rekomendasi Kami",
+    "providersTitle": "Penyedia yang Direkomendasikan",
+    "providersDesc": "Ini adalah penyedia yang kami percaya berdasarkan pengalaman traveler kami. Kami tidak berafiliasi dengan mereka.",
+    "visitWebsite": "Kunjungi Website",
+    "tipsTag": "Tips",
+    "tipsTitle": "Tips Asuransi untuk Indonesia",
+    "ctaTitle": "Siap merencanakan petualangan Anda?",
+    "ctaDesc": "Setelah Anda terlindungi, mari mulai merancang perjalanan impian Anda ke Indonesia.",
+    "ctaCta": "Mulai Merencanakan"
   }
 }

@@ -46,7 +46,8 @@ export const footerNavColumns = {
   information: {
     links: [
       {label: "FAQ", href: "/faq"},
-      {label: "Booking Conditions", href: "/terms"},
+      {label: "Booking Conditions", href: "/booking-conditions"},
+      {label: "Terms & Conditions", href: "/terms"},
       {label: "Privacy Policy", href: "/privacy"},
       {label: "Travel Insurance", href: "/insurance"},
     ],
