@@ -1,6 +1,4 @@
 import { jsPDF } from "jspdf";
-import fs from "fs";
-import path from "path";
 
 interface TicketData {
   orderNumber: string;
@@ -24,41 +22,27 @@ export function generateTicketPDF(data: TicketData): Buffer {
   const margin = 20;
   const contentWidth = pageWidth - margin * 2;
 
-  // Load logo
-  let logoBase64 = "";
-  try {
-    const logoPath = path.join(process.cwd(), "public", "logo", "pingintrip-logo.webp");
-    if (fs.existsSync(logoPath)) {
-      const logoBuffer = fs.readFileSync(logoPath);
-      logoBase64 = `data:image/webp;base64,${logoBuffer.toString("base64")}`;
-    }
-  } catch {
-    // Logo not found, skip
-  }
-
   // ============================
   // Header Band
   // ============================
   doc.setFillColor(26, 26, 26);
   doc.rect(0, 0, pageWidth, 50, "F");
 
-  if (logoBase64) {
-    try {
-      doc.addImage(logoBase64, "WEBP", margin, 12, 28, 28);
-    } catch {
-      // Fallback: text-only header
-    }
-  }
-
+  // Text logo
   doc.setTextColor(255, 255, 255);
-  doc.setFontSize(22);
+  doc.setFontSize(24);
   doc.setFont("helvetica", "bold");
-  doc.text("PINGINTRIP", logoBase64 ? margin + 33 : margin, 28);
+  doc.text("PINGINTRIP", margin, 28);
 
   doc.setFontSize(9);
   doc.setFont("helvetica", "normal");
   doc.setTextColor(180, 180, 180);
-  doc.text("Authentic journeys, real friendships, local soul", logoBase64 ? margin + 33 : margin, 35);
+  doc.text("Authentic journeys, real friendships, local soul", margin, 36);
+
+  // Decorative line
+  doc.setDrawColor(100, 100, 100);
+  doc.setLineWidth(0.3);
+  doc.line(margin, 42, pageWidth - margin, 42);
 
   // ============================
   // Booking Confirmation Title
@@ -205,5 +189,6 @@ export function generateTicketPDF(data: TicketData): Buffer {
   doc.text("hello@pingintrip.com · www.pingintrip.com", pageWidth / 2, footerY + 4, { align: "center" });
 
   // Return as buffer
-  return Buffer.from(doc.output("arraybuffer"));
+  const arrayBuffer = doc.output("arraybuffer");
+  return Buffer.from(arrayBuffer);
 }
