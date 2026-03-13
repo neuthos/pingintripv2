@@ -3,6 +3,7 @@ import prisma from "@/lib/db";
 import { verifyWebhookToken } from "@/lib/xendit";
 import { sendConfirmationEmail } from "@/lib/email";
 import { sendOrderTelegramNotification } from "@/lib/telegram";
+import { generateTicketPDF } from "@/lib/pdf";
 import { formatPrice } from "@/data/packages";
 import type { Currency } from "@/data/packages";
 
@@ -42,10 +43,53 @@ export async function POST(req: NextRequest) {
         },
       });
 
-      // Send Telegram notification
+      // Format dates
       const fmtDate = (d: Date) =>
         d.toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric" });
 
+      // Generate PDF ticket
+      let pdfBuffer: Buffer | undefined;
+      try {
+        pdfBuffer = generateTicketPDF({
+          orderNumber: order.orderNumber,
+          userName: order.userName,
+          userEmail: order.userEmail,
+          userPhone: order.userPhone || "-",
+          tripTitle: order.tripTitle,
+          tripCode: order.tripCode,
+          startDate: fmtDate(order.startDate),
+          endDate: fmtDate(order.endDate),
+          durationDays: order.durationDays,
+          travelerCount: order.travelerCount,
+          totalPrice: formatPrice(order.totalPrice, order.currency as Currency),
+          currency: order.currency,
+          status: "paid",
+        });
+      } catch (e) {
+        console.error("Failed to generate PDF ticket:", e);
+      }
+
+      // Send confirmation email with PDF
+      try {
+        await sendConfirmationEmail({
+          to: order.userEmail,
+          userName: order.userName,
+          orderNumber: order.orderNumber,
+          tripTitle: order.tripTitle,
+          tripCode: order.tripCode,
+          startDate: fmtDate(order.startDate),
+          endDate: fmtDate(order.endDate),
+          durationDays: order.durationDays,
+          travelerCount: order.travelerCount,
+          totalPrice: formatPrice(order.totalPrice, order.currency as Currency),
+          currency: order.currency,
+          pdfBuffer,
+        });
+      } catch (e) {
+        console.error("Failed to send confirmation email:", e);
+      }
+
+      // Send Telegram notification
       try {
         await sendOrderTelegramNotification({
           type: "payment_received",

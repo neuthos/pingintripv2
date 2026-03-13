@@ -46,6 +46,7 @@ type TabId = "overview" | "itinerary" | "details";
 
 export default function OpenTripDetailPage() {
   const t = useTranslations("OpenTripsPage");
+  const tb = useTranslations("BookingModal");
   const locale = useLocale();
   const currency = getDefaultCurrency(locale);
   const params = useParams();
@@ -66,7 +67,7 @@ export default function OpenTripDetailPage() {
     );
   }
 
-  return <TripDetailContent trip={trip} locale={locale} currency={currency} t={t} />;
+  return <TripDetailContent trip={trip} locale={locale} currency={currency} t={t} tb={tb} />;
 }
 
 // ============================
@@ -78,9 +79,10 @@ interface TripDetailContentProps {
   locale: string;
   currency: Currency;
   t: ReturnType<typeof useTranslations>;
+  tb: ReturnType<typeof useTranslations>;
 }
 
-function TripDetailContent({trip, locale, currency, t}: TripDetailContentProps) {
+function TripDetailContent({trip, locale, currency, t, tb}: TripDetailContentProps) {
   const {data: session} = useSession();
   const router = useRouter();
   const [activeTab, setActiveTab] = useState<TabId>("overview");
@@ -568,7 +570,7 @@ function TripDetailContent({trip, locale, currency, t}: TripDetailContentProps) 
                       <div className="absolute top-3 right-3 z-3 bg-primary/90 backdrop-blur-sm text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">
                         {relTrip.durationDays} {t("days")}
                       </div>
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent z-2" />
+                      <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/30 to-transparent z-2" />
                       <div className="absolute bottom-0 left-0 right-0 p-3 z-3">
                         <h4 className="text-white font-bold text-xs leading-tight mb-1 line-clamp-2">
                           {relTitle}
@@ -640,6 +642,7 @@ function TripDetailContent({trip, locale, currency, t}: TripDetailContentProps) 
           onPhoneChange={setBookingPhone}
           onTravelersChange={setBookingTravelers}
           onRequestsChange={setBookingRequests}
+          tb={tb}
           onSubmit={async () => {
             if (!session?.user) { signIn("google"); return; }
             if (!selectedDate) return;

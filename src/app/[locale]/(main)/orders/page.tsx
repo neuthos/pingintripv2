@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { useSession, signIn } from "next-auth/react";
 import { Link } from "@/i18n/navigation";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import {
   CheckCircle,
   Clock,
@@ -32,25 +32,26 @@ interface Order {
   createdAt: string;
 }
 
-const statusConfig: Record<string, { label: string; icon: React.ReactNode; color: string }> = {
-  pending_payment: { label: "Pending Payment", icon: <CreditCard className="w-3 h-3" />, color: "text-amber-600 bg-amber-50 border-amber-200" },
-  paid: { label: "Paid", icon: <CheckCircle className="w-3 h-3" />, color: "text-blue-600 bg-blue-50 border-blue-200" },
-  confirmed: { label: "Confirmed", icon: <CheckCircle className="w-3 h-3" />, color: "text-green-600 bg-green-50 border-green-200" },
-  in_progress: { label: "In Progress", icon: <Clock className="w-3 h-3" />, color: "text-purple-600 bg-purple-50 border-purple-200" },
-  completed: { label: "Completed", icon: <CheckCircle className="w-3 h-3" />, color: "text-green-700 bg-green-100 border-green-300" },
-  cancelled: { label: "Cancelled", icon: <XCircle className="w-3 h-3" />, color: "text-red-600 bg-red-50 border-red-200" },
-  refunded: { label: "Refunded", icon: <RotateCcw className="w-3 h-3" />, color: "text-gray-600 bg-gray-50 border-gray-200" },
-};
-
 export default function MyOrdersPage() {
   const { data: session, status: sessionStatus } = useSession();
   const locale = useLocale();
+  const t = useTranslations("OrdersPage");
   const [orders, setOrders] = useState<Order[]>([]);
   const [fetchingOrders, setFetchingOrders] = useState(false);
   const loading = sessionStatus === "loading" || fetchingOrders;
 
   const isLoaded = sessionStatus !== "loading";
   const userEmail = session?.user?.email;
+
+  const statusConfig: Record<string, { label: string; icon: React.ReactNode; color: string }> = {
+    pending_payment: { label: t("bookings"), icon: <CreditCard className="w-3 h-3" />, color: "text-amber-600 bg-amber-50 border-amber-200" },
+    paid: { label: "Paid", icon: <CheckCircle className="w-3 h-3" />, color: "text-blue-600 bg-blue-50 border-blue-200" },
+    confirmed: { label: "Confirmed", icon: <CheckCircle className="w-3 h-3" />, color: "text-green-600 bg-green-50 border-green-200" },
+    in_progress: { label: "In Progress", icon: <Clock className="w-3 h-3" />, color: "text-purple-600 bg-purple-50 border-purple-200" },
+    completed: { label: "Completed", icon: <CheckCircle className="w-3 h-3" />, color: "text-green-700 bg-green-100 border-green-300" },
+    cancelled: { label: "Cancelled", icon: <XCircle className="w-3 h-3" />, color: "text-red-600 bg-red-50 border-red-200" },
+    refunded: { label: "Refunded", icon: <RotateCcw className="w-3 h-3" />, color: "text-gray-600 bg-gray-50 border-gray-200" },
+  };
 
   useEffect(() => {
     if (!isLoaded) return;
@@ -92,10 +93,10 @@ export default function MyOrdersPage() {
       <main className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center px-6">
           <User className="w-12 h-12 text-gray-300 mx-auto mb-4" />
-          <h2 className="text-lg font-bold text-neutral mb-2">Sign in to view your orders</h2>
-          <p className="text-sm text-gray-500 mb-6">Access your booking history and manage your trips</p>
+          <h2 className="text-lg font-bold text-neutral mb-2">{t("signInTitle")}</h2>
+          <p className="text-sm text-gray-500 mb-6">{t("signInDesc")}</p>
           <button onClick={() => signIn("google")} className="btn btn-primary btn-md text-sm font-bold">
-            Sign In with Google
+            {t("signInBtn")}
           </button>
         </div>
       </main>
@@ -107,9 +108,9 @@ export default function MyOrdersPage() {
       {/* Header */}
       <header className="bg-[#1a1a1a] text-white py-8">
         <div className="max-w-3xl mx-auto px-4 sm:px-6">
-          <h1 className="text-xl md:text-2xl font-bold mb-1">My Orders</h1>
+          <h1 className="text-xl md:text-2xl font-bold mb-1">{t("title")}</h1>
           <p className="text-white/50 text-sm">
-            {orders.length} booking{orders.length !== 1 ? "s" : ""}
+            {orders.length} {orders.length !== 1 ? t("bookingsPlural") : t("bookings")}
           </p>
         </div>
       </header>
@@ -118,12 +119,12 @@ export default function MyOrdersPage() {
         {orders.length === 0 ? (
           <div className="bg-white rounded-xl border border-gray-200 p-10 text-center">
             <ShoppingBag className="w-12 h-12 text-gray-200 mx-auto mb-4" />
-            <h3 className="text-base font-bold text-neutral mb-2">No bookings yet</h3>
+            <h3 className="text-base font-bold text-neutral mb-2">{t("noBookingsTitle")}</h3>
             <p className="text-sm text-gray-500 mb-6">
-              Start planning your adventure! Browse our open trips.
+              {t("noBookingsDesc")}
             </p>
             <Link href="/packages" className="btn btn-primary btn-sm text-sm font-bold">
-              Browse Open Trips
+              {t("browseTrips")}
             </Link>
           </div>
         ) : (
@@ -151,7 +152,7 @@ export default function MyOrdersPage() {
                   <div className="flex items-center justify-between text-xs text-gray-500">
                     <div className="flex items-center gap-4">
                       <span>{fmtDate(order.startDate)} — {fmtDate(order.endDate)}</span>
-                      <span>{order.travelerCount} pax</span>
+                      <span>{order.travelerCount} {t("pax")}</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <span className="font-bold text-neutral">{fmtPrice(order.totalPrice, order.currency)}</span>

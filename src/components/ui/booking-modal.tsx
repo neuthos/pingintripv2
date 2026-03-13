@@ -27,6 +27,7 @@ interface BookingModalProps {
   onRequestsChange: (v: string) => void;
   onSubmit: () => void;
   t: (key: string, values?: Record<string, string | number>) => string;
+  tb: (key: string, values?: Record<string, string | number>) => string;
 }
 
 const localeFmt = (locale: string) =>
@@ -54,6 +55,7 @@ export default function BookingModal({
   onRequestsChange,
   onSubmit,
   t,
+  tb,
 }: BookingModalProps) {
   // Display price in user's locale currency
   const displayPrice = trip.price[currency];
@@ -98,7 +100,7 @@ export default function BookingModal({
               </button>
             )}
             <h3 className="font-bold text-neutral">
-              {bookingStep === "dates" ? t("selectDate") : "Your Details"}
+              {bookingStep === "dates" ? t("selectDate") : tb("yourDetails")}
             </h3>
           </div>
           <button onClick={onClose} className="text-gray-400 hover:text-gray-600 text-xl font-bold">
@@ -177,13 +179,13 @@ export default function BookingModal({
             {!session?.user ? (
               <div className="text-center py-6">
                 <User className="w-10 h-10 text-gray-300 mx-auto mb-3" />
-                <p className="text-sm text-gray-600 mb-1 font-medium">Sign in to continue booking</p>
-                <p className="text-xs text-gray-400 mb-4">Sign in with Google to get 10% off!</p>
+                <p className="text-sm text-gray-600 mb-1 font-medium">{tb("signInToContinue")}</p>
+                <p className="text-xs text-gray-400 mb-4">{tb("signInDiscount")}</p>
                 <button
                   onClick={onSubmit}
                   className="btn btn-primary btn-md text-sm font-bold"
                 >
-                  Sign In with Google
+                  {tb("signInBtn")}
                 </button>
               </div>
             ) : (
@@ -191,11 +193,11 @@ export default function BookingModal({
                 {/* Pre-filled from Google */}
                 <div className="bg-green-50 border border-green-200 rounded-xl p-3 flex items-center gap-2 text-xs text-green-700">
                   <span>✅</span>
-                  <span>Signed in as <strong>{session.user.name}</strong> ({session.user.email}) — 10% discount applied!</span>
+                  <span>{tb("signedInAs")} <strong>{session.user.name}</strong> ({session.user.email}) {tb("discountApplied")}</span>
                 </div>
 
                 <div>
-                  <label className="text-xs font-semibold text-gray-700 mb-1.5 block">Phone Number <span className="text-red-500">*</span></label>
+                  <label className="text-xs font-semibold text-gray-700 mb-1.5 block">{tb("phoneLabel")} <span className="text-red-500">*</span></label>
                   <input
                     type="tel"
                     value={bookingPhone}
@@ -207,13 +209,13 @@ export default function BookingModal({
                     }`}
                   />
                   {bookingPhone.trim().length === 0 && (
-                    <p className="text-[10px] text-red-400 mt-1">Phone number is required for booking</p>
+                    <p className="text-[10px] text-red-400 mt-1">{tb("phoneRequired")}</p>
                   )}
                 </div>
 
                 {/* Travelers */}
                 <div>
-                  <label className="text-xs font-semibold text-gray-700 mb-1.5 block">Number of Travelers</label>
+                  <label className="text-xs font-semibold text-gray-700 mb-1.5 block">{tb("travelersLabel")}</label>
                   <div className="flex items-center gap-3">
                     <button
                       onClick={() => onTravelersChange(Math.max(1, bookingTravelers - 1))}
@@ -228,18 +230,18 @@ export default function BookingModal({
                     >
                       +
                     </button>
-                    <span className="text-xs text-gray-400">max {trip.maxPax}</span>
+                    <span className="text-xs text-gray-400">{tb("max")} {trip.maxPax}</span>
                   </div>
                 </div>
 
                 {/* Special Requests */}
                 <div>
-                  <label className="text-xs font-semibold text-gray-700 mb-1.5 block">Special Requests (optional)</label>
+                  <label className="text-xs font-semibold text-gray-700 mb-1.5 block">{tb("specialRequests")}</label>
                   <textarea
                     value={bookingRequests}
                     onChange={(e) => onRequestsChange(e.target.value)}
                     rows={2}
-                    placeholder="Dietary needs, allergies, pickup location..."
+                    placeholder={tb("specialRequestsPlaceholder")}
                     className="w-full bg-white border border-gray-200 text-sm px-3 py-2.5 rounded-lg focus:outline-none focus:border-primary resize-none"
                   />
                 </div>
@@ -254,21 +256,21 @@ export default function BookingModal({
                   </div>
                   {discountPercent > 0 && (
                     <div className="flex justify-between text-sm">
-                      <span className="text-green-600">Google Discount (-{discountPercent}%)</span>
+                      <span className="text-green-600">{tb("googleDiscount")} (-{discountPercent}%)</span>
                       <span className="text-green-600">
                         -{formatPrice(totalBeforeDiscount - totalPrice, currency)}
                       </span>
                     </div>
                   )}
                   <div className="flex justify-between text-base font-bold border-t border-gray-200 pt-2 mt-1">
-                    <span>Total</span>
+                    <span>{tb("total")}</span>
                     <span className="text-primary">{formatPrice(totalPrice, currency)}</span>
                   </div>
 
                   {/* IDR charge note for non-IDR users */}
                   {currency !== "IDR" && (
                     <p className="text-[10px] text-gray-400 pt-1">
-                      💳 You will be charged {formatPrice(idrTotalPrice, "IDR")} (IDR) via Xendit
+                      💳 {tb("idrChargeNote", { amount: formatPrice(idrTotalPrice, "IDR") })}
                     </p>
                   )}
                 </div>
@@ -281,10 +283,10 @@ export default function BookingModal({
                 >
                   {submitting ? (
                     <span className="flex items-center justify-center gap-2">
-                      <Loader2 className="w-4 h-4 animate-spin" /> Processing...
+                      <Loader2 className="w-4 h-4 animate-spin" /> {tb("processing")}
                     </span>
                   ) : (
-                    "Proceed to Payment →"
+                    tb("proceedToPayment")
                   )}
                 </button>
               </div>
