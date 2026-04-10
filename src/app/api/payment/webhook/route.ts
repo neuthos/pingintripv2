@@ -50,6 +50,7 @@ export async function POST(req: NextRequest) {
       // Generate PDF ticket
       let pdfBuffer: Buffer | undefined;
       try {
+        console.log("Generating PDF ticket for order:", order.orderNumber);
         pdfBuffer = generateTicketPDF({
           orderNumber: order.orderNumber,
           userName: order.userName,
@@ -65,12 +66,14 @@ export async function POST(req: NextRequest) {
           currency: order.currency,
           status: "paid",
         });
+        console.log("PDF generated successfully, size:", pdfBuffer.length, "bytes");
       } catch (e) {
         console.error("Failed to generate PDF ticket:", e);
       }
 
       // Send confirmation email with PDF
       try {
+        console.log("Sending confirmation email to:", order.userEmail, "with PDF:", !!pdfBuffer);
         await sendConfirmationEmail({
           to: order.userEmail,
           userName: order.userName,
@@ -85,6 +88,7 @@ export async function POST(req: NextRequest) {
           currency: order.currency,
           pdfBuffer,
         });
+        console.log("Confirmation email sent successfully");
       } catch (e) {
         console.error("Failed to send confirmation email:", e);
       }
