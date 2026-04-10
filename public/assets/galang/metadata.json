@@ -1,0 +1,35 @@
+{
+  "name": "galang",
+  "originalWidth": 1170,
+  "originalHeight": 1354,
+  "aspectRatio": 0.8641,
+  "dominantColor": "#181818",
+  "variants": [
+    {
+      "name": "placeholder",
+      "width": 20,
+      "height": 23,
+      "file": "placeholder.webp"
+    },
+    {
+      "name": "sm",
+      "width": 640,
+      "height": 741,
+      "file": "sm.webp"
+    },
+    {
+      "name": "md",
+      "width": 1024,
+      "height": 1185,
+      "file": "md.webp"
+    },
+    {
+      "name": "original",
+      "width": 1170,
+      "height": 1354,
+      "file": "original.webp"
+    }
+  ],
+  "basePath": "/assets/galang",
+  "generatedAt": "2026-04-03T13:24:24.314Z"
+}

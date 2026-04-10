@@ -1,13 +1,13 @@
-import {Link} from "@/i18n/navigation";
-import {useTranslations} from "next-intl";
-import OptimizedImage from "@/components/ui/optimized-image";
-import MissionSection from "@/components/sections/MissionSection";
-import TestimonialsSection from "@/components/sections/TestimonialsSection";
-import DestinationsSection from "@/components/sections/DestinationsSection";
-import TripsSection from "@/components/sections/TripsSection";
 import BrandStorySection from "@/components/sections/BrandStorySection";
-import USPSection from "@/components/sections/USPSection";
+import DestinationsSection from "@/components/sections/DestinationsSection";
 import FinalCTASection from "@/components/sections/FinalCTASection";
+import {Link} from "@/i18n/navigation";
+import MissionSection from "@/components/sections/MissionSection";
+import OptimizedImage from "@/components/ui/optimized-image";
+import TestimonialsSection from "@/components/sections/TestimonialsSection";
+import TripsSection from "@/components/sections/TripsSection";
+import USPSection from "@/components/sections/USPSection";
+import {useTranslations} from "next-intl";
 
 export default function HomePage() {
   const t = useTranslations("Hero");
@@ -18,7 +18,7 @@ export default function HomePage() {
       <section className="hero min-h-[70vh] relative overflow-hidden">
         {/* Background Image */}
         <OptimizedImage
-          src="/assets/hero2"
+          src="/assets/hero3"
           alt="Lombok & Bali landscape"
           fill
           priority
@@ -37,7 +37,9 @@ export default function HomePage() {
             </h1>
             <p className="py-6 text-lg text-white/80">{t("subtitle")}</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/destinations" className="btn btn-primary btn-lg">{t("cta")}</Link>
+              <Link href="/destinations" className="btn btn-primary btn-lg">
+                {t("cta")}
+              </Link>
               <button className="btn btn-outline btn-lg text-white border-white hover:bg-white hover:text-black">
                 {t("secondaryCta")}
               </button>
@@ -69,4 +71,3 @@ export default function HomePage() {
     </main>
   );
 }
-

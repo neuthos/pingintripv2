@@ -1,0 +1,47 @@
+{
+  "name": "beach-enjoy",
+  "originalWidth": 6000,
+  "originalHeight": 4000,
+  "aspectRatio": 1.5,
+  "dominantColor": "#98a8b8",
+  "variants": [
+    {
+      "name": "placeholder",
+      "width": 20,
+      "height": 13,
+      "file": "placeholder.webp"
+    },
+    {
+      "name": "sm",
+      "width": 640,
+      "height": 427,
+      "file": "sm.webp"
+    },
+    {
+      "name": "md",
+      "width": 1024,
+      "height": 683,
+      "file": "md.webp"
+    },
+    {
+      "name": "lg",
+      "width": 1536,
+      "height": 1024,
+      "file": "lg.webp"
+    },
+    {
+      "name": "xl",
+      "width": 1920,
+      "height": 1280,
+      "file": "xl.webp"
+    },
+    {
+      "name": "original",
+      "width": 6000,
+      "height": 4000,
+      "file": "original.webp"
+    }
+  ],
+  "basePath": "/assets/beach-enjoy",
+  "generatedAt": "2026-04-03T13:23:43.134Z"
+}

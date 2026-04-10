@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef, useEffect, CSSProperties } from "react";
+import React, {CSSProperties, useEffect, useRef, useState} from "react";
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -104,7 +104,7 @@ export default function OptimizedImage({
   onError,
 }: OptimizedImageProps) {
   const [metadata, setMetadata] = useState<ImageMetadata | null>(
-    metadataCache.get(src) || null
+    metadataCache.get(src) || null,
   );
   const [isLoaded, setIsLoaded] = useState(false);
   const [isInView, setIsInView] = useState(priority);
@@ -137,7 +137,7 @@ export default function OptimizedImage({
           observer.disconnect();
         }
       },
-      { rootMargin: "200px" }
+      {rootMargin: "200px"},
     );
 
     observer.observe(el);
@@ -148,7 +148,7 @@ export default function OptimizedImage({
   const getSrcSet = (): string => {
     if (!metadata) return "";
     const imageVariants = metadata.variants.filter(
-      (v) => v.name !== "placeholder"
+      (v) => v.name !== "placeholder",
     );
     return imageVariants
       .map((v) => `${metadata.basePath}/${v.file} ${v.width}w`)
@@ -167,9 +167,7 @@ export default function OptimizedImage({
   // Get placeholder src
   const getPlaceholderSrc = (): string => {
     if (!metadata) return "";
-    const placeholder = metadata.variants.find(
-      (v) => v.name === "placeholder"
-    );
+    const placeholder = metadata.variants.find((v) => v.name === "placeholder");
     if (placeholder) return `${metadata.basePath}/${placeholder.file}`;
     return "";
   };
@@ -192,7 +190,7 @@ export default function OptimizedImage({
     position: fill ? "absolute" : "relative",
     overflow: "hidden",
     ...(fill
-      ? { inset: 0, width: "100%", height: "100%" }
+      ? {inset: 0, width: "100%", height: "100%"}
       : {
           width: width ? `${width}px` : "100%",
           height: height ? `${height}px` : undefined,

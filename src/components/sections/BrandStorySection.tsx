@@ -1,7 +1,7 @@
 "use client";
 
-import {useTranslations} from "next-intl";
 import OptimizedImage from "@/components/ui/optimized-image";
+import {useTranslations} from "next-intl";
 
 interface StoryBlock {
   imageKey: string;
@@ -11,7 +11,7 @@ interface StoryBlock {
 
 const storyBlocks: StoryBlock[] = [
   {
-    imageKey: "/assets/hero2", // placeholder — user will replace
+    imageKey: "/assets/hero3", // placeholder — user will replace
     translationPrefix: "block1",
     imagePosition: "right",
   },
