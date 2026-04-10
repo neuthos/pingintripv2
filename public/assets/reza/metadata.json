@@ -1,0 +1,29 @@
+{
+  "name": "reza",
+  "originalWidth": 976,
+  "originalHeight": 890,
+  "aspectRatio": 1.0966,
+  "dominantColor": "#d8d8e8",
+  "variants": [
+    {
+      "name": "placeholder",
+      "width": 20,
+      "height": 18,
+      "file": "placeholder.webp"
+    },
+    {
+      "name": "sm",
+      "width": 640,
+      "height": 584,
+      "file": "sm.webp"
+    },
+    {
+      "name": "original",
+      "width": 976,
+      "height": 890,
+      "file": "original.webp"
+    }
+  ],
+  "basePath": "/assets/reza",
+  "generatedAt": "2026-04-03T13:29:19.771Z"
+}

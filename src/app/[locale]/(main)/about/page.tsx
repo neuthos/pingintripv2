@@ -1,21 +1,23 @@
 "use client";
 
-import {useTranslations} from "next-intl";
-import {Link} from "@/i18n/navigation";
-import {regions, places} from "@/data/destinations";
-import {companyInfo} from "@/data/company";
 import {
-  MapPin,
-  Users,
-  Compass,
-  CalendarCheck,
-  Heart,
-  BookOpen,
-  Leaf,
   ArrowRight,
-  Quote,
+  BookOpen,
   Building2,
+  CalendarCheck,
+  Compass,
+  Heart,
+  Leaf,
+  MapPin,
+  Quote,
+  Users,
 } from "lucide-react";
+import {places, regions} from "@/data/destinations";
+
+import {Link} from "@/i18n/navigation";
+import OptimizedImage from "@/components/ui/optimized-image";
+import {companyInfo} from "@/data/company";
+import {useTranslations} from "next-intl";
 
 export default function AboutPage() {
   const t = useTranslations("AboutPage");
@@ -65,18 +67,18 @@ export default function AboutPage() {
               <div className="aspect-[4/5] bg-gray-100 rounded-2xl overflow-hidden relative">
                 {/* Placeholder for founder image */}
                 <div className="absolute inset-0 flex items-center justify-center text-gray-300">
-                  <div className="text-center">
-                    <Compass className="w-16 h-16 mx-auto mb-3 opacity-30" />
-                    <p className="text-sm text-gray-400 italic">
-                      Photo: Reza guiding travelers through Indonesia
-                    </p>
-                  </div>
+                  <OptimizedImage
+                    src="/assets/reza"
+                    alt="Reza guiding travelers through Indonesia"
+                  />
                 </div>
               </div>
               {/* Floating accent */}
               <div className="absolute -bottom-4 -right-4 bg-primary text-primary-content rounded-2xl px-6 py-4 shadow-lg">
                 <p className="text-2xl font-bold">{yearsActive}+</p>
-                <p className="text-xs font-medium opacity-80">{t("statsYears")}</p>
+                <p className="text-xs font-medium opacity-80">
+                  {t("statsYears")}
+                </p>
               </div>
             </div>
 
@@ -144,7 +146,9 @@ export default function AboutPage() {
                 key={title}
                 className="bg-white rounded-2xl p-6 md:p-8 border border-gray-100 shadow-sm hover:shadow-md transition-shadow"
               >
-                <div className={`w-12 h-12 rounded-xl ${color} flex items-center justify-center mb-5`}>
+                <div
+                  className={`w-12 h-12 rounded-xl ${color} flex items-center justify-center mb-5`}
+                >
                   <Icon className="w-5 h-5" />
                 </div>
                 <h3 className="text-lg font-bold text-neutral mb-3">{title}</h3>
@@ -168,17 +172,27 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
             {[
-              {value: `${yearsActive}+`, label: t("statsYears"), icon: CalendarCheck},
+              {
+                value: `${yearsActive}+`,
+                label: t("statsYears"),
+                icon: CalendarCheck,
+              },
               {value: "500+", label: t("statsGuests"), icon: Users},
               {value: "50+", label: t("statsGuides"), icon: Compass},
-              {value: `${totalDestinations}`, label: t("statsDestinations"), icon: MapPin},
+              {
+                value: `${totalDestinations}`,
+                label: t("statsDestinations"),
+                icon: MapPin,
+              },
             ].map(({value, label, icon: Icon}) => (
               <div key={label} className="text-center">
                 <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center mx-auto mb-4">
                   <Icon className="w-5 h-5 text-primary" />
                 </div>
                 <p className="text-3xl md:text-4xl font-bold mb-1">{value}</p>
-                <p className="text-xs text-white/50 font-medium uppercase tracking-wider">{label}</p>
+                <p className="text-xs text-white/50 font-medium uppercase tracking-wider">
+                  {label}
+                </p>
               </div>
             ))}
           </div>
@@ -203,7 +217,13 @@ export default function AboutPage() {
             {/* Reza */}
             <div className="bg-gray-50 rounded-2xl p-6 text-center border border-gray-100">
               <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                <Users className="w-10 h-10 text-gray-400" />
+                <OptimizedImage
+                  width={96}
+                  height={96}
+                  className="mx-auto rounded-full text-gray-400"
+                  src="/assets/reza"
+                  alt={"reza"}
+                />
               </div>
               <h3 className="text-lg font-bold text-neutral mb-1">Reza</h3>
               <p className="text-xs uppercase tracking-wider text-primary font-bold mb-4">
@@ -217,9 +237,17 @@ export default function AboutPage() {
             {/* Galang */}
             <div className="bg-gray-50 rounded-2xl p-6 text-center border border-gray-100">
               <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                <Users className="w-10 h-10 text-gray-400" />
+                <OptimizedImage
+                  width={96}
+                  height={96}
+                  className="mx-auto rounded-full text-gray-400"
+                  src="/assets/galang"
+                  alt={"galang-ardian"}
+                />
               </div>
-              <h3 className="text-lg font-bold text-neutral mb-1">Galang Ardian</h3>
+              <h3 className="text-lg font-bold text-neutral mb-1">
+                Galang Ardian
+              </h3>
               <p className="text-xs uppercase tracking-wider text-primary font-bold mb-4">
                 {t("teamGalangRole")}
               </p>
@@ -248,51 +276,74 @@ export default function AboutPage() {
           {/* Masonry-style grid */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
             {/* Row 1 — large + 2 small */}
-            <div className="col-span-2 row-span-2 aspect-square bg-gray-200 rounded-2xl overflow-hidden relative group">
-              {/* Replace with: <OptimizedImage src="/assets/gallery-1" alt="..." fill objectFit="cover" /> */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <p className="text-xs text-gray-400 italic text-center px-4">Group photo with travelers</p>
-              </div>
+            <div className="col-span-2 row-span-2 aspect-square rounded-2xl overflow-hidden relative group">
+              <OptimizedImage
+                src="/assets/pingintrip"
+                alt="Group photo with travelers exploring Indonesia"
+                fill
+                objectFit="cover"
+                className="transition-transform duration-500 group-hover:scale-105"
+              />
             </div>
-            <div className="aspect-square bg-gray-200 rounded-2xl overflow-hidden relative">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <p className="text-xs text-gray-400 italic text-center px-2">Hiking adventure</p>
-              </div>
+            <div className="aspect-square rounded-2xl overflow-hidden relative">
+              <OptimizedImage
+                src="/assets/reza-tour"
+                alt="Reza guiding travelers on hiking adventure"
+                fill
+                objectFit="cover"
+              />
             </div>
-            <div className="aspect-square bg-gray-200 rounded-2xl overflow-hidden relative">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <p className="text-xs text-gray-400 italic text-center px-2">Beach moment</p>
-              </div>
+            <div className="aspect-square rounded-2xl overflow-hidden relative">
+              <OptimizedImage
+                src="/assets/beach-enjoy"
+                alt="Travelers enjoying beach moment in Indonesia"
+                fill
+                objectFit="cover"
+              />
             </div>
 
             {/* Row 2 */}
-            <div className="aspect-square bg-gray-200 rounded-2xl overflow-hidden relative">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <p className="text-xs text-gray-400 italic text-center px-2">Temple visit</p>
-              </div>
+            <div className="aspect-square rounded-2xl overflow-hidden relative">
+              <OptimizedImage
+                src="/assets/our-agenda-to-local"
+                alt="Local cultural experience and community visit"
+                fill
+                objectFit="cover"
+              />
             </div>
-            <div className="aspect-square bg-gray-200 rounded-2xl overflow-hidden relative">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <p className="text-xs text-gray-400 italic text-center px-2">Local food experience</p>
-              </div>
+            <div className="aspect-square rounded-2xl overflow-hidden relative">
+              <OptimizedImage
+                src="/assets/girl-with-cup-of-coffee"
+                alt="Traveler enjoying local coffee experience"
+                fill
+                objectFit="cover"
+              />
             </div>
 
             {/* Row 3 — 2 small + large */}
-            <div className="aspect-square bg-gray-200 rounded-2xl overflow-hidden relative">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <p className="text-xs text-gray-400 italic text-center px-2">Sunset view</p>
-              </div>
+            <div className="aspect-square rounded-2xl overflow-hidden relative">
+              <OptimizedImage
+                src="/assets/share-drawing-book-to-cildren"
+                alt="Sharing moments with local children"
+                fill
+                objectFit="cover"
+              />
             </div>
-            <div className="aspect-square bg-gray-200 rounded-2xl overflow-hidden relative">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <p className="text-xs text-gray-400 italic text-center px-2">Snorkeling spot</p>
-              </div>
+            <div className="aspect-square rounded-2xl overflow-hidden relative">
+              <OptimizedImage
+                src="/assets/travel-discussion"
+                alt="Travel discussion and planning with travelers"
+                fill
+                objectFit="cover"
+              />
             </div>
-            <div className="col-span-2 aspect-video bg-gray-200 rounded-2xl overflow-hidden relative">
-              {/* Replace with: <OptimizedImage src="/assets/gallery-8" alt="..." fill objectFit="cover" /> */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <p className="text-xs text-gray-400 italic text-center px-4">Team with travelers panorama</p>
-              </div>
+            <div className="col-span-2 aspect-video rounded-2xl overflow-hidden relative">
+              <OptimizedImage
+                src="/assets/woman-in-boat"
+                alt="Traveler enjoying boat experience in Indonesia"
+                fill
+                objectFit="cover"
+              />
             </div>
           </div>
         </div>
@@ -301,7 +352,7 @@ export default function AboutPage() {
       {/* ============================
           TRUST
           ============================ */}
-      <section className="py-16 md:py-20 bg-gray-50">
+      {/* <section className="py-16 md:py-20 bg-gray-50">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="w-14 h-14 bg-white rounded-2xl shadow-sm border border-gray-100 flex items-center justify-center mx-auto mb-6">
             <Building2 className="w-6 h-6 text-gray-400" />
@@ -316,23 +367,23 @@ export default function AboutPage() {
             {t("trustDesc")}
           </p>
 
-          {/* Partner logos grid — replace placeholders with actual logos */}
           <div className="grid grid-cols-3 md:grid-cols-6 gap-4 md:gap-6 max-w-3xl mx-auto">
             {Array.from({length: 6}).map((_, i) => (
               <div
                 key={i}
                 className="aspect-[3/2] bg-white rounded-xl border border-gray-200 flex items-center justify-center p-4 hover:shadow-sm transition-shadow"
               >
-                {/* Replace with: <OptimizedImage src="/assets/logo-partner-X" alt="Partner Name" /> */}
                 <div className="text-center">
                   <Building2 className="w-6 h-6 text-gray-300 mx-auto mb-1" />
-                  <p className="text-[9px] text-gray-300 font-medium">Company Logo</p>
+                  <p className="text-[9px] text-gray-300 font-medium">
+                    Company Logo
+                  </p>
                 </div>
               </div>
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* ============================
           CTA
