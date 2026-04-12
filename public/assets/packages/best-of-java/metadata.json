@@ -1,0 +1,47 @@
+{
+  "name": "best-of-java",
+  "originalWidth": 4640,
+  "originalHeight": 6960,
+  "aspectRatio": 0.6667,
+  "dominantColor": "#f8e8e8",
+  "variants": [
+    {
+      "name": "placeholder",
+      "width": 20,
+      "height": 30,
+      "file": "placeholder.webp"
+    },
+    {
+      "name": "sm",
+      "width": 640,
+      "height": 960,
+      "file": "sm.webp"
+    },
+    {
+      "name": "md",
+      "width": 1024,
+      "height": 1536,
+      "file": "md.webp"
+    },
+    {
+      "name": "lg",
+      "width": 1536,
+      "height": 2304,
+      "file": "lg.webp"
+    },
+    {
+      "name": "xl",
+      "width": 1920,
+      "height": 2880,
+      "file": "xl.webp"
+    },
+    {
+      "name": "original",
+      "width": 4640,
+      "height": 6960,
+      "file": "original.webp"
+    }
+  ],
+  "basePath": "/assets/packages/best-of-java",
+  "generatedAt": "2026-04-12T09:13:00.547Z"
+}

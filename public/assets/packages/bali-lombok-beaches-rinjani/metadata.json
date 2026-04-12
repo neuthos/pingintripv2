@@ -1,0 +1,47 @@
+{
+  "name": "bali-lombok-beaches-rinjani",
+  "originalWidth": 3992,
+  "originalHeight": 2242,
+  "aspectRatio": 1.7806,
+  "dominantColor": "#f8f8f8",
+  "variants": [
+    {
+      "name": "placeholder",
+      "width": 20,
+      "height": 11,
+      "file": "placeholder.webp"
+    },
+    {
+      "name": "sm",
+      "width": 640,
+      "height": 359,
+      "file": "sm.webp"
+    },
+    {
+      "name": "md",
+      "width": 1024,
+      "height": 575,
+      "file": "md.webp"
+    },
+    {
+      "name": "lg",
+      "width": 1536,
+      "height": 863,
+      "file": "lg.webp"
+    },
+    {
+      "name": "xl",
+      "width": 1920,
+      "height": 1078,
+      "file": "xl.webp"
+    },
+    {
+      "name": "original",
+      "width": 3992,
+      "height": 2242,
+      "file": "original.webp"
+    }
+  ],
+  "basePath": "/assets/packages/bali-lombok-beaches-rinjani",
+  "generatedAt": "2026-04-12T09:12:16.310Z"
+}

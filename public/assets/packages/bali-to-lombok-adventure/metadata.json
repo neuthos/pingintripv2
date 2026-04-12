@@ -1,0 +1,47 @@
+{
+  "name": "bali-to-lombok-adventure",
+  "originalWidth": 6000,
+  "originalHeight": 3375,
+  "aspectRatio": 1.7778,
+  "dominantColor": "#485868",
+  "variants": [
+    {
+      "name": "placeholder",
+      "width": 20,
+      "height": 11,
+      "file": "placeholder.webp"
+    },
+    {
+      "name": "sm",
+      "width": 640,
+      "height": 359,
+      "file": "sm.webp"
+    },
+    {
+      "name": "md",
+      "width": 1024,
+      "height": 575,
+      "file": "md.webp"
+    },
+    {
+      "name": "lg",
+      "width": 1536,
+      "height": 864,
+      "file": "lg.webp"
+    },
+    {
+      "name": "xl",
+      "width": 1920,
+      "height": 1080,
+      "file": "xl.webp"
+    },
+    {
+      "name": "original",
+      "width": 6000,
+      "height": 3375,
+      "file": "original.webp"
+    }
+  ],
+  "basePath": "/assets/packages/bali-to-lombok-adventure",
+  "generatedAt": "2026-04-12T09:12:45.282Z"
+}

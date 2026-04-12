@@ -36,6 +36,7 @@ export interface OpenTrip {
   route: {en: string; id: string; cn: string};
   highlights: string[];
   featured: boolean;
+  isTrial?: boolean;
   image: string;
   itinerary: ItineraryDay[];
 }
@@ -121,7 +122,7 @@ export const openTrips: OpenTrip[] = [
       "senggigi",
     ],
     featured: true,
-    image: "/assets/bali",
+    image: "/assets/packages/bali-to-lombok-adventure",
     itinerary: [
       {
         dayNumber: 1,
@@ -298,7 +299,7 @@ export const openTrips: OpenTrip[] = [
       "snorkeling",
     ],
     featured: true,
-    image: "/assets/bali",
+    image: "/assets/packages/bali-to-flores-komodo",
     itinerary: [
       {
         dayNumber: 1,
@@ -421,7 +422,7 @@ export const openTrips: OpenTrip[] = [
       "kuta",
     ],
     featured: false,
-    image: "/assets/bali",
+    image: "/assets/packages/java-to-bali-overland",
     itinerary: [
       {
         dayNumber: 1,
@@ -560,7 +561,7 @@ export const openTrips: OpenTrip[] = [
       "gili-trawangan",
     ],
     featured: true,
-    image: "/assets/bali",
+    image: "/assets/packages/bali-to-lombok-volcanoes",
     itinerary: [
       {
         dayNumber: 1,
@@ -722,7 +723,7 @@ export const openTrips: OpenTrip[] = [
       "manta-rays",
     ],
     featured: true,
-    image: "/assets/komodo",
+    image: "/assets/packages/flores-frontier",
     itinerary: [
       {
         dayNumber: 1,
@@ -822,7 +823,7 @@ export const openTrips: OpenTrip[] = [
     },
     highlights: ["jakarta", "bandung", "yogyakarta", "mount-bromo", "malang"],
     featured: false,
-    image: "/assets/east-java",
+    image: "/assets/packages/best-of-java",
     itinerary: [
       {
         dayNumber: 1,
@@ -868,7 +869,7 @@ export const openTrips: OpenTrip[] = [
         dayNumber: 6,
         title: "Day 6: Yogyakarta/Ngadas",
         location: "Yogyakarta/Ngadas",
-        description: `Continue the journey across the agricultural heartland of Java to Ngadas, a village in the scenic Mt Bromo region. Experience the local culture with a G Adventures-supported community homestay. Private VehicleYogyakarta – Desa Ngadas8h400km Settle in and scan the scenery from the convenience of a private vehicle. Your G for Good Moment: Ngadas Homestay Nestled amongst the green hills of the Mt Bromo region, the village of Ngadas is home to a Tengger farming community. Overnight with a local family participating in the community's homestay program, a G Adventures-supported initiative. Learn about the local culture, customs, and traditions from your hosts.`,
+        description: `Continue the journey across the agricultural heartland of Java to Ngadas, a village in the scenic Mt Bromo region. Experience the local culture with a Pingintrip-supported community homestay. Private VehicleYogyakarta – Desa Ngadas8h400km Settle in and scan the scenery from the convenience of a private vehicle. Your G for Good Moment: Ngadas Homestay Nestled amongst the green hills of the Mt Bromo region, the village of Ngadas is home to a Tengger farming community. Overnight with a local family participating in the community's homestay program, a Pingintrip-supported initiative. Learn about the local culture, customs, and traditions from your hosts.`,
         accommodation: "Ngadas Homestay (or similar)Homestay",
         meals: [],
       },
@@ -903,12 +904,12 @@ export const openTrips: OpenTrip[] = [
     code: "PT-BALI-05",
     slug: "indonesia-candidasa-mt-rinjani-the-gilis",
     title: {
-      en: "Bali & Lombok: Beaches, Mountain Treks & Women-Led Adventures",
+      en: "Bali & Lombok: Beaches, Rinjani Treks & Gili Islands",
       id: "Bali, Gunung Rinjani & Kepulauan Gili",
       cn: "巴厘岛、林贾尼火山与吉利群岛",
     },
     description: {
-      en: "Discover Indonesia's cultural and natural diversity over 9 transformative days. Relax on Candidasa's tranquil shores, trek Mount Rinjani's lush foothills guided by local women, master Sasak culinary traditions, and snorkel Gili Trawangan's turquoise reefs—all while supporting women-led tourism initiatives.",
+      en: "Discover Indonesia's cultural and natural diversity over 9 transformative days. Relax on Candidasa's tranquil shores, trek Mount Rinjani's lush foothills with expert local guides, master Sasak culinary traditions, and snorkel Gili Trawangan's turquoise reefs.",
       id: "9 hari budaya, trekking dan kebahagiaan pulau — jelajahi Candidasa, mendaki kaki bukit Gunung Rinjani dengan pemandu wanita lokal, belajar masak Sasak, dan snorkeling di Gili Trawangan.",
       cn: "9天文化、徒步与海岛之旅——探索坎迪达萨、与当地女导游徒步林贾尼火山山麓、学习萨萨克烹饪、在吉利特拉旺安浮潜。",
     },
@@ -935,7 +936,7 @@ export const openTrips: OpenTrip[] = [
       "gili-trawangan",
     ],
     featured: false,
-    image: "/assets/bali",
+    image: "/assets/packages/bali-lombok-beaches-rinjani",
     itinerary: [
       {
         dayNumber: 1,
@@ -957,7 +958,7 @@ export const openTrips: OpenTrip[] = [
         dayNumber: 3,
         title: "Day 3: Candi Dasa/Sembalun",
         location: "Candi Dasa/Sembalun",
-        description: `Sail to Lombok via morning ferry, arriving late morning to begin your Mount Rinjani adventure. Journey north to Senaru village, where female guides from the Rinjani Women Guide Association lead you through Gunung Rinjani National Park's foothills. Hike shaded pathways through bamboo groves and village gardens, following ancient irrigation channels to the thundering Sindang Gile and Tiu Kelep waterfalls within Senaru Reserve. Local legend claims these falls possess healing powers. Spot long-tailed monkeys and, if fortunate, the rare ebony leaf monkey. Learn how Sasak communities utilize medicinal plants along the trail.`,
+        description: `Sail to Lombok via morning ferry, arriving late morning to begin your Mount Rinjani adventure. Journey north to Senaru village, where expert local guides lead you through Gunung Rinjani National Park's foothills. Hike shaded pathways through bamboo groves and village gardens, following ancient irrigation channels to the thundering Sindang Gile and Tiu Kelep waterfalls within Senaru Reserve. Local legend claims these falls possess healing powers. Spot long-tailed monkeys and, if fortunate, the rare ebony leaf monkey. Learn how Sasak communities utilize medicinal plants along the trail.`,
         accommodation: "Accommodation",
         meals: [],
       },
@@ -1005,7 +1006,7 @@ export const openTrips: OpenTrip[] = [
         dayNumber: 9,
         title: "Day 9: Gili Trawangan",
         location: "Gili Trawangan",
-        description: `Your Bali-Lombok journey concludes today. Depart Gili Trawangan at your convenience, carrying memories of women-led treks, Sasak traditions, volcanic sunrises, and endless turquoise horizons.`,
+        description: `Your Bali-Lombok journey concludes today. Depart Gili Trawangan at your convenience, carrying memories of Rinjani treks, Sasak traditions, volcanic sunrises, and endless turquoise horizons.`,
         accommodation: "Accommodation",
         meals: [],
       },
@@ -1049,7 +1050,7 @@ export const openTrips: OpenTrip[] = [
       "yogyakarta",
     ],
     featured: false,
-    image: "/assets/central-java",
+    image: "/assets/packages/highlights-java-dieng",
     itinerary: [
       {
         dayNumber: 1,
@@ -1149,7 +1150,7 @@ export const openTrips: OpenTrip[] = [
     },
     highlights: ["yogyakarta", "borobudur", "solo", "mount-bromo", "surabaya"],
     featured: false,
-    image: "/assets/central-java",
+    image: "/assets/packages/classic-java-borobudur",
     itinerary: [
       {
         dayNumber: 1,
@@ -1195,7 +1196,7 @@ export const openTrips: OpenTrip[] = [
         dayNumber: 6,
         title: "Day 6: Solo/Bromo",
         location: "Solo/Bromo",
-        description: `After breakfast, continue east to Ngadas Village. On the way, make stops to explore Alun Alun Malang City Square and colorful Jodipan Village. Arrive to Ngadas in the late afternoon. This picturesque village in the foothills of Mt Bromo is known for its Javanese traditions and beautiful nature. Your G for Good Moment: Ngadas Homestay Nestled amongst the green hills of the Mt Bromo region, the village of Ngadas is home to a Tengger farming community. Overnight with a local family participating in the community's homestay program, a G Adventures-supported initiative. Learn about the local culture, customs, and traditions from your hosts. Jodipan Colorful Village VisitMalang Grab your camera for a visit to the picture perfect Jodipan Village. Known for its colorful rainbow homes, like the while town is a mural. Private VehicleSolo – Ngadas5h370km Settle in and scan the scenery from the convenience of a private vehicle.`,
+        description: `After breakfast, continue east to Ngadas Village. On the way, make stops to explore Alun Alun Malang City Square and colorful Jodipan Village. Arrive to Ngadas in the late afternoon. This picturesque village in the foothills of Mt Bromo is known for its Javanese traditions and beautiful nature. Your G for Good Moment: Ngadas Homestay Nestled amongst the green hills of the Mt Bromo region, the village of Ngadas is home to a Tengger farming community. Overnight with a local family participating in the community's homestay program, a Pingintrip-supported initiative. Learn about the local culture, customs, and traditions from your hosts. Jodipan Colorful Village VisitMalang Grab your camera for a visit to the picture perfect Jodipan Village. Known for its colorful rainbow homes, like the while town is a mural. Private VehicleSolo – Ngadas5h370km Settle in and scan the scenery from the convenience of a private vehicle.`,
         accommodation: "Ngadas Homestay (or similar)Homestay",
         meals: [],
       },
@@ -1203,7 +1204,7 @@ export const openTrips: OpenTrip[] = [
         dayNumber: 7,
         title: "Day 7: Bromo",
         location: "Bromo",
-        description: `An early morning jeep ride is the best way to see the Bromo Crater this morning. Followed by a 45 minute hike to reach Penanjakan Hill view point just in time for sunrise! Admire the oranges and pinks before continuing the hike through the Sea of Sands to the top of Bromo Crater. Enjoy a picnic breakfast at Teletubbies Hill. Return to Ngadas Village for a walking tour (and maybe a coffee?) to see the temples, the tomb of mbah Sedek and the holy forest. Enjoy a local lunch and dinner at the homestay with free time to explore how you wish in between. Your G for Good Moment: Village Walk Learn more about daily life in Ngadas with a village walk. Take in views of the scenic hills as you walk along, passing farming areas and stopping to visit the local temple, vihara, and mosque. Your G for Good Moment: Lunch at Ngadas Village Nestled amongst the green hills of the Mt Bromo region, the village of Ngadas is home to a Tengger farming community. Enjoy a village walk and local lunch at this G Adventures-supported initiative. Take in views of the scenic hills as you walk along, passing farming areas and stopping to visit the local temple, vihara, and mosque. Learn about the local culture, customs, and traditions from your hosts. Free TimeNgadas Enjoy a free afternoon in Ngadas Village. Mount Bromo Jeep ExcursionGunung Bromo4h Jump in a jeep and explore the winding landscape of Eastern Java, climbing upwards and outwards towards the grandeur of Mt Bromo to witness a stunning sunrise. Hike to the peak of Mt Bromo, part of the Tengger Calder, the largest volcanic range in the area. A distinct site, the volcano blew its top off completely and is constantly smouldering with white smoke.`,
+        description: `An early morning jeep ride is the best way to see the Bromo Crater this morning. Followed by a 45 minute hike to reach Penanjakan Hill view point just in time for sunrise! Admire the oranges and pinks before continuing the hike through the Sea of Sands to the top of Bromo Crater. Enjoy a picnic breakfast at Teletubbies Hill. Return to Ngadas Village for a walking tour (and maybe a coffee?) to see the temples, the tomb of mbah Sedek and the holy forest. Enjoy a local lunch and dinner at the homestay with free time to explore how you wish in between. Your G for Good Moment: Village Walk Learn more about daily life in Ngadas with a village walk. Take in views of the scenic hills as you walk along, passing farming areas and stopping to visit the local temple, vihara, and mosque. Your G for Good Moment: Lunch at Ngadas Village Nestled amongst the green hills of the Mt Bromo region, the village of Ngadas is home to a Tengger farming community. Enjoy a village walk and local lunch at this Pingintrip-supported initiative. Take in views of the scenic hills as you walk along, passing farming areas and stopping to visit the local temple, vihara, and mosque. Learn about the local culture, customs, and traditions from your hosts. Free TimeNgadas Enjoy a free afternoon in Ngadas Village. Mount Bromo Jeep ExcursionGunung Bromo4h Jump in a jeep and explore the winding landscape of Eastern Java, climbing upwards and outwards towards the grandeur of Mt Bromo to witness a stunning sunrise. Hike to the peak of Mt Bromo, part of the Tengger Calder, the largest volcanic range in the area. A distinct site, the volcano blew its top off completely and is constantly smouldering with white smoke.`,
         accommodation: "Ngadas Homestay (or similar)Homestay",
         meals: [],
       },
@@ -1356,7 +1357,7 @@ export const openTrips: OpenTrip[] = [
       "candidasa",
     ],
     featured: false,
-    image: "/assets/bali",
+    image: "/assets/packages/bali-adventure",
     itinerary: [
       {
         dayNumber: 1,
@@ -1470,7 +1471,7 @@ export const openTrips: OpenTrip[] = [
       "nusa-lembongan",
     ],
     featured: true,
-    image: "/assets/bali",
+    image: "/assets/packages/bali-to-lembongan",
     itinerary: [
       {
         dayNumber: 1,
@@ -1516,7 +1517,7 @@ export const openTrips: OpenTrip[] = [
         dayNumber: 6,
         title: "Day 6: Kintamani/Ubud",
         location: "Kintamani/Ubud",
-        description: `Rise and shine as we are getting after it today! Waking well before the sun, we'll start our 2 hour trek to reach the Mt Batur summit in time to enjoy an absolutely stunning sunrise. And what's a picturesque sunrise without a lil picnic breakfast, amirite? With the sun finally up, we'll hike back down for a proper breakfast and a well-deserved hot spring soak. Then it's goodbye Kintamani and hello Ubud! On the way, we'll stop at G Adventures-supported PKP Community to meet with the women leaders, visit the garden and enjoy a local lunch. Then, the rest of the afternoon is yours to explore Ubud. But in the evening, put your party hat on because we're going out! Join your group and Tour Leader for your Big Night Out in Ubud. Mount Batur Sunrise TrekKintamani5h7km Climb to the summit of Mt Batur (1700m), for an amazing sunrise and scenic views. The climb is an experience that will afford anyone who does it a sense of accomplishment and appreciation for the natural beauty this island has. Your Wellness Moment: Local Hot Spring Pool Relax in the pools filled with warm mineral waters from a local spring to soothe tired muscles and ease worries away. Private VehicleKintamani – Ubud2h53km Settle in and scan the scenery from the convenience of a private vehicle. Your G for Good Moment: Pusat Kegiatan Perempuan (PKP) Community Visit Visit the PKP Community, a G-Adventures supported project, for a delicious local lunch made by the women of this enterprise. This centre works to support gender equality and help empower local women through job skill training. PKP is a safe space for women in the community who have experienced discrimination from divorce. We'll meet them over a cup of their specially made tea, tour the garden and learn about the amazing work this organization is doing over lunch. Free TimeUbud Spend the rest of the day free to explore Ubud. Your Big Night Out Moment: in Ubud We're going out! Get yourself a beer, or maybe some cacao and be ready for a fun night out with your crew in Ubud!`,
+        description: `Rise and shine as we are getting after it today! Waking well before the sun, we'll start our 2 hour trek to reach the Mt Batur summit in time to enjoy an absolutely stunning sunrise. And what's a picturesque sunrise without a lil picnic breakfast, amirite? With the sun finally up, we'll hike back down for a proper breakfast and a well-deserved hot spring soak. Then it's goodbye Kintamani and hello Ubud! On the way, we'll stop at Pingintrip-supported PKP Community to meet with the women leaders, visit the garden and enjoy a local lunch. Then, the rest of the afternoon is yours to explore Ubud. But in the evening, put your party hat on because we're going out! Join your group and Tour Leader for your Big Night Out in Ubud. Mount Batur Sunrise TrekKintamani5h7km Climb to the summit of Mt Batur (1700m), for an amazing sunrise and scenic views. The climb is an experience that will afford anyone who does it a sense of accomplishment and appreciation for the natural beauty this island has. Your Wellness Moment: Local Hot Spring Pool Relax in the pools filled with warm mineral waters from a local spring to soothe tired muscles and ease worries away. Private VehicleKintamani – Ubud2h53km Settle in and scan the scenery from the convenience of a private vehicle. Your G for Good Moment: Pusat Kegiatan Perempuan (PKP) Community Visit Visit the PKP Community, a Pingintrip supported project, for a delicious local lunch made by the women of this enterprise. This centre works to support gender equality and help empower local women through job skill training. PKP is a safe space for women in the community who have experienced discrimination from divorce. We'll meet them over a cup of their specially made tea, tour the garden and learn about the amazing work this organization is doing over lunch. Free TimeUbud Spend the rest of the day free to explore Ubud. Your Big Night Out Moment: in Ubud We're going out! Get yourself a beer, or maybe some cacao and be ready for a fun night out with your crew in Ubud!`,
         accommodation: "Pande Permai Bungalow (or similar)Hotel",
         meals: [],
       },
@@ -1594,7 +1595,7 @@ export const openTrips: OpenTrip[] = [
     },
     highlights: ["ubud", "tempasan", "senggigi", "gili-trawangan"],
     featured: false,
-    image: "/assets/bali",
+    image: "/assets/packages/ubud-to-lombok",
     itinerary: [
       {
         dayNumber: 1,
@@ -1702,7 +1703,7 @@ export const openTrips: OpenTrip[] = [
     },
     highlights: ["tempasan", "senggigi", "gili-trawangan", "snorkeling"],
     featured: false,
-    image: "/assets/lombok",
+    image: "/assets/packages/lombok-gili-adventure",
     itinerary: [
       {
         dayNumber: 1,
@@ -1794,7 +1795,7 @@ export const openTrips: OpenTrip[] = [
     },
     highlights: ["sanur", "munduk", "kintamani", "ubud", "candidasa"],
     featured: true,
-    image: "/assets/bali",
+    image: "/assets/packages/classic-bali",
     itinerary: [
       {
         dayNumber: 1,
@@ -1901,7 +1902,7 @@ export const openTrips: OpenTrip[] = [
       "gili-trawangan",
     ],
     featured: true,
-    image: "/assets/bali",
+    image: "/assets/packages/bali-lombok-complete",
     itinerary: [
       {
         dayNumber: 1,
@@ -2054,7 +2055,7 @@ export const openTrips: OpenTrip[] = [
       "ubud",
     ],
     featured: false,
-    image: "/assets/bali",
+    image: "/assets/packages/bali-wild-heart",
     itinerary: [
       {
         dayNumber: 1,
@@ -2162,7 +2163,7 @@ export const openTrips: OpenTrip[] = [
     },
     highlights: ["canggu-surfing", "bulian-village", "mount-batur", "ubud"],
     featured: true,
-    image: "/assets/bali",
+    image: "/assets/packages/bali-unplugged",
     itinerary: [
       {
         dayNumber: 1,
@@ -2208,7 +2209,7 @@ export const openTrips: OpenTrip[] = [
         dayNumber: 6,
         title: "Kintamani to Ubud",
         location: "Kintamani/Ubud",
-        description: `Start our 2 hour trek to reach the Mt Batur summit in time for sunrise. Then it's goodbye Kintamani and hello Ubud! Stop at G Adventures-supported PKP Community. In the evening, join your group for your Big Night Out in Ubud.`,
+        description: `Start our 2 hour trek to reach the Mt Batur summit in time for sunrise. Then it's goodbye Kintamani and hello Ubud! Stop at Pingintrip-supported PKP Community. In the evening, join your group for your Big Night Out in Ubud.`,
         accommodation: "Pande Permai Bungalow (or similar)",
         meals: [],
       },
@@ -2254,7 +2255,7 @@ export const openTrips: OpenTrip[] = [
     },
     highlights: ["kuta", "bulian-village", "ubud", "gili-trawangan"],
     featured: false,
-    image: "/assets/bali",
+    image: "/assets/packages/bali-beaches-boat-rides",
     itinerary: [
       {
         dayNumber: 1,
@@ -2276,7 +2277,7 @@ export const openTrips: OpenTrip[] = [
         dayNumber: 3,
         title: "Kuta to Bulian",
         location: "Kuta/Bulian",
-        description: `It's off to Bulian today. Breathe in the beautiful scenery before stopping for lunch en route at the G Adventures supported Bali Community Training Lunch Program.`,
+        description: `It's off to Bulian today. Breathe in the beautiful scenery before stopping for lunch en route at the Pingintrip supported Bali Community Training Lunch Program.`,
         accommodation: "Bulian Homestay (or similar)",
         meals: [],
       },
@@ -2343,14 +2344,14 @@ export const tourPackages = openTrips;
  * Get an open trip by its slug
  */
 export function getOpenTripBySlug(slug: string): OpenTrip | undefined {
-  return openTrips.find((t) => t.slug === slug);
+  return getOpenTrips().find((t) => t.slug === slug);
 }
 
 /**
  * Get open trips by region ID
  */
 export function getOpenTripsByRegion(regionId: string): OpenTrip[] {
-  return openTrips.filter((t) => t.regionId === regionId);
+  return getOpenTrips().filter((t) => t.regionId === regionId);
 }
 
 /**
@@ -2377,6 +2378,63 @@ export function getOpenTripRoute(trip: OpenTrip, locale: string): string {
   return trip.route[locale as keyof typeof trip.route] || trip.route.en;
 }
 
+// ============================
+// TRIAL PACKAGE & getOpenTrips
+// ============================
+
+export const trialPackage: OpenTrip = {
+  id: "trip-trial-pingintrip",
+  code: "PT-TRIAL-01",
+  slug: "trial-pingintrip",
+  title: {
+    en: "[TRIAL] Pingintrip Test Package",
+    id: "[TRIAL] Paket Test Pingintrip",
+    cn: "[试用] Pingintrip 测试套餐",
+  },
+  description: {
+    en: "Trial package for testing payment flow. Price: Rp 10,000.",
+    id: "Paket uji coba untuk menguji alur pembayaran. Harga: Rp 10.000.",
+    cn: "用于测试支付流程的试用套餐。价格：Rp 10,000。",
+  },
+  durationDays: 1,
+  physicalRating: 1,
+  difficulty: "easy",
+  maxPax: 1,
+  price: {
+    USD: {amount: 1},
+    IDR: {amount: 10000},
+    CNY: {amount: 5},
+  },
+  regionId: "region-bali",
+  startingPoint: "Bali",
+  route: {en: "Bali", id: "Bali", cn: "巴厘岛"},
+  highlights: [],
+  featured: false,
+  isTrial: true,
+  image: "/assets/bali",
+  itinerary: [
+    {
+      dayNumber: 1,
+      title: "Trial Package",
+      location: "Bali",
+      description:
+        "Trial package for testing the Xendit payment integration. Admin use only.",
+      accommodation: "-",
+      meals: [],
+    },
+  ],
+};
+
+/**
+ * Get all open trips — includes trial package if NEXT_PUBLIC_SHOW_TRIAL_PACKAGE=true
+ */
+export function getOpenTrips(): OpenTrip[] {
+  if (process.env.NEXT_PUBLIC_SHOW_TRIAL_PACKAGE === "true") {
+    return [trialPackage, ...openTrips];
+  }
+  return openTrips;
+}
+
 /**
  * Filter open trips by criteria
  */
@@ -2392,7 +2450,7 @@ export interface OpenTripFilters {
 export function filterOpenTrips(filters: OpenTripFilters): OpenTrip[] {
   const locale = filters.locale || "en";
 
-  return openTrips.filter((trip) => {
+  return getOpenTrips().filter((trip) => {
     // Region filter
     if (filters.regionId && trip.regionId !== filters.regionId) return false;
 
@@ -2480,14 +2538,14 @@ export function getFutureAvailableDates(durationDays: number): Date[] {
  * Get all open trip slugs (for generateStaticParams)
  */
 export function getAllOpenTripSlugs(): string[] {
-  return openTrips.map((t) => t.slug);
+  return getOpenTrips().map((t) => t.slug);
 }
 
 /**
  * Get featured open trips
  */
 export function getFeaturedOpenTrips(): OpenTrip[] {
-  return openTrips.filter((t) => t.featured);
+  return getOpenTrips().filter((t) => t.featured);
 }
 
 /**

@@ -2,6 +2,7 @@
 
 import {useTranslations} from "next-intl";
 import {Link} from "@/i18n/navigation";
+import {trackEvent} from "@/lib/gtag";
 
 export default function MissionSection() {
   const t = useTranslations("Mission");
@@ -37,7 +38,8 @@ export default function MissionSection() {
         {/* CTA */}
         <div className="mt-10">
           <Link
-            href="/contact"
+            href="/enquiry"
+            onClick={() => trackEvent({action: "click", category: "mission_section", label: "get_in_touch"})}
             className="btn btn-neutral btn-md rounded-lg uppercase tracking-wider text-xs font-semibold px-8"
           >
             {t("cta")}

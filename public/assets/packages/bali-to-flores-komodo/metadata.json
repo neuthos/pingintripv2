@@ -1,0 +1,47 @@
+{
+  "name": "bali-to-flores-komodo",
+  "originalWidth": 7340,
+  "originalHeight": 4893,
+  "aspectRatio": 1.5001,
+  "dominantColor": "#181818",
+  "variants": [
+    {
+      "name": "placeholder",
+      "width": 20,
+      "height": 13,
+      "file": "placeholder.webp"
+    },
+    {
+      "name": "sm",
+      "width": 640,
+      "height": 426,
+      "file": "sm.webp"
+    },
+    {
+      "name": "md",
+      "width": 1024,
+      "height": 682,
+      "file": "md.webp"
+    },
+    {
+      "name": "lg",
+      "width": 1536,
+      "height": 1024,
+      "file": "lg.webp"
+    },
+    {
+      "name": "xl",
+      "width": 1920,
+      "height": 1280,
+      "file": "xl.webp"
+    },
+    {
+      "name": "original",
+      "width": 7340,
+      "height": 4893,
+      "file": "original.webp"
+    }
+  ],
+  "basePath": "/assets/packages/bali-to-flores-komodo",
+  "generatedAt": "2026-04-12T09:12:40.918Z"
+}

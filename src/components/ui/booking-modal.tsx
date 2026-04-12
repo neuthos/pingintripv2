@@ -4,6 +4,7 @@ import { Calendar, ArrowLeft, Loader2, User } from "lucide-react";
 import type { OpenTrip, Currency } from "@/data/packages";
 import { formatPrice } from "@/data/packages";
 import type { Session } from "next-auth";
+import { trackEvent } from "@/lib/gtag";
 
 interface BookingModalProps {
   trip: OpenTrip;
@@ -277,7 +278,10 @@ export default function BookingModal({
 
                 {/* Submit */}
                 <button
-                  onClick={onSubmit}
+                  onClick={() => {
+                    trackEvent({action: "click", category: "booking", label: `proceed_to_payment_${trip.slug}`});
+                    onSubmit();
+                  }}
                   disabled={submitting || bookingPhone.trim().length === 0}
                   className="w-full btn btn-primary btn-md text-sm font-bold disabled:opacity-60"
                 >

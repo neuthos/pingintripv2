@@ -1,0 +1,47 @@
+{
+  "name": "bali-beaches-boat-rides",
+  "originalWidth": 8192,
+  "originalHeight": 6144,
+  "aspectRatio": 1.3333,
+  "dominantColor": "#786858",
+  "variants": [
+    {
+      "name": "placeholder",
+      "width": 20,
+      "height": 15,
+      "file": "placeholder.webp"
+    },
+    {
+      "name": "sm",
+      "width": 640,
+      "height": 480,
+      "file": "sm.webp"
+    },
+    {
+      "name": "md",
+      "width": 1024,
+      "height": 768,
+      "file": "md.webp"
+    },
+    {
+      "name": "lg",
+      "width": 1536,
+      "height": 1152,
+      "file": "lg.webp"
+    },
+    {
+      "name": "xl",
+      "width": 1920,
+      "height": 1440,
+      "file": "xl.webp"
+    },
+    {
+      "name": "original",
+      "width": 8192,
+      "height": 6144,
+      "file": "original.webp"
+    }
+  ],
+  "basePath": "/assets/packages/bali-beaches-boat-rides",
+  "generatedAt": "2026-04-12T09:12:33.103Z"
+}

@@ -4,6 +4,7 @@ import {useTranslations} from "next-intl";
 import {useLocale} from "next-intl";
 import {tourPackages, formatPrice, getDefaultCurrency} from "@/data/packages";
 import {Link} from "@/i18n/navigation";
+import {trackEvent} from "@/lib/gtag";
 import OptimizedImage from "@/components/ui/optimized-image";
 import {ArrowRight} from "lucide-react";
 
@@ -97,6 +98,7 @@ export default function TripsSection() {
             </p>
             <Link
               href="/packages"
+              onClick={() => trackEvent({action: "click", category: "trips_section", label: "view_all_packages"})}
               className="inline-flex items-center gap-2 text-xs uppercase tracking-wider text-white/80 hover:text-white font-medium transition-colors"
             >
               {t("viewAll")}
@@ -122,6 +124,7 @@ export default function TripsSection() {
                   <Link
                     key={pkg.id}
                     href={`/packages/${pkg.slug}`}
+                    onClick={() => trackEvent({action: "click", category: "trips_section", label: `trip_card_${pkg.slug}`})}
                     className="flex-none w-[220px] md:w-[240px] snap-start group"
                   >
                     {/* Card */}

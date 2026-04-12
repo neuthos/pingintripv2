@@ -5,6 +5,7 @@ import {useTranslations} from "next-intl";
 import {Link, usePathname, useRouter} from "@/i18n/navigation";
 import {useLocale} from "next-intl";
 import {useSession, signIn, signOut} from "next-auth/react";
+import {trackEvent} from "@/lib/gtag";
 import {Menu, X, Globe, ChevronDown, User, LogOut, Send, Shield, ShoppingBag} from "lucide-react";
 import Image from "next/image";
 
@@ -94,6 +95,7 @@ export default function Navbar() {
               {/* Enquiry CTA */}
               <Link
                 href="/enquiry"
+                onClick={() => trackEvent({action: "click", category: "navbar", label: "enquiry_cta"})}
                 className="btn btn-primary btn-xs h-8 min-h-0 rounded-lg text-xs font-semibold px-4 gap-1.5"
               >
                 <Send className="w-3 h-3" />
@@ -208,14 +210,14 @@ export default function Navbar() {
                 /* Not Logged In */
                 <>
                   <button
-                    onClick={handleSignIn}
+                    onClick={() => { trackEvent({action: "click", category: "navbar", label: "login"}); handleSignIn(); }}
                     className="btn btn-ghost btn-xs h-8 min-h-0 gap-1.5 text-gray-600 hover:text-gray-800 rounded-lg text-xs font-medium"
                   >
                     <User className="w-3.5 h-3.5" />
                     {t("login")}
                   </button>
                   <button
-                    onClick={handleSignIn}
+                    onClick={() => { trackEvent({action: "click", category: "navbar", label: "signup"}); handleSignIn(); }}
                     className="btn btn-primary btn-xs h-8 min-h-0 rounded-lg text-xs font-semibold px-4"
                   >
                     {t("signup")}
@@ -318,7 +320,7 @@ export default function Navbar() {
             ))}
             <Link
               href="/enquiry"
-              onClick={() => setIsMobileMenuOpen(false)}
+              onClick={() => { trackEvent({action: "click", category: "navbar_mobile", label: "enquiry_cta"}); setIsMobileMenuOpen(false); }}
               className="block py-2.5 px-3 rounded-lg text-[13px] font-semibold text-primary hover:bg-primary/5 transition-colors"
             >
               {t("enquiry")}

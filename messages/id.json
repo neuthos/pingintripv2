@@ -431,6 +431,22 @@
     "signInBtn": "Masuk dengan Google",
     "pax": "orang"
   },
+  "RegionDetailPage": {
+    "backToDestinations": "Kembali ke Destinasi",
+    "breadcrumbDestinations": "Destinasi",
+    "aboutRegion": "Tentang {region}",
+    "popularFor": "Populer Untuk",
+    "places": "Tempat",
+    "placesCount": "lokasi",
+    "ctaTitle": "Rencanakan Trip ke Sini",
+    "ctaDesc": "Tertarik menjelajahi wilayah ini? Ceritakan impian tripmu dan kami akan membuat itinerary yang sempurna.",
+    "ctaBtn": "Ajukan Permintaan",
+    "explorePlaces": "Tempat-Tempat di {region}",
+    "viewDetails": "Lihat Detail",
+    "tripsTitle": "Open Trip di {region}",
+    "tripsDesc": "Bergabunglah dalam salah satu petualangan grup kami atau ceritakan impian itinerary-mu.",
+    "browseTrips": "Lihat Open Trip"
+  },
   "OrderDetailPage": {
     "backToTrips": "Kembali ke Open Trips",
     "paymentProcessing": "Pembayaran sedang diproses... Mohon tunggu sebentar.",

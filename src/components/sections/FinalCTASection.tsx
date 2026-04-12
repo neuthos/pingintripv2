@@ -2,6 +2,7 @@
 
 import {useTranslations} from "next-intl";
 import {Link} from "@/i18n/navigation";
+import {trackEvent} from "@/lib/gtag";
 
 export default function FinalCTASection() {
   const t = useTranslations("FinalCTA");
@@ -41,6 +42,13 @@ export default function FinalCTASection() {
         <Link
           href="/enquiry"
           className="inline-block bg-neutral text-white text-xs uppercase tracking-[0.2em] font-bold px-8 py-3.5 hover:bg-gray-800 transition-colors"
+          onClick={() =>
+            trackEvent({
+              action: "click",
+              category: "final_cta",
+              label: "get_in_touch",
+            })
+          }
         >
           {t("cta")}
         </Link>

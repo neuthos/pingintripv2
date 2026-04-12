@@ -1,0 +1,47 @@
+{
+  "name": "lombok-gili-adventure",
+  "originalWidth": 2689,
+  "originalHeight": 3761,
+  "aspectRatio": 0.715,
+  "dominantColor": "#3888c8",
+  "variants": [
+    {
+      "name": "placeholder",
+      "width": 20,
+      "height": 28,
+      "file": "placeholder.webp"
+    },
+    {
+      "name": "sm",
+      "width": 640,
+      "height": 895,
+      "file": "sm.webp"
+    },
+    {
+      "name": "md",
+      "width": 1024,
+      "height": 1432,
+      "file": "md.webp"
+    },
+    {
+      "name": "lg",
+      "width": 1536,
+      "height": 2148,
+      "file": "lg.webp"
+    },
+    {
+      "name": "xl",
+      "width": 1920,
+      "height": 2685,
+      "file": "xl.webp"
+    },
+    {
+      "name": "original",
+      "width": 2689,
+      "height": 3761,
+      "file": "original.webp"
+    }
+  ],
+  "basePath": "/assets/packages/lombok-gili-adventure",
+  "generatedAt": "2026-04-12T09:13:18.757Z"
+}

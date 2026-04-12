@@ -4,7 +4,7 @@ import {useState, useMemo, useCallback} from "react";
 import {useTranslations, useLocale} from "next-intl";
 import {Link} from "@/i18n/navigation";
 import {
-  openTrips,
+  getOpenTrips,
   filterOpenTrips,
   formatPrice,
   getDefaultCurrency,
@@ -135,7 +135,7 @@ export default function OpenTripsPage() {
             {t("subtitle")}
           </p>
           <p className="text-white/30 text-xs uppercase tracking-wider">
-            {t("tourCount", {count: openTrips.length})}
+            {t("tourCount", {count: getOpenTrips().length})}
           </p>
         </div>
       </header>
