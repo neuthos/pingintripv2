@@ -1,0 +1,47 @@
+{
+  "name": "bali-to-lembongan",
+  "originalWidth": 2240,
+  "originalHeight": 2988,
+  "aspectRatio": 0.7497,
+  "dominantColor": "#489898",
+  "variants": [
+    {
+      "name": "placeholder",
+      "width": 20,
+      "height": 27,
+      "file": "placeholder.webp"
+    },
+    {
+      "name": "sm",
+      "width": 640,
+      "height": 854,
+      "file": "sm.webp"
+    },
+    {
+      "name": "md",
+      "width": 1024,
+      "height": 1366,
+      "file": "md.webp"
+    },
+    {
+      "name": "lg",
+      "width": 1536,
+      "height": 2049,
+      "file": "lg.webp"
+    },
+    {
+      "name": "xl",
+      "width": 1920,
+      "height": 2561,
+      "file": "xl.webp"
+    },
+    {
+      "name": "original",
+      "width": 2240,
+      "height": 2988,
+      "file": "original.webp"
+    }
+  ],
+  "basePath": "/assets/packages/bali-to-lembongan",
+  "generatedAt": "2026-04-12T09:12:42.571Z"
+}

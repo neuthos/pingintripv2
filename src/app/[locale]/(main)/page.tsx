@@ -1,7 +1,7 @@
 import BrandStorySection from "@/components/sections/BrandStorySection";
 import DestinationsSection from "@/components/sections/DestinationsSection";
 import FinalCTASection from "@/components/sections/FinalCTASection";
-import {Link} from "@/i18n/navigation";
+import HeroCTAButtons from "@/components/ui/HeroCTAButtons";
 import MissionSection from "@/components/sections/MissionSection";
 import OptimizedImage from "@/components/ui/optimized-image";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
@@ -36,14 +36,7 @@ export default function HomePage() {
               {t("title")}
             </h1>
             <p className="py-6 text-lg text-white/80">{t("subtitle")}</p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/destinations" className="btn btn-primary btn-lg">
-                {t("cta")}
-              </Link>
-              <button className="btn btn-outline btn-lg text-white border-white hover:bg-white hover:text-black">
-                {t("secondaryCta")}
-              </button>
-            </div>
+            <HeroCTAButtons />
           </div>
         </div>
       </section>

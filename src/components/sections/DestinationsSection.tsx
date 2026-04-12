@@ -6,6 +6,7 @@ import {regions} from "@/data/destinations";
 import {Link} from "@/i18n/navigation";
 import OptimizedImage from "@/components/ui/optimized-image";
 import {ArrowRight} from "lucide-react";
+import {trackEvent} from "@/lib/gtag";
 
 export default function DestinationsSection() {
   const t = useTranslations("Destinations");
@@ -34,9 +35,17 @@ export default function DestinationsSection() {
               dest.tagline.en;
 
             return (
-              <div
+              <Link
                 key={dest.id}
-                className={`group relative aspect-4/5 rounded-xl overflow-hidden ${
+                href={`/destinations/region/${dest.slug}`}
+                onClick={() =>
+                  trackEvent({
+                    action: "click",
+                    category: "destination_card",
+                    label: dest.slug,
+                  })
+                }
+                className={`group relative aspect-4/5 rounded-xl overflow-hidden cursor-pointer ${
                   index >= 4 ? "hidden md:block" : ""
                 }`}
               >
@@ -60,7 +69,7 @@ export default function DestinationsSection() {
                     {tagline}
                   </p>
                 </div>
-              </div>
+              </Link>
             );
           })}
         </div>
@@ -70,6 +79,13 @@ export default function DestinationsSection() {
           <Link
             href="/destinations"
             className="btn btn-primary btn-md rounded-lg text-sm font-semibold gap-2 px-8"
+            onClick={() =>
+              trackEvent({
+                action: "click",
+                category: "destinations_cta",
+                label: "explore_all_destinations",
+              })
+            }
           >
             {t("cta")}
             <ArrowRight className="w-4 h-4" />

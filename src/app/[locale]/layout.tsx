@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { Outfit, Lora, Caveat } from "next/font/google";
 import { routing } from "@/i18n/routing";
 import AuthProvider from "@/components/providers/AuthProvider";
+import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
 import "../globals.css";
 
 const outfit = Outfit({
@@ -55,6 +56,7 @@ export default async function LocaleLayout({ children, params }: Props) {
             {children}
           </NextIntlClientProvider>
         </AuthProvider>
+        <GoogleAnalytics />
       </body>
     </html>
   );

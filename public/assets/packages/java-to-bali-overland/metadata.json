@@ -1,0 +1,47 @@
+{
+  "name": "java-to-bali-overland",
+  "originalWidth": 4160,
+  "originalHeight": 2340,
+  "aspectRatio": 1.7778,
+  "dominantColor": "#e8e8e8",
+  "variants": [
+    {
+      "name": "placeholder",
+      "width": 20,
+      "height": 11,
+      "file": "placeholder.webp"
+    },
+    {
+      "name": "sm",
+      "width": 640,
+      "height": 360,
+      "file": "sm.webp"
+    },
+    {
+      "name": "md",
+      "width": 1024,
+      "height": 576,
+      "file": "md.webp"
+    },
+    {
+      "name": "lg",
+      "width": 1536,
+      "height": 864,
+      "file": "lg.webp"
+    },
+    {
+      "name": "xl",
+      "width": 1920,
+      "height": 1080,
+      "file": "xl.webp"
+    },
+    {
+      "name": "original",
+      "width": 4160,
+      "height": 2340,
+      "file": "original.webp"
+    }
+  ],
+  "basePath": "/assets/packages/java-to-bali-overland",
+  "generatedAt": "2026-04-12T09:13:17.044Z"
+}

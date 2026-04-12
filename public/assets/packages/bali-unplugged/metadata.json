@@ -1,0 +1,47 @@
+{
+  "name": "bali-unplugged",
+  "originalWidth": 5304,
+  "originalHeight": 7952,
+  "aspectRatio": 0.667,
+  "dominantColor": "#182818",
+  "variants": [
+    {
+      "name": "placeholder",
+      "width": 20,
+      "height": 30,
+      "file": "placeholder.webp"
+    },
+    {
+      "name": "sm",
+      "width": 640,
+      "height": 960,
+      "file": "sm.webp"
+    },
+    {
+      "name": "md",
+      "width": 1024,
+      "height": 1535,
+      "file": "md.webp"
+    },
+    {
+      "name": "lg",
+      "width": 1536,
+      "height": 2303,
+      "file": "lg.webp"
+    },
+    {
+      "name": "xl",
+      "width": 1920,
+      "height": 2879,
+      "file": "xl.webp"
+    },
+    {
+      "name": "original",
+      "width": 5304,
+      "height": 7952,
+      "file": "original.webp"
+    }
+  ],
+  "basePath": "/assets/packages/bali-unplugged",
+  "generatedAt": "2026-04-12T09:12:57.170Z"
+}

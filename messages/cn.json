@@ -431,6 +431,22 @@
     "signInBtn": "使用Google登录",
     "pax": "人"
   },
+  "RegionDetailPage": {
+    "backToDestinations": "返回目的地",
+    "breadcrumbDestinations": "目的地",
+    "aboutRegion": "关于{region}",
+    "popularFor": "热门活动",
+    "places": "景点",
+    "placesCount": "处",
+    "ctaTitle": "计划一次旅行",
+    "ctaDesc": "有兴趣探索这个地区吗？告诉我们您的旅行梦想，我们将为您打造完美行程。",
+    "ctaBtn": "提交咨询",
+    "explorePlaces": "探索{region}的景点",
+    "viewDetails": "查看详情",
+    "tripsTitle": "{region}的公开旅行团",
+    "tripsDesc": "加入我们精心打造的团队探险或告诉我们您的梦想行程。",
+    "browseTrips": "浏览公开旅行"
+  },
   "OrderDetailPage": {
     "backToTrips": "返回公开旅行",
     "paymentProcessing": "付款处理中…请稍候。",

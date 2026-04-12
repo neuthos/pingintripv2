@@ -431,6 +431,22 @@
     "signInBtn": "Sign In with Google",
     "pax": "pax"
   },
+  "RegionDetailPage": {
+    "backToDestinations": "Back to Destinations",
+    "breadcrumbDestinations": "Destinations",
+    "aboutRegion": "About {region}",
+    "popularFor": "Popular For",
+    "places": "Places",
+    "placesCount": "spots",
+    "ctaTitle": "Plan a Trip Here",
+    "ctaDesc": "Interested in exploring this region? Tell us your dream trip and we'll craft the perfect itinerary.",
+    "ctaBtn": "Make an Enquiry",
+    "explorePlaces": "Places to Explore in {region}",
+    "viewDetails": "View Details",
+    "tripsTitle": "Open Trips in {region}",
+    "tripsDesc": "Join one of our handcrafted group adventures or tell us your dream itinerary.",
+    "browseTrips": "Browse Open Trips"
+  },
   "OrderDetailPage": {
     "backToTrips": "Back to Open Trips",
     "paymentProcessing": "Payment processing... This may take a moment.",
