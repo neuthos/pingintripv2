@@ -6,6 +6,7 @@ import MissionSection from "@/components/sections/MissionSection";
 import OptimizedImage from "@/components/ui/optimized-image";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import TripsSection from "@/components/sections/TripsSection";
+import TrustpilotSection from "@/components/sections/TrustpilotSection";
 import USPSection from "@/components/sections/USPSection";
 import {useTranslations} from "next-intl";
 
@@ -46,6 +47,7 @@ export default function HomePage() {
 
       {/* Testimonials */}
       <TestimonialsSection />
+      <TrustpilotSection />
 
       {/* Destinations */}
       <DestinationsSection />
