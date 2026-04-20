@@ -85,6 +85,32 @@ function OrderContent() {
       .finally(() => setLoading(false));
   }, [orderId]);
 
+  // Trustpilot: send review invitation once order is paid/confirmed
+  useEffect(() => {
+    if (!order || !["paid", "confirmed", "completed"].includes(order.status)) return;
+    const key = `tp_invited_${order.orderNumber}`;
+    if (sessionStorage.getItem(key)) return;
+
+    const sendInvitation = () => {
+      const tp = (window as { tp?: (action: string, data: Record<string, string>) => void }).tp;
+      if (typeof tp !== "function") return;
+      tp("createInvitation", {
+        recipientEmail: order.userEmail,
+        recipientName: order.userName,
+        referenceId: order.orderNumber,
+        source: "InvitationScript",
+      });
+      sessionStorage.setItem(key, "1");
+    };
+
+    if ((window as { tp?: unknown }).tp) {
+      sendInvitation();
+    } else {
+      const timer = setTimeout(sendInvitation, 2000);
+      return () => clearTimeout(timer);
+    }
+  }, [order]);
+
   // Auto-refresh order status when coming from Xendit payment
   useEffect(() => {
     if (paymentStatus !== "success" || !orderId) return;
