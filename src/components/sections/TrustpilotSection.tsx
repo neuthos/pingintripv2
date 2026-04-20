@@ -12,7 +12,6 @@ export default function TrustpilotSection() {
   const widgetRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Initialize widget if script already loaded (e.g. on client navigation)
     if (
       widgetRef.current &&
       (
