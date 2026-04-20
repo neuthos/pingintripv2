@@ -1,11 +1,14 @@
-import type { Metadata } from "next";
-import { NextIntlClientProvider, hasLocale } from "next-intl";
-import { notFound } from "next/navigation";
-import { Outfit, Lora, Caveat } from "next/font/google";
-import { routing } from "@/i18n/routing";
+import "../globals.css";
+
+import {Caveat, Lora, Outfit} from "next/font/google";
+import {NextIntlClientProvider, hasLocale} from "next-intl";
+
 import AuthProvider from "@/components/providers/AuthProvider";
 import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
-import "../globals.css";
+import type {Metadata} from "next";
+import Script from "next/script";
+import {notFound} from "next/navigation";
+import {routing} from "@/i18n/routing";
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -37,11 +40,11 @@ export const metadata: Metadata = {
 
 type Props = {
   children: React.ReactNode;
-  params: Promise<{ locale: string }>;
+  params: Promise<{locale: string}>;
 };
 
-export default async function LocaleLayout({ children, params }: Props) {
-  const { locale } = await params;
+export default async function LocaleLayout({children, params}: Props) {
+  const {locale} = await params;
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
@@ -52,13 +55,17 @@ export default async function LocaleLayout({ children, params }: Props) {
         className={`${outfit.variable} ${lora.variable} ${caveat.variable} antialiased`}
       >
         <AuthProvider>
-          <NextIntlClientProvider>
-            {children}
-          </NextIntlClientProvider>
+          <NextIntlClientProvider>{children}</NextIntlClientProvider>
         </AuthProvider>
         <GoogleAnalytics />
+        <Script
+          id="trustpilot-invite"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `(function(w,d,s,r,n){w.TrustpilotObject=n;w[n]=w[n]||function(){(w[n].q=w[n].q||[]).push(arguments)};a=d.createElement(s);a.async=1;a.src=r;a.type='text/java'+s;f=d.getElementsByTagName(s)[0];f.parentNode.insertBefore(a,f)})(window,document,'script','https://invitejs.trustpilot.com/tp.min.js','tp');tp('register','fOGWEFBQqTP3yy6w');`,
+          }}
+        />
       </body>
     </html>
   );
 }
-

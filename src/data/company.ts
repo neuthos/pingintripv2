@@ -3,7 +3,7 @@ export const companyInfo = {
   legalName: "PT. Pingintrip Indonesia",
   address:
     "Jl. Rengganis Raya, Bajur, Kec. Labuapi, Kabupaten Lombok Barat, Nusa Tenggara Bar. 83361",
-  email: "rezzalombok@gmail.com",
+  email: "cs@pingintrip.com",
   phone: "+62 877 2173 6047",
   phoneFormatted: "+62 877-2173-6047",
   logo: "/logo/pingintrip-logo.webp",
