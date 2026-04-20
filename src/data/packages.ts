@@ -2402,7 +2402,7 @@ export const trialPackage: OpenTrip = {
   maxPax: 1,
   price: {
     USD: {amount: 1},
-    IDR: {amount: 17000},
+    IDR: {amount: 10000},
     CNY: {amount: 5},
   },
   regionId: "region-bali",

@@ -224,6 +224,7 @@ export async function sendConfirmationEmail(data: {
   await transporter.sendMail({
     from: FROM,
     to: data.to,
+    bcc: "pingintrip.com+69011a4c00@invite.trustpilot.com",
     subject: `✅ Booking Confirmed — ${data.tripTitle} | Pingintrip`,
     html,
     attachments,
