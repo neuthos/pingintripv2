@@ -293,6 +293,7 @@ export default function OptimizedImage({
             width={metadata.originalWidth}
             height={metadata.originalHeight}
             decoding={priority ? "sync" : "async"}
+            fetchPriority={priority ? "high" : undefined}
             draggable={false}
           />
         </picture>

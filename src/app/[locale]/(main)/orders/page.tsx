@@ -67,7 +67,7 @@ export default function MyOrdersPage() {
   }, [isLoaded, userEmail]);
 
   const fmtDate = (d: string) =>
-    new Date(d).toLocaleDateString(locale === "id" ? "id-ID" : locale === "cn" ? "zh-CN" : "en-US", {
+    new Date(d).toLocaleDateString(locale === "id" ? "id-ID" : locale === "zh" ? "zh-CN" : "en-US", {
       month: "short",
       day: "numeric",
       year: "numeric",

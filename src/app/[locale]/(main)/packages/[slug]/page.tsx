@@ -104,7 +104,7 @@ function TripDetailContent({trip, locale, currency, t, tb}: TripDetailContentPro
     ? region.name[locale as keyof typeof region.name] || region.name.en
     : "";
   const physicalLabel =
-    getPhysicalRatingLabel(trip.physicalRating)[locale as "en" | "id" | "cn"] ||
+    getPhysicalRatingLabel(trip.physicalRating)[locale as "en" | "id" | "zh"] ||
     getPhysicalRatingLabel(trip.physicalRating).en;
 
   // Related trips (same region, exclude current)

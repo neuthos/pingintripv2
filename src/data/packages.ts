@@ -24,8 +24,8 @@ export interface OpenTrip {
   id: string;
   code: string;
   slug: string;
-  title: {en: string; id: string; cn: string};
-  description: {en: string; id: string; cn: string};
+  title: {en: string; id: string; zh: string};
+  description: {en: string; id: string; zh: string};
   durationDays: number;
   physicalRating: number;
   difficulty: "easy" | "moderate" | "challenging";
@@ -33,7 +33,7 @@ export interface OpenTrip {
   price: MultiCurrencyPrice;
   regionId: string;
   startingPoint: string;
-  route: {en: string; id: string; cn: string};
+  route: {en: string; id: string; zh: string};
   highlights: string[];
   featured: boolean;
   isTrial?: boolean;
@@ -71,7 +71,7 @@ export function getDefaultCurrency(locale: string): Currency {
   switch (locale) {
     case "id":
       return "IDR";
-    case "cn":
+    case "zh":
       return "CNY";
     default:
       return "USD";
@@ -90,12 +90,12 @@ export const openTrips: OpenTrip[] = [
     title: {
       en: "Bali to Lombok Adventure: 16-Day Island Hopping & Cultural Trek",
       id: "Petualangan Bali ke Lombok: 16 Hari Jelajah Pulau & Trekking Budaya",
-      cn: "巴厘岛到龙目岛探险：16天跳岛与文化徒步之旅",
+      zh: "巴厘岛到龙目岛探险：16天跳岛与文化徒步之旅",
     },
     description: {
       en: "Experience the ultimate Indonesian island adventure across Bali and Lombok. Learn to surf in Canggu, hike Mount Batur at sunrise, immerse yourself in traditional village life, and snorkel crystal-clear waters of the Gili Islands. Perfect blend of adventure, culture, and tropical paradise.",
       id: "Rasakan petualangan pulau Indonesia terlengkap di Bali dan Lombok. Belajar surfing di Canggu, mendaki Gunung Batur saat sunrise, menginap di desa tradisional, dan snorkeling di perairan jernih Kepulauan Gili. Kombinasi sempurna antara petualangan, budaya, dan surga tropis.",
-      cn: "体验印尼终极跳岛探险，横跨巴厘岛和龙目岛。在仓古学习冲浪、日出时分攀登巴图尔火山、沉浸于传统村庄生活、在吉利群岛清澈海域浮潜。冒险、文化与热带天堂的完美结合。",
+      zh: "体验印尼终极跳岛探险，横跨巴厘岛和龙目岛。在仓古学习冲浪、日出时分攀登巴图尔火山、沉浸于传统村庄生活、在吉利群岛清澈海域浮潜。冒险、文化与热带天堂的完美结合。",
     },
     durationDays: 16,
     physicalRating: 3,
@@ -111,7 +111,7 @@ export const openTrips: OpenTrip[] = [
     route: {
       en: "Canggu to Seminyak",
       id: "Canggu ke Seminyak",
-      cn: "仓古至塞米亚克",
+      zh: "仓古至塞米亚克",
     },
     highlights: [
       "canggu-surfing",
@@ -268,12 +268,12 @@ export const openTrips: OpenTrip[] = [
     title: {
       en: "Bali to Flores: Komodo Dragons, Island Hopping & Ancient Villages",
       id: "Ubud ke Flores: Komodo, Pantai & Trekking Suku",
-      cn: "乌布到弗洛雷斯：巨蜥、海滩与部落徒步",
+      zh: "乌布到弗洛雷斯：巨蜥、海滩与部落徒步",
     },
     description: {
       en: "Journey from Ubud's cultural treasures to Flores' untamed wilderness across 10 unforgettable days. Trek remote mountain trails to UNESCO-listed Waerebo village, encounter legendary Komodo dragons on volcanic islands, and snorkel turquoise waters teeming with marine life.",
       id: "Dari jantung spiritual Bali ke perbatasan liar Flores — temukan desa kuno, mendaki ke Waerebo, berlayar bersama komodo, dan menyelam di terumbu karang.",
-      cn: "从巴厘岛的精神中心到弗洛雷斯的荒野前沿——探索古老村庄、徒步到瓦埃勒博、与科莫多巨蜥同行、潜入原始珊瑚礁。",
+      zh: "从巴厘岛的精神中心到弗洛雷斯的荒野前沿——探索古老村庄、徒步到瓦埃勒博、与科莫多巨蜥同行、潜入原始珊瑚礁。",
     },
     durationDays: 10,
     physicalRating: 3,
@@ -289,7 +289,7 @@ export const openTrips: OpenTrip[] = [
     route: {
       en: "Ubud to Labuan Bajo",
       id: "Ubud ke Labuan Bajo",
-      cn: "乌布至拉布汉巴焦",
+      zh: "乌布至拉布汉巴焦",
     },
     highlights: [
       "ubud",
@@ -390,12 +390,12 @@ export const openTrips: OpenTrip[] = [
     title: {
       en: "Java to Bali Overland: Volcanoes, Temples & Beach Bliss",
       id: "Indonesia: Hammock & Hiking — Jawa ke Bali",
-      cn: "印度尼西亚：吊床与徒步——爪哇到巴厘岛",
+      zh: "印度尼西亚：吊床与徒步——爪哇到巴厘岛",
     },
     description: {
       en: "Traverse Indonesia's heartland on this 14-day overland odyssey from Jakarta to Kuta. Explore Bandung's tea plantations and hot springs, discover Yogyakarta's UNESCO temples, summit Mount Bromo at sunrise, and surf Bali's legendary breaks before unwinding in beachside hammocks.",
       id: "14 hari melintasi jantung vulkanik Jawa ke pantai Bali. Kunjungi Bandung, jelajahi candi Yogyakarta, saksikan Gunung Bromo saat matahari terbit, dan akhiri dengan vibes selancar Bali.",
-      cn: "14天从爪哇火山中心区穿越到巴厘岛海滩。访问万隆、探索日惹寺庙、日出时分观赏布罗莫火山，以巴厘岛冲浪氛围结束。",
+      zh: "14天从爪哇火山中心区穿越到巴厘岛海滩。访问万隆、探索日惹寺庙、日出时分观赏布罗莫火山，以巴厘岛冲浪氛围结束。",
     },
     durationDays: 14,
     physicalRating: 3,
@@ -411,7 +411,7 @@ export const openTrips: OpenTrip[] = [
     route: {
       en: "Jakarta to Kuta",
       id: "Jakarta ke Kuta",
-      cn: "雅加达至库塔",
+      zh: "雅加达至库塔",
     },
     highlights: [
       "jakarta",
@@ -529,12 +529,12 @@ export const openTrips: OpenTrip[] = [
     title: {
       en: "Bali to Lombok: Volcanoes, Villages & Paradise Islands",
       id: "Bali ke Gili: Petualangan Pulau Terbaik",
-      cn: "巴厘岛到吉利：终极海岛冒险",
+      zh: "巴厘岛到吉利：终极海岛冒险",
     },
     description: {
       en: "Experience 15 days of Indonesian island life from surf culture to sacred villages. Catch waves in Canggu, sleep in traditional Bulian homestays, summit Mount Batur for sunrise, master Ubud's arts, trek remote Lombok communities, and unwind on Gili Trawangan's car-free shores.",
       id: "15 hari keajaiban pulau — berselancar di Canggu, menginap di desa Bulian, mendaki puncak Gunung Batur, jelajahi Ubud, trekking di alam liar Lombok, dan bersantai di pantai Gili Trawangan.",
-      cn: "15天纯粹的海岛魔力——在仓古冲浪、住在布利安村、登顶巴图尔火山、探索乌布、徒步龙目岛荒野、在吉利特拉旺安的原始海滩放松。",
+      zh: "15天纯粹的海岛魔力——在仓古冲浪、住在布利安村、登顶巴图尔火山、探索乌布、徒步龙目岛荒野、在吉利特拉旺安的原始海滩放松。",
     },
     durationDays: 15,
     physicalRating: 3,
@@ -550,7 +550,7 @@ export const openTrips: OpenTrip[] = [
     route: {
       en: "Canggu to Gili Trawangan",
       id: "Canggu ke Gili Trawangan",
-      cn: "仓古至吉利特拉旺安",
+      zh: "仓古至吉利特拉旺安",
     },
     highlights: [
       "canggu",
@@ -692,12 +692,12 @@ export const openTrips: OpenTrip[] = [
     title: {
       en: "Flores Frontier: Jungles, Villages & Komodo Dragons",
       id: "Perbatasan Flores: Hutan, Desa & Komodo",
-      cn: "弗洛雷斯前沿：丛林、村庄与科莫多巨蜥",
+      zh: "弗洛雷斯前沿：丛林、村庄与科莫多巨蜥",
     },
     description: {
       en: "8 days deep into Flores — trek to the spider-web rice fields, stay in the ancient Waerebo village, sail through Komodo National Park, and snorkel with manta rays.",
       id: "8 hari menjelajahi Flores — mendaki ke sawah jaring laba-laba, menginap di desa kuno Waerebo, berlayar di Taman Nasional Komodo, dan snorkeling bersama pari manta.",
-      cn: "8天深入弗洛雷斯——徒步到蜘蛛网状稻田、住在古老的瓦埃勒博村、在科莫多国家公园航行、与蝠鲼一起浮潜。",
+      zh: "8天深入弗洛雷斯——徒步到蜘蛛网状稻田、住在古老的瓦埃勒博村、在科莫多国家公园航行、与蝠鲼一起浮潜。",
     },
     durationDays: 8,
     physicalRating: 4,
@@ -713,7 +713,7 @@ export const openTrips: OpenTrip[] = [
     route: {
       en: "Labuan Bajo roundtrip",
       id: "Labuan Bajo PP",
-      cn: "拉布汉巴焦往返",
+      zh: "拉布汉巴焦往返",
     },
     highlights: [
       "labuan-bajo",
@@ -798,12 +798,12 @@ export const openTrips: OpenTrip[] = [
     title: {
       en: "Best of Java: Temples, Tea Hills & Volcanoes",
       id: "Terbaik dari Jawa: Candi, Perbukitan Teh & Gunung Berapi",
-      cn: "爪哇精华：寺庙、茶山与火山",
+      zh: "爪哇精华：寺庙、茶山与火山",
     },
     description: {
       en: "A 9-day journey through Java's cultural treasures — explore Jakarta, visit Bandung's tea plantations, discover Yogyakarta's ancient temples, and witness the sunrise over Mt Bromo.",
       id: "9 hari perjalanan melalui harta karun budaya Jawa — jelajahi Jakarta, kunjungi perkebunan teh Bandung, temukan candi kuno Yogyakarta, dan saksikan matahari terbit di Gunung Bromo.",
-      cn: "9天爪哇文化之旅——探索雅加达、参观万隆茶园、发现日惹古寺、观赏布罗莫火山日出。",
+      zh: "9天爪哇文化之旅——探索雅加达、参观万隆茶园、发现日惹古寺、观赏布罗莫火山日出。",
     },
     durationDays: 9,
     physicalRating: 2,
@@ -819,7 +819,7 @@ export const openTrips: OpenTrip[] = [
     route: {
       en: "Jakarta to Sanur",
       id: "Jakarta ke Sanur",
-      cn: "雅加达至萨努尔",
+      zh: "雅加达至萨努尔",
     },
     highlights: ["jakarta", "bandung", "yogyakarta", "mount-bromo", "malang"],
     featured: false,
@@ -906,12 +906,12 @@ export const openTrips: OpenTrip[] = [
     title: {
       en: "Bali & Lombok: Beaches, Rinjani Treks & Gili Islands",
       id: "Bali, Gunung Rinjani & Kepulauan Gili",
-      cn: "巴厘岛、林贾尼火山与吉利群岛",
+      zh: "巴厘岛、林贾尼火山与吉利群岛",
     },
     description: {
       en: "Discover Indonesia's cultural and natural diversity over 9 transformative days. Relax on Candidasa's tranquil shores, trek Mount Rinjani's lush foothills with expert local guides, master Sasak culinary traditions, and snorkel Gili Trawangan's turquoise reefs.",
       id: "9 hari budaya, trekking dan kebahagiaan pulau — jelajahi Candidasa, mendaki kaki bukit Gunung Rinjani dengan pemandu wanita lokal, belajar masak Sasak, dan snorkeling di Gili Trawangan.",
-      cn: "9天文化、徒步与海岛之旅——探索坎迪达萨、与当地女导游徒步林贾尼火山山麓、学习萨萨克烹饪、在吉利特拉旺安浮潜。",
+      zh: "9天文化、徒步与海岛之旅——探索坎迪达萨、与当地女导游徒步林贾尼火山山麓、学习萨萨克烹饪、在吉利特拉旺安浮潜。",
     },
     durationDays: 9,
     physicalRating: 3,
@@ -927,7 +927,7 @@ export const openTrips: OpenTrip[] = [
     route: {
       en: "Candi Dasa to Gili Trawangan",
       id: "Candi Dasa ke Gili Trawangan",
-      cn: "坎迪达萨至吉利特拉旺安",
+      zh: "坎迪达萨至吉利特拉旺安",
     },
     highlights: [
       "candidasa",
@@ -1019,12 +1019,12 @@ export const openTrips: OpenTrip[] = [
     title: {
       en: "Highlights of Java: Temples & the Dieng Plateau",
       id: "Sorotan Jawa: Candi & Dataran Tinggi Dieng",
-      cn: "爪哇亮点：寺庙与迪恩高原",
+      zh: "爪哇亮点：寺庙与迪恩高原",
     },
     description: {
       en: "8 days discovering Java's hidden gems — explore Jakarta's energy, Bandung's colonial charm, the mystical Dieng Plateau, and Yogyakarta's world-famous temples.",
       id: "8 hari menemukan permata tersembunyi Jawa — jelajahi energi Jakarta, pesona kolonial Bandung, Dataran Tinggi Dieng yang mistis, dan candi-candi terkenal Yogyakarta.",
-      cn: "8天发现爪哇隐藏宝石——探索雅加达的活力、万隆的殖民魅力、神秘的迪恩高原和日惹的世界著名寺庙。",
+      zh: "8天发现爪哇隐藏宝石——探索雅加达的活力、万隆的殖民魅力、神秘的迪恩高原和日惹的世界著名寺庙。",
     },
     durationDays: 8,
     physicalRating: 2,
@@ -1040,7 +1040,7 @@ export const openTrips: OpenTrip[] = [
     route: {
       en: "Jakarta to Yogyakarta",
       id: "Jakarta ke Yogyakarta",
-      cn: "雅加达至日惹",
+      zh: "雅加达至日惹",
     },
     highlights: [
       "jakarta",
@@ -1125,12 +1125,12 @@ export const openTrips: OpenTrip[] = [
     title: {
       en: "Classic Java: Borobudur & Mt Bromo",
       id: "Java Klasik: Borobudur & Gunung Bromo",
-      cn: "经典爪哇：婆罗浮屠与布罗莫火山",
+      zh: "经典爪哇：婆罗浮屠与布罗莫火山",
     },
     description: {
       en: "8 days through Central and East Java — explore Yogyakarta, witness sunrise at Borobudur, discover Solo's batik heritage, and trek across Mt Bromo's otherworldly sand sea.",
       id: "8 hari melalui Jawa Tengah dan Timur — jelajahi Yogyakarta, saksikan matahari terbit di Borobudur, temukan warisan batik Solo, dan trekking di lautan pasir Gunung Bromo.",
-      cn: "8天穿越中爪哇和东爪哇——探索日惹、在婆罗浮屠观日出、发现梭罗的蜡染遗产、徒步穿越布罗莫火山的超现实沙海。",
+      zh: "8天穿越中爪哇和东爪哇——探索日惹、在婆罗浮屠观日出、发现梭罗的蜡染遗产、徒步穿越布罗莫火山的超现实沙海。",
     },
     durationDays: 8,
     physicalRating: 3,
@@ -1146,7 +1146,7 @@ export const openTrips: OpenTrip[] = [
     route: {
       en: "Yogyakarta to Surabaya",
       id: "Yogyakarta ke Surabaya",
-      cn: "日惹至泗水",
+      zh: "日惹至泗水",
     },
     highlights: ["yogyakarta", "borobudur", "solo", "mount-bromo", "surabaya"],
     featured: false,
@@ -1225,12 +1225,12 @@ export const openTrips: OpenTrip[] = [
     title: {
       en: "Classic Lombok: Beaches, Culture & Gili Islands",
       id: "Lombok Klasik: Pantai, Budaya & Kepulauan Gili",
-      cn: "经典龙目岛：海滩、文化与吉利群岛",
+      zh: "经典龙目岛：海滩、文化与吉利群岛",
     },
     description: {
       en: "8 days exploring Lombok's raw beauty — snorkel Candidasa's coast, discover Kuta Lombok's untouched beaches, sail to the Gili Islands, and experience authentic Sasak culture.",
       id: "8 hari menjelajahi keindahan mentah Lombok — snorkeling di pantai Candidasa, temukan pantai Kuta Lombok yang belum tersentuh, berlayar ke Kepulauan Gili, dan rasakan budaya Sasak asli.",
-      cn: "8天探索龙目岛的原始之美——在坎迪达萨海岸浮潜、发现库塔龙目岛的原始海滩、航行到吉利群岛、体验正宗的萨萨克文化。",
+      zh: "8天探索龙目岛的原始之美——在坎迪达萨海岸浮潜、发现库塔龙目岛的原始海滩、航行到吉利群岛、体验正宗的萨萨克文化。",
     },
     durationDays: 8,
     physicalRating: 2,
@@ -1246,7 +1246,7 @@ export const openTrips: OpenTrip[] = [
     route: {
       en: "Candi Dasa to Sanur",
       id: "Candi Dasa ke Sanur",
-      cn: "坎迪达萨至萨努尔",
+      zh: "坎迪达萨至萨努尔",
     },
     highlights: ["candidasa", "kuta-lombok", "senggigi", "gili-trawangan"],
     featured: false,
@@ -1325,12 +1325,12 @@ export const openTrips: OpenTrip[] = [
     title: {
       en: "Bali Adventure: Temples, Hot Springs & Culture",
       id: "Petualangan Bali: Candi, Sumber Air Panas & Budaya",
-      cn: "巴厘岛探险：寺庙、温泉与文化",
+      zh: "巴厘岛探险：寺庙、温泉与文化",
     },
     description: {
       en: "9 days immersed in Bali's spiritual heart — explore Seminyak, trek through Munduk's waterfalls, stay in Bulian village, summit Mount Batur, and relax in Candidasa.",
       id: "9 hari tenggelam di jantung spiritual Bali — jelajahi Seminyak, trekking di air terjun Munduk, menginap di desa Bulian, mendaki Gunung Batur, dan bersantai di Candidasa.",
-      cn: "9天沉浸在巴厘岛的精神中心——探索塞米亚克、徒步穿越蒙杜克瀑布、住在布利安村、登顶巴图尔火山、在坎迪达萨放松。",
+      zh: "9天沉浸在巴厘岛的精神中心——探索塞米亚克、徒步穿越蒙杜克瀑布、住在布利安村、登顶巴图尔火山、在坎迪达萨放松。",
     },
     durationDays: 9,
     physicalRating: 3,
@@ -1346,7 +1346,7 @@ export const openTrips: OpenTrip[] = [
     route: {
       en: "Seminyak to Candi Dasa",
       id: "Seminyak ke Candi Dasa",
-      cn: "塞米亚克至坎迪达萨",
+      zh: "塞米亚克至坎迪达萨",
     },
     highlights: [
       "seminyak",
@@ -1440,12 +1440,12 @@ export const openTrips: OpenTrip[] = [
     title: {
       en: "Bali to Lembongan: Island Hopping Bliss",
       id: "Bali ke Lembongan: Jelajah Pulau Penuh Kebahagiaan",
-      cn: "巴厘岛到蓝梦岛：跳岛幸福之旅",
+      zh: "巴厘岛到蓝梦岛：跳岛幸福之旅",
     },
     description: {
       en: "11 days of island-hopping magic — surf Canggu, live village life in Bulian, trek Mount Batur, explore Ubud, and finish with crystal-clear waters on Nusa Lembongan.",
       id: "11 hari keajaiban jelajah pulau — berselancar di Canggu, hidup di desa Bulian, mendaki Gunung Batur, jelajahi Ubud, dan akhiri di perairan jernih Nusa Lembongan.",
-      cn: "11天跳岛魔力之旅——在仓古冲浪、在布利安村体验乡村生活、徒步巴图尔火山、探索乌布、在蓝梦岛清澈海水中结束旅程。",
+      zh: "11天跳岛魔力之旅——在仓古冲浪、在布利安村体验乡村生活、徒步巴图尔火山、探索乌布、在蓝梦岛清澈海水中结束旅程。",
     },
     durationDays: 11,
     physicalRating: 3,
@@ -1461,7 +1461,7 @@ export const openTrips: OpenTrip[] = [
     route: {
       en: "Canggu to Nusa Lembongan",
       id: "Canggu ke Nusa Lembongan",
-      cn: "仓古至蓝梦岛",
+      zh: "仓古至蓝梦岛",
     },
     highlights: [
       "canggu",
@@ -1570,12 +1570,12 @@ export const openTrips: OpenTrip[] = [
     title: {
       en: "Ubud to Lombok: Temples, Jungles & Island Vibes",
       id: "Ubud ke Lombok: Candi, Hutan & Suasana Pulau",
-      cn: "乌布到龙目岛：寺庙、丛林与海岛风情",
+      zh: "乌布到龙目岛：寺庙、丛林与海岛风情",
     },
     description: {
       en: "9 days from Bali's cultural capital to Lombok's wild shores — stay in Ubud, trek through Tempasan village, explore Senggigi, and end on the white sands of Gili Trawangan.",
       id: "9 hari dari ibu kota budaya Bali ke pantai liar Lombok — menginap di Ubud, trekking desa Tempasan, jelajahi Senggigi, dan berakhir di pasir putih Gili Trawangan.",
-      cn: "9天从巴厘岛文化之都到龙目岛狂野海岸——住在乌布、徒步坦帕山村、探索森吉吉、在吉利特拉旺安白色沙滩结束。",
+      zh: "9天从巴厘岛文化之都到龙目岛狂野海岸——住在乌布、徒步坦帕山村、探索森吉吉、在吉利特拉旺安白色沙滩结束。",
     },
     durationDays: 9,
     physicalRating: 3,
@@ -1591,7 +1591,7 @@ export const openTrips: OpenTrip[] = [
     route: {
       en: "Ubud to Gili Trawangan",
       id: "Ubud ke Gili Trawangan",
-      cn: "乌布至吉利特拉旺安",
+      zh: "乌布至吉利特拉旺安",
     },
     highlights: ["ubud", "tempasan", "senggigi", "gili-trawangan"],
     featured: false,
@@ -1678,12 +1678,12 @@ export const openTrips: OpenTrip[] = [
     title: {
       en: "Lombok & Gili Adventure: Treks, Reefs & Local Life",
       id: "Petualangan Lombok & Gili: Trekking, Terumbu & Kehidupan Lokal",
-      cn: "龙目岛与吉利冒险：徒步、珊瑚礁与当地生活",
+      zh: "龙目岛与吉利冒险：徒步、珊瑚礁与当地生活",
     },
     description: {
       en: "7 days of raw Lombok adventure — trek through rice paddies, cook with locals in Tempasan village, snorkel crystal reefs, and kick back on Gili Trawangan's sandy shores.",
       id: "7 hari petualangan liar Lombok — trekking melewati sawah, memasak bersama penduduk lokal di desa Tempasan, snorkeling di terumbu karang, dan bersantai di pantai Gili Trawangan.",
-      cn: "7天龙目岛原始冒险——穿越稻田徒步、在坦帕山村与当地人一起烹饪、浮潜水晶般的珊瑚礁、在吉利特拉旺安沙滩放松。",
+      zh: "7天龙目岛原始冒险——穿越稻田徒步、在坦帕山村与当地人一起烹饪、浮潜水晶般的珊瑚礁、在吉利特拉旺安沙滩放松。",
     },
     durationDays: 7,
     physicalRating: 3,
@@ -1699,7 +1699,7 @@ export const openTrips: OpenTrip[] = [
     route: {
       en: "Tempasan to Gili Trawangan",
       id: "Tempasan ke Gili Trawangan",
-      cn: "坦帕山至吉利特拉旺安",
+      zh: "坦帕山至吉利特拉旺安",
     },
     highlights: ["tempasan", "senggigi", "gili-trawangan", "snorkeling"],
     featured: false,
@@ -1770,12 +1770,12 @@ export const openTrips: OpenTrip[] = [
     title: {
       en: "Classic Bali: Temples, Rice Terraces & Hidden Gems",
       id: "Bali Klasik: Candi, Sawah Terasering & Permata Tersembunyi",
-      cn: "经典巴厘岛：寺庙、梯田与隐藏宝石",
+      zh: "经典巴厘岛：寺庙、梯田与隐藏宝石",
     },
     description: {
       en: "8 days through Bali's cultural highlights — from Sanur's coastal calm to Munduk's misty waterfalls, Kintamani's volcanic views, Ubud's artsy soul, and Candidasa's historic coast.",
       id: "8 hari melalui sorotan budaya Bali — dari ketenangan pesisir Sanur ke air terjun berkabut Munduk, pemandangan vulkanik Kintamani, jiwa seni Ubud, dan pantai bersejarah Candidasa.",
-      cn: "8天巴厘岛文化之旅——从萨努尔的海岸宁静到蒙杜克的迷雾瀑布、金塔马尼的火山景观、乌布的艺术灵魂和坎迪达萨的历史海岸。",
+      zh: "8天巴厘岛文化之旅——从萨努尔的海岸宁静到蒙杜克的迷雾瀑布、金塔马尼的火山景观、乌布的艺术灵魂和坎迪达萨的历史海岸。",
     },
     durationDays: 8,
     physicalRating: 2,
@@ -1791,7 +1791,7 @@ export const openTrips: OpenTrip[] = [
     route: {
       en: "Sanur to Candi Dasa",
       id: "Sanur ke Candi Dasa",
-      cn: "萨努尔至坎迪达萨",
+      zh: "萨努尔至坎迪达萨",
     },
     highlights: ["sanur", "munduk", "kintamani", "ubud", "candidasa"],
     featured: true,
@@ -1870,12 +1870,12 @@ export const openTrips: OpenTrip[] = [
     title: {
       en: "Bali & Lombok: The Complete Island Experience",
       id: "Bali & Lombok: Pengalaman Pulau Lengkap",
-      cn: "巴厘岛与龙目岛：完整的海岛体验",
+      zh: "巴厘岛与龙目岛：完整的海岛体验",
     },
     description: {
       en: "14 days of the ultimate Bali and Lombok combo — explore temples, snorkel warm waters, trek through villages, sail to the Gilis, and watch traditional shadow puppets dance in the night.",
       id: "14 hari kombinasi Bali dan Lombok terbaik — jelajahi candi, snorkeling perairan hangat, trekking desa, berlayar ke Gili, dan saksikan wayang kulit menari di malam hari.",
-      cn: "14天终极巴厘岛和龙目岛组合——探索寺庙、在温暖水域浮潜、穿越村庄徒步、航行到吉利群岛、观看传统皮影戏在夜晚跳舞。",
+      zh: "14天终极巴厘岛和龙目岛组合——探索寺庙、在温暖水域浮潜、穿越村庄徒步、航行到吉利群岛、观看传统皮影戏在夜晚跳舞。",
     },
     durationDays: 14,
     physicalRating: 2,
@@ -1891,7 +1891,7 @@ export const openTrips: OpenTrip[] = [
     route: {
       en: "Sanur to Sanur",
       id: "Sanur ke Sanur",
-      cn: "萨努尔至萨努尔",
+      zh: "萨努尔至萨努尔",
     },
     highlights: [
       "sanur",
@@ -2025,12 +2025,12 @@ export const openTrips: OpenTrip[] = [
     title: {
       en: "Bali's Wild Heart: Surfing, Volcanoes & Village Soul",
       id: "Jantung Liar Bali: Selancar, Gunung Berapi & Jiwa Desa",
-      cn: "巴厘岛的狂野之心：冲浪、火山与乡村灵魂",
+      zh: "巴厘岛的狂野之心：冲浪、火山与乡村灵魂",
     },
     description: {
       en: "9 days beyond the brochure — ride Canggu's iconic waves, trek up a volcano in the dark for sunrise, stay in a traditional village, cycle past rice paddies, and dig into Ubud's artsy buzz.",
       id: "9 hari di luar brosur — selancar di ombak ikonik Canggu, mendaki gunung berapi dalam gelap untuk matahari terbit, menginap di desa tradisional, bersepeda melewati sawah, dan nikmati suasana seni Ubud.",
-      cn: "9天超越画册——驾驭仓古标志性的海浪、黑夜中徒步火山观日出、住在传统村庄、骑自行车穿过稻田、深入乌布的艺术氛围。",
+      zh: "9天超越画册——驾驭仓古标志性的海浪、黑夜中徒步火山观日出、住在传统村庄、骑自行车穿过稻田、深入乌布的艺术氛围。",
     },
     durationDays: 9,
     physicalRating: 3,
@@ -2046,7 +2046,7 @@ export const openTrips: OpenTrip[] = [
     route: {
       en: "Canggu to Ubud",
       id: "Canggu ke Ubud",
-      cn: "仓古至乌布",
+      zh: "仓古至乌布",
     },
     highlights: [
       "canggu-surfing",
@@ -2138,12 +2138,12 @@ export const openTrips: OpenTrip[] = [
     title: {
       en: "Bali Unplugged: 7 Days Off the Beaten Path",
       id: "Bali Unplugged: 7 Hari di Jalur Tak Biasa",
-      cn: "巴厘岛真实之旅：7天偏离寻常路线",
+      zh: "巴厘岛真实之旅：7天偏离寻常路线",
     },
     description: {
       en: "7 days of real Bali — surf Canggu, stay with locals in Bulian village, camp under stars at Mount Batur, chase hidden waterfalls, and cycle past lush rice paddies. Raw, real, ridiculously fun.",
       id: "7 hari Bali yang sesungguhnya — selancar di Canggu, menginap bersama penduduk lokal di desa Bulian, berkemah di bawah bintang di Gunung Batur, mengejar air terjun tersembunyi, dan bersepeda melewati sawah.",
-      cn: "7天真实的巴厘岛——在仓古冲浪、与当地人住在布利安村、在巴图尔火山星空下露营、追寻隐藏瀑布、骑自行车穿过翠绿稻田。原始、真实、有趣到不行。",
+      zh: "7天真实的巴厘岛——在仓古冲浪、与当地人住在布利安村、在巴图尔火山星空下露营、追寻隐藏瀑布、骑自行车穿过翠绿稻田。原始、真实、有趣到不行。",
     },
     durationDays: 7,
     physicalRating: 2,
@@ -2159,7 +2159,7 @@ export const openTrips: OpenTrip[] = [
     route: {
       en: "Canggu to Ubud",
       id: "Canggu ke Ubud",
-      cn: "仓古至乌布",
+      zh: "仓古至乌布",
     },
     highlights: ["canggu-surfing", "bulian-village", "mount-batur", "ubud"],
     featured: true,
@@ -2230,12 +2230,12 @@ export const openTrips: OpenTrip[] = [
     title: {
       en: "Bali Beaches & Boat Rides: Kuta to Gili",
       id: "Pantai & Perahu Bali: Kuta ke Gili",
-      cn: "巴厘岛海滩与船旅：库塔到吉利",
+      zh: "巴厘岛海滩与船旅：库塔到吉利",
     },
     description: {
       en: "9 days exploring Bali's coast and islands — surf in Kuta, explore Bulian's village life, wander Ubud's temples and lotus ponds, and sail to the paradise of Gili Trawangan.",
       id: "9 hari menjelajahi pantai dan pulau Bali — berselancar di Kuta, jelajahi kehidupan desa Bulian, berkeliaran di candi dan kolam teratai Ubud, dan berlayar ke surga Gili Trawangan.",
-      cn: "9天探索巴厘岛海岸和岛屿——在库塔冲浪、探索布利安村落生活、漫步乌布寺庙和莲花池、航行到吉利特拉旺安天堂。",
+      zh: "9天探索巴厘岛海岸和岛屿——在库塔冲浪、探索布利安村落生活、漫步乌布寺庙和莲花池、航行到吉利特拉旺安天堂。",
     },
     durationDays: 9,
     physicalRating: 2,
@@ -2251,7 +2251,7 @@ export const openTrips: OpenTrip[] = [
     route: {
       en: "Kuta to Gili Trawangan",
       id: "Kuta ke Gili Trawangan",
-      cn: "库塔至吉利特拉旺安",
+      zh: "库塔至吉利特拉旺安",
     },
     highlights: ["kuta", "bulian-village", "ubud", "gili-trawangan"],
     featured: false,
@@ -2389,12 +2389,12 @@ export const trialPackage: OpenTrip = {
   title: {
     en: "[TRIAL] Pingintrip Test Package",
     id: "[TRIAL] Paket Test Pingintrip",
-    cn: "[试用] Pingintrip 测试套餐",
+    zh: "[试用] Pingintrip 测试套餐",
   },
   description: {
     en: "Trial package for testing payment flow. Price: Rp 10,000.",
     id: "Paket uji coba untuk menguji alur pembayaran. Harga: Rp 10.000.",
-    cn: "用于测试支付流程的试用套餐。价格：Rp 10,000。",
+    zh: "用于测试支付流程的试用套餐。价格：Rp 10,000。",
   },
   durationDays: 1,
   physicalRating: 1,
@@ -2407,7 +2407,7 @@ export const trialPackage: OpenTrip = {
   },
   regionId: "region-bali",
   startingPoint: "Bali",
-  route: {en: "Bali", id: "Bali", cn: "巴厘岛"},
+  route: {en: "Bali", id: "Bali", zh: "巴厘岛"},
   highlights: [],
   featured: false,
   isTrial: true,
@@ -2554,14 +2554,14 @@ export function getFeaturedOpenTrips(): OpenTrip[] {
 export function getPhysicalRatingLabel(rating: number): {
   en: string;
   id: string;
-  cn: string;
+  zh: string;
 } {
-  const labels: Record<number, {en: string; id: string; cn: string}> = {
-    1: {en: "Easy", id: "Mudah", cn: "轻松"},
-    2: {en: "Light", id: "Ringan", cn: "轻度"},
-    3: {en: "Moderate", id: "Sedang", cn: "中等"},
-    4: {en: "Demanding", id: "Berat", cn: "较难"},
-    5: {en: "Challenging", id: "Sangat Berat", cn: "挑战性"},
+  const labels: Record<number, {en: string; id: string; zh: string}> = {
+    1: {en: "Easy", id: "Mudah", zh: "轻松"},
+    2: {en: "Light", id: "Ringan", zh: "轻度"},
+    3: {en: "Moderate", id: "Sedang", zh: "中等"},
+    4: {en: "Demanding", id: "Berat", zh: "较难"},
+    5: {en: "Challenging", id: "Sangat Berat", zh: "挑战性"},
   };
   return labels[rating] || labels[3];
 }

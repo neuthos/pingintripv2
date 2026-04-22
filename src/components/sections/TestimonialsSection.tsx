@@ -70,7 +70,7 @@ export default function TestimonialsSection() {
 
               {/* Name — handwriting font */}
               <p
-                className="text-base text-primary mt-auto"
+                className="text-base text-[#006d94] mt-auto"
                 style={{fontFamily: "var(--font-caveat), cursive"}}
               >
                 {review.name}, {review.location}

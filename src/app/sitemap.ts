@@ -4,7 +4,7 @@ import {
 } from "@/data/destinations";
 
 const BASE_URL = "https://pingintrip.com";
-const LOCALES = ["en", "id", "cn"];
+const LOCALES = ["en", "id", "zh"];
 
 export default async function sitemap() {
   const now = new Date().toISOString();

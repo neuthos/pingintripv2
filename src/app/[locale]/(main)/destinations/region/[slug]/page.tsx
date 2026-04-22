@@ -32,7 +32,7 @@ export async function generateMetadata({params}: PageProps) {
   const region = getRegionBySlug(slug);
   if (!region) return {};
 
-  const getName = (obj: {en: string; id: string; cn: string}) =>
+  const getName = (obj: {en: string; id: string; zh: string}) =>
     obj[locale as keyof typeof obj] || obj.en;
 
   const regionName = getName(region.name);
@@ -65,7 +65,7 @@ export default async function RegionDetailPage({params}: PageProps) {
   const regionPlaces = getPlacesByRegion(region.id);
   const t = await getTranslations("RegionDetailPage");
 
-  const getName = (obj: {en: string; id: string; cn: string}) =>
+  const getName = (obj: {en: string; id: string; zh: string}) =>
     obj[locale as keyof typeof obj] || obj.en;
 
   const regionName = getName(region.name);
@@ -292,7 +292,7 @@ function PlaceCard({
   viewDetailsLabel,
 }: {
   place: Place;
-  getName: (obj: {en: string; id: string; cn: string}) => string;
+  getName: (obj: {en: string; id: string; zh: string}) => string;
   viewDetailsLabel: string;
 }) {
   return (

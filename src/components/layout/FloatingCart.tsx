@@ -51,7 +51,7 @@ export default function FloatingCart() {
   const [hydrated, setHydrated] = useState(false);
 
   const getName = useCallback(
-    (obj: {en: string; id: string; cn: string}) =>
+    (obj: {en: string; id: string; zh: string}) =>
       obj[locale as keyof typeof obj] || obj.en,
     [locale],
   );

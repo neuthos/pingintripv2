@@ -18,7 +18,7 @@ const navLinks = [
 const localeLabels: Record<string, string> = {
   en: "EN",
   id: "ID",
-  cn: "CN",
+  zh: "CN",
 };
 
 export default function Navbar() {
@@ -43,7 +43,7 @@ export default function Navbar() {
   }, []);
 
   const handleLocaleChange = (newLocale: string) => {
-    router.replace(pathname, {locale: newLocale as "en" | "id" | "cn"});
+    router.replace(pathname, {locale: newLocale as "en" | "id" | "zh"});
   };
 
   const handleSignIn = () => {
@@ -233,6 +233,7 @@ export default function Navbar() {
                 <div
                   tabIndex={0}
                   role="button"
+                  aria-label="Select language"
                   className="btn btn-ghost btn-xs btn-square h-8 w-8 min-h-0"
                 >
                   <Globe className="w-4 h-4 text-gray-500" />

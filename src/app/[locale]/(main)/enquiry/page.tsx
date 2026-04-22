@@ -203,7 +203,7 @@ export default function EnquiryPage() {
     }
   }, [travelers]);
 
-  const getName = (obj: {en: string; id: string; cn: string}) =>
+  const getName = (obj: {en: string; id: string; zh: string}) =>
     obj[locale as keyof typeof obj] || obj.en;
 
   const selectedPlaces = useMemo(

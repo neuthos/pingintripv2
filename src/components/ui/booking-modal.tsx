@@ -32,7 +32,7 @@ interface BookingModalProps {
 }
 
 const localeFmt = (locale: string) =>
-  locale === "id" ? "id-ID" : locale === "cn" ? "zh-CN" : "en-US";
+  locale === "id" ? "id-ID" : locale === "zh" ? "zh-CN" : "en-US";
 
 export default function BookingModal({
   trip,

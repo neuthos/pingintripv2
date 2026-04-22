@@ -90,7 +90,7 @@ export default function DestinationsSection() {
             {t("cta")}
             <ArrowRight className="w-4 h-4" />
           </Link>
-          <p className="text-xs text-gray-400 mt-3">{t("ctaHint")}</p>
+          <p className="text-xs text-gray-500 mt-3">{t("ctaHint")}</p>
         </div>
       </div>
     </section>

@@ -31,9 +31,18 @@ import {
 // Sort options
 // ============================
 
-type SortOption = "popular" | "price-low" | "price-high" | "duration-short" | "duration-long";
+type SortOption =
+  | "popular"
+  | "price-low"
+  | "price-high"
+  | "duration-short"
+  | "duration-long";
 
-function sortTrips(trips: OpenTrip[], sort: SortOption, currency: Currency): OpenTrip[] {
+function sortTrips(
+  trips: OpenTrip[],
+  sort: SortOption,
+  currency: Currency,
+): OpenTrip[] {
   const sorted = [...trips];
   switch (sort) {
     case "popular":
@@ -102,7 +111,7 @@ export default function OpenTripsPage() {
 
   // Get localized name helper
   const getName = useCallback(
-    (obj: {en: string; id: string; cn: string}) =>
+    (obj: {en: string; id: string; zh: string}) =>
       obj[locale as keyof typeof obj] || obj.en,
     [locale],
   );
@@ -139,16 +148,6 @@ export default function OpenTripsPage() {
           </p>
         </div>
       </header>
-
-      {/* Google Signup Discount Banner */}
-      <div className="bg-amber-50 border-b border-amber-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-center gap-2 text-center">
-          <span className="text-amber-600 text-lg">🎉</span>
-          <p className="text-xs md:text-sm text-amber-800/80">
-            {t("googleDiscount")}
-          </p>
-        </div>
-      </div>
 
       {/* Filter Bar */}
       <div className="sticky top-0 z-30 bg-white border-b border-gray-100 shadow-sm">
@@ -238,7 +237,8 @@ export default function OpenTripsPage() {
           {/* Mobile Filter Toggle */}
           <div className="flex md:hidden items-center justify-between py-3">
             <p className="text-sm text-gray-600">
-              <span className="font-bold">{filteredTrips.length}</span> {t("tripsFound")}
+              <span className="font-bold">{filteredTrips.length}</span>{" "}
+              {t("tripsFound")}
             </p>
             <button
               onClick={() => setShowMobileFilters(!showMobileFilters)}
@@ -291,7 +291,9 @@ export default function OpenTripsPage() {
                 <div className="relative">
                   <select
                     value={selectedDuration}
-                    onChange={(e) => setSelectedDuration(Number(e.target.value))}
+                    onChange={(e) =>
+                      setSelectedDuration(Number(e.target.value))
+                    }
                     className="w-full appearance-none bg-gray-50 border border-gray-200 text-sm pl-3 pr-8 py-2.5 rounded-lg"
                   >
                     {durationRanges.map((range, i) => (
@@ -315,8 +317,12 @@ export default function OpenTripsPage() {
                     <option value="popular">{t("sortPopular")}</option>
                     <option value="price-low">{t("sortPriceLow")}</option>
                     <option value="price-high">{t("sortPriceHigh")}</option>
-                    <option value="duration-short">{t("sortDurationShort")}</option>
-                    <option value="duration-long">{t("sortDurationLong")}</option>
+                    <option value="duration-short">
+                      {t("sortDurationShort")}
+                    </option>
+                    <option value="duration-long">
+                      {t("sortDurationLong")}
+                    </option>
                   </select>
                   <ChevronDown className="absolute right-2.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-gray-400 pointer-events-none" />
                 </div>
@@ -337,7 +343,11 @@ export default function OpenTripsPage() {
       {/* Results Count (Desktop) */}
       <div className="hidden md:block max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
         <p className="text-sm text-gray-500">
-          {t("showing")} <span className="font-bold text-gray-700">{filteredTrips.length}</span> {t("tripsFound")}
+          {t("showing")}{" "}
+          <span className="font-bold text-gray-700">
+            {filteredTrips.length}
+          </span>{" "}
+          {t("tripsFound")}
         </p>
       </div>
 
@@ -359,7 +369,9 @@ export default function OpenTripsPage() {
         ) : (
           <div className="text-center py-20">
             <MapPin className="w-10 h-10 text-gray-300 mx-auto mb-4" />
-            <p className="text-gray-500 text-base font-medium mb-2">{t("noResultsTitle")}</p>
+            <p className="text-gray-500 text-base font-medium mb-2">
+              {t("noResultsTitle")}
+            </p>
             <p className="text-gray-400 text-sm mb-6">{t("noResultsDesc")}</p>
             <button
               onClick={clearAllFilters}
@@ -382,7 +394,7 @@ interface TripCardProps {
   trip: OpenTrip;
   locale: string;
   currency: Currency;
-  getName: (obj: {en: string; id: string; cn: string}) => string;
+  getName: (obj: {en: string; id: string; zh: string}) => string;
   t: ReturnType<typeof useTranslations>;
 }
 
@@ -397,22 +409,16 @@ function TripCard({trip, locale, currency, getName, t}: TripCardProps) {
   // Discount percentage
   const discountPercent =
     price.discountedAmount && price.amount > 0
-      ? Math.round(((price.amount - price.discountedAmount) / price.amount) * 100)
+      ? Math.round(
+          ((price.amount - price.discountedAmount) / price.amount) * 100,
+        )
       : 0;
 
   return (
-    <Link
-      href={`/packages/${trip.slug}`}
-      className="group block"
-    >
+    <Link href={`/packages/${trip.slug}`} className="group block">
       <div className="relative aspect-3/4 rounded-xl overflow-hidden">
         {/* Image */}
-        <OptimizedImage
-          src={trip.image}
-          alt={title}
-          fill
-          objectFit="cover"
-        />
+        <OptimizedImage src={trip.image} alt={title} fill objectFit="cover" />
 
         {/* Badges top-left */}
         <div className="absolute top-3 left-3 z-3 flex flex-col gap-1.5">

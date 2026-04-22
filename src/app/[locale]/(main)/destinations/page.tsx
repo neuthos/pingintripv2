@@ -95,11 +95,11 @@ export default function DestinationsPage() {
       const nameMatch =
         place.name.en.toLowerCase().includes(q) ||
         place.name.id.toLowerCase().includes(q) ||
-        place.name.cn.toLowerCase().includes(q);
+        place.name.zh.toLowerCase().includes(q);
       const descMatch =
         place.description.en.toLowerCase().includes(q) ||
         place.description.id.toLowerCase().includes(q) ||
-        place.description.cn.toLowerCase().includes(q);
+        place.description.zh.toLowerCase().includes(q);
       const catMatch = place.category.toLowerCase().includes(q);
       return nameMatch || descMatch || catMatch;
     });
@@ -125,7 +125,7 @@ export default function DestinationsPage() {
 
   // Get localized name
   const getName = useCallback(
-    (obj: {en: string; id: string; cn: string}) =>
+    (obj: {en: string; id: string; zh: string}) =>
       obj[locale as keyof typeof obj] || obj.en,
     [locale],
   );
@@ -509,7 +509,7 @@ export default function DestinationsPage() {
 interface HorizontalPlacesScrollProps {
   places: Place[];
   expanded: boolean;
-  getName: (obj: {en: string; id: string; cn: string}) => string;
+  getName: (obj: {en: string; id: string; zh: string}) => string;
   isPlaceSelected: (id: string) => boolean;
   togglePlace: (place: Place) => void;
   setDetailPlace: (place: Place) => void;
@@ -599,7 +599,7 @@ function HorizontalPlacesScroll({
 
 interface PlaceCardProps {
   place: Place;
-  getName: (obj: {en: string; id: string; cn: string}) => string;
+  getName: (obj: {en: string; id: string; zh: string}) => string;
   isSelected: boolean;
   onToggle: () => void;
   onDetail: () => void;
@@ -683,7 +683,7 @@ function PlaceCardComponent({
 
 interface PlaceDetailModalContentProps {
   place: Place;
-  getName: (obj: {en: string; id: string; cn: string}) => string;
+  getName: (obj: {en: string; id: string; zh: string}) => string;
   isSelected: boolean;
   onToggle: () => void;
   onClose: () => void;
